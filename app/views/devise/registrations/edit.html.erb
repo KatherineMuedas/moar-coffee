@@ -13,6 +13,15 @@
         <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
       <% end %>
     </div>
+     <div class="form-group">
+      <%= f.label :zipcode %>
+      <%= f.text_field :zipcode, :autofocus => true, class: 'form-control' %>
+    </div>
+     <div class="form-group">
+      <%= f.label :gender, 'Gender:' %>
+      <%= f.select :gender, [['Female',true], ['Male',false]], 
+                                selected: false, class: 'form-control' %>
+    </div>
     <fieldset>
       <p>Leave these fields blank if you don't want to change your password.</p>
       <div class="form-group">

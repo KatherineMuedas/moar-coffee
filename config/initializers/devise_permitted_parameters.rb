@@ -8,10 +8,15 @@ module DevisePermittedParameters
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << :name
-    devise_parameter_sanitizer.for(:account_update) << :name
+    devise_parameter_sanitizer.for(:sign_up) << [:name, :zipcode, :gender]
+    devise_parameter_sanitizer.for(:account_update) << [:name, :zipcode, :gender]
   end
 
 end
 
 DeviseController.send :include, DevisePermittedParameters
+
+
+
+
+  

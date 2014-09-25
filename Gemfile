@@ -16,6 +16,7 @@ gem 'high_voltage'
 gem 'pg'
 gem 'simple_form'
 gem 'thin'
+gem "paperclip", "~> 4.2"
 # gem 'haml-rails'
 
 group :development do
