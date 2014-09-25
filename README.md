@@ -1,42 +1,69 @@
 Moar Coffee
 ================
 
-This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
-provided by the [RailsApps Project](http://railsapps.github.io/).
+Team members:
+ - Phil
+ - Chase
+ - Katherine
 
-Rails Composer is open source and supported by subscribers. Please join RailsApps to support development of Rails Composer.
+###Community based, coffee experience sharing application. Rate and enjoy coffees from your local coffee shops. Find and explore new coffees based on real users experiences. 
 
-Problems? Issues?
------------
+Models:
+  Users:
+    - name, zip code, photo(avatar), gender, points*, rank*
+    - has many: reviews,pictures, favorites* 
+  shops index show new create edit update 
+    - name, description ,website, menu website
+    - has many: drinks reviews through drinks pictures
+    - has one: location 
 
-Need help? Ask on Stack Overflow with the tag 'railsapps.'
+  Location(of shops):
+    - street address, city, state zipcode, phone number 
 
-Your application contains diagnostics in the README file. Please provide a copy of the README file when reporting any issues.
+  drinks: show new create edit update
+    - name, description(optional)
+    - has many: reviews
+    - belongs to: shop
 
-If the application doesn’t work as expected, please [report an issue](https://github.com/RailsApps/rails_apps_composer/issues)
-and include the diagnostics.
+  Reviews:  create destroy
+    - title, body, drink rating(first integer)
+    - has one: picture
+    - belongs to: drink, user
 
-Ruby on Rails
--------------
+  Pictures:
+    - caption, photo
+    - belongs to: review, shop, user
 
-This application requires:
+  Favorites*:
+    - belongs_to user, shop
 
-- Ruby 2.1.0
-- Rails 4.1.5
+Other Ideas
+  Follow Users
+  Public activity /news feed
+  Points*, rank* & Leader board
+  Geolocation for finding user location
+  Google maps
+  Login with Facebook, twitter, github, google+
+  Sharing with Facebook, twitter 
+  Message user?
+  Quiz  → Javascript
 
-Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.html).
 
+Moar Coffee is a drink experience sharing application that is community based.
+
+Moar =>  is a roar for more.  
+
+Basic Idea
+  When the user arrive to his profile page he will find an option “Add and find  shops”
+  When he select the Add and find shops option he will be directed to list of shops
+  When the user select a shop will be redirect to the shop page where is going to find a  list of drinks with their reviews. 
+
+ 
 Getting Started
 ---------------
 
-Documentation and Support
--------------------------
-
 Issues
 -------------
-
-Similar Projects
-----------------
 
 Contributing
 ------------
