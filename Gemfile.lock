@@ -55,7 +55,7 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.2.1)
-    foundation-rails (5.4.4.0)
+    foundation-rails (5.4.3.0)
       railties (>= 3.1.0)
       sass (>= 3.2.0)
     high_voltage (2.2.1)
@@ -164,7 +164,7 @@ DEPENDENCIES
   binding_of_caller
   coffee-rails (~> 4.0.0)
   devise
-  foundation-rails
+  foundation-rails (= 5.4.3.0)
   high_voltage
   hub
   jbuilder (~> 2.0)
@@ -175,7 +175,7 @@ DEPENDENCIES
   quiet_assets
   rails (= 4.1.5)
   rails_layout
-  sass-rails (~> 4.0.3)
+  sass-rails (~> 4.0.1)
   sdoc (~> 0.4.0)
   simple_form
   spring

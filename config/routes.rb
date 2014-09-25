@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  root to: 'visitors#index'
+ 
   devise_for :users
   resources :users
+  resources :shops do
+    resources :drinks 
+  end
+  resources :reviews
+ root to: 'shops#index'
 end

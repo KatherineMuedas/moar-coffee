@@ -11,10 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140924214544) do
+ActiveRecord::Schema.define(version: 20140924233028) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "drinks", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "shop_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "drinks", ["shop_id"], name: "index_drinks_on_shop_id", using: :btree
+
+  create_table "reviews", force: true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.integer  "drink_rating"
+    t.integer  "drink_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reviews", ["drink_id"], name: "index_reviews_on_drink_id", using: :btree
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
+
+  create_table "shops", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "website"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

@@ -1,0 +1,30 @@
+<%= simple_form_for @shop do |f| %>
+  <% if @shop.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@project.errors.count, "error") %> prohibited
+      this shop from being saved:</h2>
+    <ul>
+    <% @shop.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.input :name %><br>
+  </div>
+ 
+  <div class="form-group">
+    <%= f.input :description %><br>
+  </div>
+
+  <div class="form-group">
+    <%= f.input :website %><br>
+  </div>
+
+  <p>
+  <%= f.submit 'Submit', :class => 'button right' %> 
+  <%= link_to 'Back', shops_path %>
+  </p>  
+<% end %>

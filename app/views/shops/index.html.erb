@@ -1,0 +1,6 @@
+<%= link_to 'New Cafe', new_shop_path %>
+<ul>
+<% @shops.each do |shop| %>
+<li> <%= shop.name %></li> 
+<%end%>
+</ul>
