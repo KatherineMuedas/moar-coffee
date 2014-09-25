@@ -6,6 +6,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # config.secret_key = '7d6dd797074af7ab9f4fdfbb9e78e7e59939000367b83db6b27094e3d3c7e5c36acce0464f37a7c01f9a4dbb8442e9fdb77e89698813a153e3b1f8b545cc8ced'
 
+
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
@@ -98,7 +99,7 @@ Devise.setup do |config|
 
   # Setup a pepper to generate the encrypted password.
   # config.pepper = '7429a2b756c0191d4692a71962103960ed7454ce7abdce9a07f6b5acc3b3b822f9bf8e74746586b98bc42202ba19df914fc3c5b9ac7cd80bbdd4e7847bf02e7b'
-
+  
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
   # confirming their account. For instance, if set to 2.days, the user will be
