@@ -1,3 +1,10 @@
+To Login:
+kat@email.com
+chase@email.com
+phil@email.com
+
+Password = password
+
 Moar Coffee
 ================
 
