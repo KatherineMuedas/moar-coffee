@@ -1,5 +1,5 @@
 <h1>Caf&eacute;s</h1>
-<%= link_to 'New Cafe', new_shop_path %>
+<%= link_to 'New Café', new_shop_path %>
 <div>
   <ul>
     <% @shops.each do |shop| %>
@@ -7,8 +7,8 @@
        <h3> <%=link_to shop.name,shop_path(shop) %></h3>
        <p><%= shop.description %></p>
       </li> 
-      <%= link_to 'Edit Cafe', edit_shop_path(shop.id) %> |
-      <%= link_to 'Show Cafe', shop_path(shop.id) %>
+      <%= link_to 'Edit Café', edit_shop_path(shop.id) %> |
+      <%= link_to 'Show Café', shop_path(shop.id) %>
     <%end%>
   </ul>
 </div>
