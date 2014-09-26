@@ -1,11 +1,11 @@
 @import "framework_and_overrides";
 @import "font-awesome";
 // nav bar
-.no_margin {
+//entire nav bar
+.no_margin, .top-bar {
   margin: 0;
 }
 .top-bar{
- margin: 0;
  height: 12%; 
  width: 100%;
 }
