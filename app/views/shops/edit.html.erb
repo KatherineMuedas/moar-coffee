@@ -1,2 +1,17 @@
-<h1>Shops#edit</h1>
-<p>Find me in app/views/shops/edit.html.erb</p>
+<h3> Edit Post </h3>
+<%= form_for @post do |f| %>
+  <%= f.label :name %>:
+  <%= f.text_field :name %>
+
+  <%= f.label :discritpion%>
+  <%= f.text_field :author %>
+
+  <%= f.label :body %>
+  <%= f.text_field :body %>
+
+  <%= f.submit %>
+<% end %>
+<%= render 'form' %>
+
+<%= link_to 'Show', @post %> |
+<%= link_to 'Back', posts_path %>
