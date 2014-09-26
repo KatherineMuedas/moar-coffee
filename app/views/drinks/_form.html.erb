@@ -1,4 +1,4 @@
-<%= simple_form_for ([@shop, @shop.drinks.build]) do |f| %>
+<%= simple_form_for ([@shop, @drink]) do |f| %>
   <% if @shop.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@project.errors.count, "error") %> prohibited
@@ -21,6 +21,6 @@
 
   <p>
   <%= f.submit 'Submit', :class => 'button right' %> 
-  <%= link_to 'Back', shops_path %>
+  <%= link_to 'Back', shop_path(@shop) %>
   </p>  
 <% end %>
