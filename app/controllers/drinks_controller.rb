@@ -16,11 +16,11 @@ class DrinksController < ApplicationController
   end
 
   def edit
-    @drink = @shop.drink.find(params[:shop_id])
+    @drink = @shop.drinks.find_by(id: params[:id])
   end
 
   def update
-    @drink = @shop.drink.find(params[:shop_id])
+    @drink = @shop.drinks.find_by(id: params[:id])
 
     if @drink.update_attributes(drink_params)
       redirect_to @drink

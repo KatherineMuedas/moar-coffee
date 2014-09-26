@@ -1,0 +1,5 @@
+<ul>
+<% @drinks.each do |drink| %>
+<li><%= drink.name %> | <%=link_to 'Edit', edit_shop_drink_path(@shop.id, drink.id), class: "button tiny" %></li> 
+<% end %>
+</ul>
