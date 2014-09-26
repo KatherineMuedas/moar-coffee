@@ -26,15 +26,16 @@ class ShopsController < ApplicationController
   end
 
   def update
-    @shop = Shop.update(params[:id])
-    if @shop.update
-      redirect_to shop_path
+    @shop = Shop.find(params[:id])
+    if @shop.update_attributes(shop_params)
+        redirect_to shop_path
     else
       render 'edit'
     end
   end
 
   private
+
   def shop_params
     params.require(:shop).permit(:name, :description, :website)
   end

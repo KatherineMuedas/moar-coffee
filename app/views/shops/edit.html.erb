@@ -1,17 +1,17 @@
-<h3> Edit caf&eacute; </h3>
+<h3> Edit Caf&eacute; </h3>
 <%= form_for @shop do |f| %>
-  <%= f.label :name %>:
+  <%= f.label :name %>
   <%= f.text_field :name %>
 
-  <%= f.label :discritpion%>
-  <%= f.text_field :author %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
 
   <%= f.label :website %>
   <%= f.text_field :website %>
 
-  <%= f.submit %>
+  <%= f.submit "Update Cafe" %>
 <% end %>
-<%= render 'form' %>
+
 
 <%= link_to 'Show', @shop %> |
 <%= link_to 'Back', shops_path %>
