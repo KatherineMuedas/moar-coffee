@@ -1,6 +1,7 @@
 <%= link_to 'New Cafe', new_shop_path %>
 <ul>
 <% @shops.each do |shop| %>
-<li> <%= shop.name %></li> 
+<li> <%=link_to shop.name,shop_path(shop) %></li>
 <%end%>
 </ul>
+
