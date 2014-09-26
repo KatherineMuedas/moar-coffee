@@ -16,6 +16,7 @@ gem 'high_voltage'
 gem 'pg'
 gem 'simple_form'
 gem 'thin'
+gem 'ffi', '~> 1.9.5'
 # gem 'haml-rails'
 
 group :development do
