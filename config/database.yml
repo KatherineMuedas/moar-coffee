@@ -5,6 +5,7 @@ default: &default
 development:
   <<: *default
   database: moar-coffee_development
+
 test:
   <<: *default
   database: moar-coffee_test

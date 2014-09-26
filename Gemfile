@@ -17,6 +17,7 @@ gem 'pg'
 gem 'simple_form'
 gem 'thin'
 gem 'ffi', '~> 1.9.5'
+gem "paperclip", "~> 4.2"
 # gem 'haml-rails'
 
 group :development do

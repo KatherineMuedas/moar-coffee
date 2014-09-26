@@ -7,11 +7,22 @@
       <%= f.text_field :name, :autofocus => true, class: 'form-control' %>
     </div>
     <div class="form-group">
+      <%= f.file_field :avatar %>
+    </div>  
+    <div class="form-group">
       <%= f.label :email %>
       <%= f.email_field :email, class: 'form-control' %>
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
       <% end %>
+    </div>
+     <div class="form-group">
+      <%= f.label :zipcode %>
+      <%= f.text_field :zipcode, :autofocus => true, class: 'form-control' %>
+    </div>
+     <div class="form-group">
+      <%= f.label :gender, 'Gender:' %>
+      <%= f.select :gender, [[nil, nil], ['Female',true], ['Male',false]], class: 'form-control' %>
     </div>
     <fieldset>
       <p>Leave these fields blank if you don't want to change your password.</p>

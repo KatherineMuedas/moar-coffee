@@ -11,6 +11,14 @@
       <%= f.email_field :email, class: 'form-control' %>
     </div>
     <div class="form-group">
+      <%= f.label :zipcode %>
+      <%= f.text_field :zipcode, class: 'form-control' %>
+    </div>
+     <div class="form-group">
+      <%= f.label :gender, 'Gender:' %>
+      <%= f.select :gender, [[nil, nil], ['Female',true], ['Male',false]], class: 'form-control' %>
+    </div>
+    <div class="form-group">
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control' %>
     </div>
