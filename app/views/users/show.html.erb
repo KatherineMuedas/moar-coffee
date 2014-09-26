@@ -1,8 +1,6 @@
 <h3> My Account </h3>
 <p>Name: <%= @user.name if @user.name %></p>
-<%= image_tag @user.avatar.url(:thumb) %>
+<%= image_tag @user.avatar.url(:medium) %>
 
 <p>Email: <%= @user.email if @user.email %></p>
-<%= form_for @user, :url => users_path, :html => { :multipart => true } do |form| %>
-  <%= form.file_field :avatar %>
-<% end %>
+ 
