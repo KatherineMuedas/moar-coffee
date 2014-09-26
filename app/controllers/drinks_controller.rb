@@ -23,7 +23,7 @@ class DrinksController < ApplicationController
     @drink = @shop.drinks.find_by(id: params[:id])
 
     if @drink.update_attributes(drink_params)
-      redirect_to @drink
+      redirect_to @shop
     else
       render :edit
     end
