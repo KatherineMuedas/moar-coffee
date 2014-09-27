@@ -83,7 +83,7 @@ GEM
       factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
     ffaker (1.25.0)
-    ffi (1.9.4)
+    ffi (1.9.5)
     font-awesome-rails (4.2.0.0)
       railties (>= 3.2, < 5.0)
     formatador (0.2.5)
@@ -290,6 +290,7 @@ DEPENDENCIES
   devise
   factory_girl_rails
   ffaker
+  ffi (~> 1.9.5)
   font-awesome-rails
   foundation-rails (= 5.4.3.0)
   guard

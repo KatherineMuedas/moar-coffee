@@ -1,14 +1,19 @@
 <%# navigation styled for Zurb Foundation 5 %>
-<nav class="top-bar" data-topbar>
-  <ul class="title-area">
-    <li class="name"><%= link_to 'Moar Coffee', root_path %></li>
-    <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
-  </ul>
-  <div class="top-bar-section">
-    <ul class= "right">
-      <li>
-        <%= render 'layouts/navigation_links' %>
-      </li>
-     </ul> 
-  </div>
+<div class="contain-no-grid sticky no_margin">
+  <!-- if gird is desired then you can enter to in place of no -->
+
+<nav class="top-bar" data-options="sticky_on: all" data-topbar>
+     <ul class="title-area">
+      <li class="name"><%= link_to 'Moar-Coffee', root_path %></li>
+      <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+    </ul>
+    <div class="top-bar-section">
+      <ul class= "right">
+        <li>
+
+          <%= render 'layouts/navigation_links' %>
+        </li>
+       </ul> 
+    </div>
 </nav>
+</div>
