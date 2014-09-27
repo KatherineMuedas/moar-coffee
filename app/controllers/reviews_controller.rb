@@ -17,7 +17,7 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    @review.destroy
+    @review = Review.find(params[:id])
     redirect_to :back, notice: 'Your review was succesfully deleted'
   end
 
