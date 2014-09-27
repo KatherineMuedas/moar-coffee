@@ -5,26 +5,26 @@
 .button{
   margin-bottom: 2px;
 }
-// nav bar
-.no_margin {
-  margin: 0;
-}
-.top-bar{
- margin: 0;
- height: 12%; 
- width: 100%;
-}
-// moar-coffee name
+// // nav bar
+// .no_margin {
+//   margin: 0;
+// }
+// .top-bar{ #breaks the navbar
+//  margin: 0;
+//  height: 12%; 
+//  width: 100%;
+// }
+// // moar-coffee name
 .top-bar .name {
  font-size: 2.3em;
- margin-top: .6em;
-
+ // margin-top: .6em;
+ line-height: 100px;
 }
-// set of nav bar links
-.top-bar-section li a {
-  margin-top: 2.8em;
-}
-// individual nav bar links
-.top-bar-section ul li > a {
-  font-size: 1em;
-}
+// // set of nav bar links #breaks the navbar
+// .top-bar-section li a {
+//   margin-top: 2.8em;
+// }
+// // individual nav bar links
+// .top-bar-section ul li > a {
+//   font-size: 1em;
+// }
