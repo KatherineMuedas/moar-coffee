@@ -1,5 +1,20 @@
-<ul>
 <% @drinks.each do |drink| %>
-<li><%= drink.name %> | <%=link_to 'Edit', edit_shop_drink_path(@shop.id, drink.id), class: "button tiny" %></li> 
-<% end %>
-</ul>
+  <h2>
+    <%= drink.name %> | <%=link_to 'Edit', edit_shop_drink_path(@shop.id, drink.id), class: "button tiny" %>
+  </h2> 
+  <% drink.reviews.each do |review| %>
+    <h4>
+      <%= review.user.name %>: <%= review.title %>
+    </h4>
+    <p>
+    <% review.drink_rating.times do  %>
+      <span><i class = "fa fa-coffee coffee fa-lg"></i></span>  
+    <% end %>
+    </p>
+    <p>
+      <%= review.body %>
+    </p>
+    <hr>
+  <% end %>
+  <%= render "reviews/form_reviews", drink: drink %>
+<% end %>    

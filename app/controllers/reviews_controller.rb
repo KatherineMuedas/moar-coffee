@@ -7,6 +7,7 @@ class ReviewsController < ApplicationController
 
   def create
     @review = @drink.reviews.new(reviews_params)
+    @review.user_id = current_user.id 
     @shop = Shop.find(@drink.shop_id)
     if @review.save
       redirect_to shop_path(@shop)
