@@ -1,12 +1,10 @@
 <h1><%= @shop.name %></h1>
 <h2><%= @shop.description %></h2>
-  <!-- link to not quite working -->
 <h2><%= link_to @shop.website, url_with_http_protocol(@shop.website), :target => '_blank' %></h2> 
-  <%= link_to 'Back', shops_path %>
+<%= link_to 'Back', shops_path %>
 <div>
-
-    <h3>Drinks</h3>
-      <%= render 'drinks/drinks' %>
-
-    <%= link_to 'Add a drink', new_shop_drink_path(@shop) %> | <%= link_to 'Back', root_path %>
+  <h3>Drinks</h3>
+  <%= render 'drinks/drinks' %>
+  <%= link_to 'Add a drink', new_shop_drink_path(@shop) %> | <%= link_to 'Back', root_path %>
 </div>
+
