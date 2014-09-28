@@ -2,6 +2,11 @@ class DrinksController < ApplicationController
   before_action :set_shop
   before_action :authenticate_user!, only:[:new, :create, :edit, :update]
 
+  def show
+    @drink = Drink.find(params[:id])
+    @drinks = @shop.drinks.all
+  end
+
   def new
     @drink = Drink.new
   end
