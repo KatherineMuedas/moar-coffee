@@ -1,15 +1,24 @@
 @import "framework_and_overrides";
 @import "font-awesome";
-// nav bar
+
 //entire nav bar
 .no_margin, .top-bar {
   margin: 0;
 }
+//right links
+.top-bar-section ul li, .top-bar-section li:not(.has-form) a:not(.button){
+  background-color: #614000;
+}
+.top-bar-section li:not(.has-form) a:not(.button):hover{
+background-color: #3D2800;
+}
+// moar-coffee name
+@media (min-width: 700px) {
 .top-bar{
+ background-color: #8C5F09;
  height: 12%; 
  width: 100%;
 }
-// moar-coffee name
 .top-bar .name {
  font-size: 2.3em;
  margin-top: .6em;
@@ -22,4 +31,5 @@
 // individual nav bar links
 .top-bar-section ul li > a {
   font-size: 1em;
+}
 }
