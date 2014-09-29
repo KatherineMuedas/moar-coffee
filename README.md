@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/KatherineMuedas/moar-coffee/badges/gpa.svg)](https://codeclimate.com/github/KatherineMuedas/moar-coffee)
+
 To Login:
 kat@email.com
 chase@email.com
