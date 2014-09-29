@@ -13,5 +13,5 @@
 <% end %>
 
 
-<%= link_to 'Show', @shop %> |
-<%= link_to 'Back', shops_path %>
+  <%= link_to 'Edit Café', edit_shop_path(shop.id), class: 'button'%> 
+  <%= link_to 'Show Café', shop_path(shop.id) , class: 'button'%>
