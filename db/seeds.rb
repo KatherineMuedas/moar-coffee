@@ -5,8 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-user = CreateAdminService.new.call
-puts 'CREATED ADMIN USER: ' << user.email
 
 shops = ["Java Shop", "Sunset Cafe", "Coffee Break", "SLC Roasting Company"]
 
@@ -25,7 +23,9 @@ users.each do |user|
                name: user,
                email: "#{user}@email.com",
                password: "password",
-               password_confirmation: "password"
+               password_confirmation: "password",
+               zipcode: 44444,
+               gender: 'true'
                )
   puts "CREATED USER: " << user
 end

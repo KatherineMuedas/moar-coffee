@@ -41,22 +41,6 @@ a:hover {
 //   color: #896115;
 // }
 
-
-////body////
-.top_background {
-  margin-top: 0;
-  width: 100%;
-  background-color: #894615;//color is not working?
-}
-
-.top_background h2{
-  margin-top: 0; 
-  text-align: center;
-}
-.row{
-text-align: center;
-}
-
 //buttons
 .button {
   border-radius: 5px;
@@ -68,7 +52,7 @@ text-align: center;
 }
 
 //large screen media query
-@media (min-width: 700px) {
+@media (min-width: 1017px) {
 // moar-coffee name
 .top-bar{
  background-color: #8C5F09;
