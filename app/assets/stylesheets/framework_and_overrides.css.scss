@@ -1,7 +1,6 @@
 
 // import the CSS framework
 @import "foundation";
-
 // override for the 'Home' navigation link
 .top-bar .name {
   font-size: rem-calc(13);
@@ -91,3 +90,4 @@ section {
   @extend .radius;
   @extend .tiny;
 }
+

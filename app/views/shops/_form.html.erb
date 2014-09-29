@@ -10,21 +10,25 @@
     </ul>
   </div>
     <% end %>
+  <div class='row'>
+   <div class='small-12 small-centered'>
+    <div class="form-group">
+      <%= f.input :name %><br>
+    </div>
+   
+    <div class="form-group">
+      <%= f.input :description %><br>
+    </div>
 
-  <div class="form-group">
-    <%= f.input :name %><br>
+    <div class="form-group">
+      <%= f.input :website %><br>
+    </div>
+   </div>
   </div>
- 
-  <div class="form-group">
-    <%= f.input :description %><br>
+  <div class='row'>
+   <div class='small-12 small-centered'>
+    <%= f.submit 'Submit', :class => 'button right' %> <!--this is weird-->
+    <%= link_to 'Back', shops_path %>
+    </div>
   </div>
-
-  <div class="form-group">
-    <%= f.input :website %><br>
-  </div>
-
-  <p>
-  <%= f.submit 'Submit', :class => 'button right' %> <!--this is weird-->
-  <%= link_to 'Back', shops_path %>
-  </p>  
 <% end %>

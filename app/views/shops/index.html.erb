@@ -1,10 +1,14 @@
-<h1>Caf&eacute;s</h1>
-<%= link_to 'New Café', new_shop_path %>
-<div>
-  <ul>
+
+  <div class="small-3 small-centered columns top_background">
+    <h1>Caf&eacute;s</h1>
+    <div class='row'>
+    <%= link_to 'New Café', new_shop_path, class: 'new_cafe button' %>
+  </div>
+  </div>
+
     <div class ='row'>
     <% @shops.each do |shop| %>
-     <div class='large-4 columns'>
+     <div class='large-4 columns box'>
       <li>
        <h3> <%=link_to shop.name,shop_path(shop) %></h3>
        <p><%= shop.description %></p>
@@ -14,5 +18,4 @@
     </div>
     <%end%>
   </div>
-  </ul>
 </div>
