@@ -1,6 +1,10 @@
 @import "framework_and_overrides";
 @import "font-awesome";
 
+main {
+  background-color: rgba(140, 95, 9, .21);
+}
+
 //entire nav bar
 .no_margin, .top-bar {
   margin: 0;
@@ -12,6 +16,18 @@
 .top-bar-section li:not(.has-form) a:not(.button):hover{
 background-color: #3D2800;
 }
+.tob-bar {
+   background-color: #8C5F09;
+}
+li {
+    list-style-type: none;
+}
+a {
+  color: #897515;
+}
+a:hover {
+    color: #896115;
+  }
 // moar-coffee name
 @media (min-width: 700px) {
 .top-bar{
