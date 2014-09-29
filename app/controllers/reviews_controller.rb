@@ -16,8 +16,23 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def edit
+    @review = Review.find(params[:id])
+  end
+
+  def update
+    @review = Review.find(params[:id])
+   
+    if @review.update(params[:id])
+      redirect_to shop_path(@shop)
+    else
+      render 'edit', notice: 'Review was not created'
+    end
+  end
+
   def destroy
     @review = Review.find(params[:id])
+    @review.destroy
     redirect_to :back, notice: 'Your review was succesfully deleted'
   end
 
