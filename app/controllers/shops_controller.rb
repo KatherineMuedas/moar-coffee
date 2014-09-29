@@ -7,7 +7,6 @@ class ShopsController < ApplicationController
   def show
     @shop = Shop.find(params[:id])
     @drinks = @shop.drinks.all
-
   end
 
   def new

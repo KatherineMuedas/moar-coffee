@@ -1,16 +1,5 @@
-<%= simple_form_for ([@shop, @drink]) do |f| %>
-  <% if @shop.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@project.errors.count, "error") %> prohibited
-      this shop from being saved:</h2>
-    <ul>
-    <% @shop.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-  <% end %>
-
+<%= simple_form_for ([@shop, @drink.build]) do |f| %>
+  
   <div class="form-group">
     <%= f.input :name %><br>
   </div>

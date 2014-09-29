@@ -12,5 +12,12 @@
           Add a Coffee
         <% end %>  
       </li>
+      <li><a href="#" data-reveal-id="addDrink" class= "button right"><i class="fa fa-plus"></i> Add a new drink</a></li>
   </ul>
+
+  <div id="addDrink" class="reveal-modal small" data-reveal>
+  <%= render "drinks/form" %>
+  <a class="close-reveal-modal">&#215;</a>
+  </div> 
 </div>
+
