@@ -1,5 +1,44 @@
-<h1><%= @user.name%></h1>
-<%= image_tag @user.avatar.url(:medium) %>
+<div class="row">
+  <div class="small-12 medium-3 columns">
+    <h1><%= @user.name%></h1>
+    <%= image_tag @user.avatar.url(:medium) %>
+    <% if current_user && @user.id == current_user.id %> 
+      <p><%= link_to 'Edit My Account', edit_user_registration_path, class: "button tiny" %></p> 
+    <% end %> 
+  </div>
+  <div class="small-12 medium-9 columns">
+    <h3>My Photos</h3>
+    <hr>  
 
+    <ul class="small-block-grid-2 medium-block-grid-4">
+      <% 4.times do %>
+        <li>
+          <img src="http://placehold.it/150x150">
+        </li>
+      <% end %>
+    </ul>
+
+    <h3>My Reviews</h3>
+    <hr>
+    <% @reviews.each do |review|%>
+      <div class='panel'>
+        <p>
+          Review <%= link_to review.drink.name, shop_drink_path(review.shop.id, review.drink.id) %> from <%= link_to review.shop.name, shop_path(review.shop.id) %>
+        </p>
+        <p>
+          <% review.drink_rating.times do  %>
+            <span><i class = "fa fa-coffee coffee fa-lg"></i></span>  
+          <% end %> - <%= review.title %>
+        </p>
+        <p>
+          <%= review.body %>
+        </p> 
+        <% if current_user && @user.id == current_user.id %>
+          <%= link_to 'Delete Review', drink_review_path(review.drink.id, review.id), method: :delete, data: { confirm: 'Are you sure you want to delete this review?' } %>
+        <% end %> 
+      </div>
+    <% end %> 
+  </div>
+</div>
 
  
