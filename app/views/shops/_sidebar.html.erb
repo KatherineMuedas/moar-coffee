@@ -7,10 +7,13 @@
       <li> <%= link_to drink.name , shop_drink_path(@shop, drink) %></li>
     <% end %>  
       <li class="heading"> 
-        <%= link_to new_shop_drink_path(@shop) do %>
-          <i class= "fa fa-plus"></i>
-          Add a Coffee
-        <% end %>  
+        <a href="#" data-reveal-id="addDrink" class= "button right"><i class="fa fa-plus"></i> Add a coffee</a>
       </li>
   </ul>
+
+  <div id="addDrink" class="reveal-modal small" data-reveal>
+  <%= render "drinks/form" %>
+  <a class="close-reveal-modal">&#215;</a>
+  </div> 
 </div>
+
