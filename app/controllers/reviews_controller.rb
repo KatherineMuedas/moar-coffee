@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
     @review.user_id = current_user.id 
     @shop = Shop.find(@drink.shop_id)
     if @review.save
-      redirect_to shop_path(@shop)
+      redirect_to :back
     else
       redirect_to :back, notice: 'Review was not created'
     end

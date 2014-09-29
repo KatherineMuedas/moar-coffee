@@ -1,7 +1,4 @@
 <div class="row">
-  <h2>
-    <%= @drink.name %> | <%=link_to 'Edit', edit_shop_drink_path(@shop.id, @drink.id), class: "button tiny" %>
-  </h2> 
   <div class="reviews-section">
     <% if @drink.reviews.empty? %>
       <h4> No Reviews to Display</h4>
