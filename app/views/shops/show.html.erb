@@ -4,10 +4,11 @@
     <h1><%= @shop.name %></h1>
     <h2><%= @shop.description %></h2>
     <h2><%= link_to @shop.website, url_with_http_protocol(@shop.website), :target => '_blank' %></h2> 
-    <%= link_to 'Back', shops_path %>
     <div>
-      <%= link_to 'Add a drink', new_shop_drink_path(@shop) %> | <%= link_to 'Back', root_path %>
+      <%= link_to 'Add a drink', new_shop_drink_path(@shop), class: 'button' %>
+      <%= link_to 'Back', root_path, class: 'button' %>
     </div>
   </div> 
 <!-- </div> -->
+
 
