@@ -1,0 +1,23 @@
+<%= render 'shops/sidebar' %>
+<div class= "small-10 columns"> 
+  <% if user_signed_in? %>
+  <a href="#" data-reveal-id="addReview" class= "button right"><i class="fa fa-plus"></i> Add a new review</a>
+  <% else %>
+    <%= link_to "Sign in to write a review", new_user_registration_path, class: "button right" %>
+  <% end %>
+  <h1 class="text-center"> <%= @drink.name %></h1>
+  <p> <%= @drink.description %></p>
+  <div class="row">
+    <% 4.times do %>
+      <div class="small-3 columns">
+        <img src="http://placehold.it/250x250">
+      </div>
+    <% end %>
+  </div>
+  <hr>
+  <%= render 'drinks/drinks' %>
+</div>
+<div id="addReview" class="reveal-modal small" data-reveal>
+  <%= render "reviews/form_reviews" %>
+  <a class="close-reveal-modal">&#215;</a>
+</div> 

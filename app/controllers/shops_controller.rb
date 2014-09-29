@@ -1,11 +1,13 @@
 class ShopsController < ApplicationController
+  before_action :authenticate_user!, only:[:new, :create, :edit, :update]
   def index
-    @shops = Shop.all
+    @shops = Shop.all.order(:name)
   end
 
   def show
     @shop = Shop.find(params[:id])
     @drinks = @shop.drinks.all
+
   end
 
   def new

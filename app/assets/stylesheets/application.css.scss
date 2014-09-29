@@ -42,14 +42,14 @@ a:hover {
 // }
 
 
-////body///
+////body////
 .top_background {
   margin-top: 0;
   width: 100%;
   background-color: #894615;//color is not working?
 }
 
-.top_background h1{
+.top_background h2{
   margin-top: 0; 
   text-align: center;
 }
@@ -82,7 +82,7 @@ text-align: center;
 }
 // set of nav bar links
 .top-bar-section li a {
-  margin-top: 2.8em;
+  margin: 1.4em 1em;
 }
 // individual nav bar links
 .top-bar-section ul li > a {
@@ -97,3 +97,4 @@ text-align: center;
   background-color: rgba(206, 210, 57, .4);
 }
 }
+@import "reviews";

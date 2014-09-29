@@ -1,6 +1,6 @@
 
   <div class="small-3 small-centered columns top_background">
-    <h1>Caf&eacute;s</h1>
+    <h2>Caf&eacute;s</h2>
     <div class='row'>
     <%= link_to 'New Café', new_shop_path, class: 'new_cafe button' %>
   </div>
@@ -13,9 +13,10 @@
        <h3> <%=link_to shop.name,shop_path(shop) %></h3>
        <p><%= shop.description %></p>
       </li> 
-      <%= link_to 'Edit Café', edit_shop_path(shop.id) %> |
+      <%= link_to 'Edit Café', edit_shop_path(shop.id)%> |
       <%= link_to 'Show Café', shop_path(shop.id) %>
     </div>
     <%end%>
   </div>
 </div>
+

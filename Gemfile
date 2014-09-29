@@ -1,21 +1,21 @@
 source 'https://rubygems.org'
 ruby '2.1.0'
 gem 'rails', '4.1.5'
+gem 'pg'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
+gem 'jquery-turbolinks' # to fix any turbolinks problems
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0',          group: :doc
-gem 'spring',        group: :development
+gem 'spring',        group: :development # stupid spring
 gem 'devise'
 gem 'foundation-rails', '5.4.3.0'
 gem 'font-awesome-rails'
-gem 'high_voltage'
-gem 'pg'
+gem 'high_voltage' #static page generation
 gem 'simple_form'
-gem 'thin'
+gem 'thin' # better webserver then webrick
 gem 'ffi', '~> 1.9.5'
 gem "paperclip", "~> 4.2"
 # gem 'haml-rails'
@@ -23,18 +23,16 @@ gem "paperclip", "~> 4.2"
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
-  gem 'meta_request'
-  gem 'hub', :require=>nil
-  gem 'quiet_assets'
-  gem 'rails_layout'
+  gem 'meta_request' # for the rails panel chrome extension
+  gem 'quiet_assets' 
   gem 'guard'
   gem 'guard-rails'
   gem 'guard-minitest'
   gem 'guard-bundler'
   gem 'guard-livereload'
   gem 'rack-livereload'
-  gem 'ruby_gntp'
-  gem 'xray-rails'
+  gem 'ruby_gntp' # send notification when guard is running. download Growl from the app store.
+  gem 'xray-rails' # short cut cmd + shift + x
 end
 
 group :development, :test do
@@ -42,18 +40,20 @@ group :development, :test do
   gem 'ffaker'
   gem 'pry-rails'
   gem 'pry-rescue'
-  gem 'rspec-rails'
+  gem 'rspec-rails' # stupid rspec
 end
 
 group :test do
   gem 'minitest-rails'
-  gem 'capybara'
+  gem 'capybara' 
   gem 'database_cleaner'
-  gem 'launchy'
-  gem 'selenium-webdriver'
+  gem 'launchy' #no idea what this is. must be for stupid rspec
+  gem 'selenium-webdriver' # for capybara
   gem 'simplecov', require: false
 end
 
 group :production do
-  gem 'rails_12factor'
+  gem 'rails_12factor' #for heroku
 end
+
+gem 'sdoc', '~> 0.4.0',          group: :doc
