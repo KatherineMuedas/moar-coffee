@@ -82,3 +82,9 @@ a:hover {
 }
 }
 @import "reviews";
+
+@media (max-width: 640px){
+  .row, section, .main_shop_page{
+    text-align: center;
+  }
+}
