@@ -24,8 +24,7 @@ users.each do |user|
                email: "#{user}@email.com",
                password: "password",
                password_confirmation: "password",
-               zipcode: 44444,
-               gender: 'false'
+               zipcode: 44444
                )
   puts "CREATED USER: " << user
 end

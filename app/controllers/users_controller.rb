@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
     @reviews = @user.reviews
   end
 
@@ -20,7 +20,7 @@ private
 # Be sure to update your create() and update() controller methods.
 
   def user_params
-    params.require(:user).permit(:avatar)
+    params.require(:user).permit(:avatar, :name, :zipcode, :gender)
   end
 
 end
