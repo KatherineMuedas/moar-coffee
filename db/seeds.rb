@@ -25,7 +25,7 @@ users.each do |user|
                password: "password",
                password_confirmation: "password",
                zipcode: 44444,
-               gender: 'true'
+               gender: 'false'
                )
   puts "CREATED USER: " << user
 end

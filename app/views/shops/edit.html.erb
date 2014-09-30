@@ -11,6 +11,5 @@
 
   <%= f.submit "Update Cafe" %>
 <% end %>
-
-  <%= link_to 'Edit Café', edit_shop_path(@shop.id)%> 
-  <%= link_to 'Show Café', shop_path(@shop.id)%>
+  <%= link_to 'Back', shops_path, class: 'button left'%>
+  <%= link_to 'Show Café', shop_path(@shop.id), class: 'button'%>

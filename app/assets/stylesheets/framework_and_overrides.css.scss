@@ -1,9 +1,10 @@
 // This section is for overwriting foundation default styles.  
 
 // $topbar-height: 100px !default;
-
 // import the CSS framework
 @import "foundation";
+$alert-transition-speed: 300ms;
+$alert-transition-ease: ease-out;
 // override for the 'Home' navigation link
 .top-bar .name {
   font-size: rem-calc(13);

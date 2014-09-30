@@ -81,9 +81,15 @@ a:hover {
   background-color: rgba(206, 210, 57, .4);
   // width: 250px;
   min-height: 12.5em;
-  white-space: wrap;
+  max-height: 12.5em;
+
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.cafe_description_index{
+  min-height: 4.5em;
+  max-height: 4.5em;
+  white-space: pre-line;
 }
 }
 @import "reviews";
