@@ -9,7 +9,6 @@ gem 'jquery-rails'
 gem 'jquery-turbolinks' # to fix any turbolinks problems
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
-gem 'spring',        group: :development # stupid spring
 gem 'devise'
 gem 'foundation-rails', '5.4.3.0'
 gem 'font-awesome-rails'
@@ -18,6 +17,7 @@ gem 'simple_form'
 gem 'thin' # better webserver then webrick
 gem 'ffi', '~> 1.9.5'
 gem "paperclip", "~> 4.2"
+gem 'friendly_id', '~> 5.0.0'
 # gem 'haml-rails'
 
 group :development do
