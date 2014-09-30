@@ -10,10 +10,13 @@ $('#addDrink .button').click( function(event){
 
 
 <% if @drink.new_record? %>
+  // alert("Please sign in before adding a drink!");
   // not saved yet
 <% else %>
   // Saved
-  $('#addDrink').foundation('reveal', 'close') 
-  $('#drinksPartial').html("<%= j render partial: 'drinks/drinks_list', locals: { drinks: @drinks, shop: @shop } %>"
-)
+  console.debug($('.drinksPartial').length);
+  $('#addDrink').foundation('reveal', 'close')
+  var partial =  "<%= j render(partial: 'drinks/drinks_list', locals: { drinks: @drinks, shop: @shop }) %>";
+  console.debug(partial);
+  $('.drinksPartial').html(partial);
 <% end %>

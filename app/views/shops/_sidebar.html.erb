@@ -3,7 +3,7 @@
   <div class='drinksPartial'>
     <%= render partial: 'drinks/drinks_list', locals: { drinks: @drinks, shop: @shop } %>
   </div>
-  <a href="#" data-reveal-id="addDrink" class= "button right"><i class="fa fa-plus"></i> Add a Coffee</a>
+  <a href="#" data-reveal-id="addDrink" class= "button"><i class="fa fa-plus"></i> Add a Coffee</a>
 
   <div id="addDrink" class="reveal-modal small" data-reveal>
   <%= render "drinks/form" %>

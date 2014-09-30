@@ -16,6 +16,7 @@ class DrinksController < ApplicationController
 
     respond_to do |format|
       if @drink.save
+        @drinks = @shop.drinks
         format.html { redirect_to @shop }
         format.js
       else
