@@ -1,11 +1,11 @@
 class ShopsController < ApplicationController
   before_action :authenticate_user!, only:[:new, :create, :edit, :update]
+  before_action :set_shop, only:[:show, :edit, :update]
   def index
     @shops = Shop.all.order(:name)
   end
 
   def show
-    @shop = Shop.find(params[:id])
     @drinks = @shop.drinks.all
   end
 
@@ -24,11 +24,9 @@ class ShopsController < ApplicationController
   end
 
   def edit
-    @shop = Shop.find(params[:id])
   end
 
   def update
-    @shop = Shop.find(params[:id])
     if @shop.update_attributes(shop_params)
         redirect_to shop_path
     else
@@ -40,6 +38,10 @@ class ShopsController < ApplicationController
 
   def shop_params
     params.require(:shop).permit(:name, :description, :website)
+  end
+
+  def set_shop
+    @shop = Shop.friendly.find(params[:id])
   end
 
 end
