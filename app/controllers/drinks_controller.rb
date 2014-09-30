@@ -1,9 +1,10 @@
 class DrinksController < ApplicationController
-  before_action :set_shop
   before_action :authenticate_user!, only:[:new, :create, :edit, :update]
+  before_action :set_shop
+  before_action :set_drink, only:[:show, :edit, :update]
+  
 
   def show
-    @drink = Drink.find(params[:id])
     @drinks = @shop.drinks.all
   end
 
@@ -26,12 +27,9 @@ class DrinksController < ApplicationController
   end
 
   def edit
-    @drink = @shop.drinks.find_by(id: params[:id])
   end
 
   def update
-    @drink = @shop.drinks.find_by(id: params[:id])
-
     if @drink.update_attributes(drink_params)
       redirect_to @shop
     else
@@ -45,6 +43,11 @@ class DrinksController < ApplicationController
   end
 
   def set_shop
-    @shop = Shop.find(params[:shop_id])
+    @shop = Shop.friendly.find(params[:shop_id])
   end
+
+  def set_drink
+    @drink = Drink.friendly.find(params[:id])
+  end
+
 end

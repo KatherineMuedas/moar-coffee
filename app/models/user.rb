@@ -8,6 +8,15 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   validates :name, :zipcode, presence: true
+
+  extend FriendlyId
+  friendly_id :slug_candidates, use: :slugged
+  def slug_candidates
+    [
+      :name,
+      [:name, :last_name]
+    ]
+  end
 end
 
 
