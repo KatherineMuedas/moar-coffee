@@ -1,15 +1,9 @@
 <div class= "small-2 columns">
-  <ul class="side-nav">
-    <li class = "heading shop-name">
-      <%= link_to @shop.name, shop_path(@shop) %>
-    </li>
-    <% @drinks.each do |drink| %>
-      <li> <%= link_to drink.name , shop_drink_path(@shop, drink) %></li>
-    <% end %>  
-      <li class="heading"> 
-        <a href="#" data-reveal-id="addDrink" class= "button right"><i class="fa fa-plus"></i> Add a Coffee</a>
-      </li>
-  </ul>
+  <h4 class = "heading shop-name"><%= link_to @shop.name, shop_path(@shop) %></h4>
+  <div class='drinksPartial'>
+    <%= render partial: 'drinks/drinks_list', locals: { drinks: @drinks, shop: @shop } %>
+  </div>
+  <a href="#" data-reveal-id="addDrink" class= "button right"><i class="fa fa-plus"></i> Add a Coffee</a>
 
   <div id="addDrink" class="reveal-modal small" data-reveal>
   <%= render "drinks/form" %>

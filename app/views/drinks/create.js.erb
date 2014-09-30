@@ -13,5 +13,7 @@ $('#addDrink .button').click( function(event){
   // not saved yet
 <% else %>
   // Saved
-  $('#addDrink').foundation('reveal', 'close')  
+  $('#addDrink').foundation('reveal', 'close') 
+  $('#drinksPartial').html("<%= j render partial: 'drinks/drinks_list', locals: { drinks: @drinks, shop: @shop } %>"
+)
 <% end %>

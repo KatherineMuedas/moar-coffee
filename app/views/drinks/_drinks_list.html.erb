@@ -1,0 +1,5 @@
+<ul>
+  <% drinks.each do |drink| %>
+    <li><%= link_to drink.name , shop_drink_path(shop, drink) %></li>
+  <% end %>  
+</ul>
