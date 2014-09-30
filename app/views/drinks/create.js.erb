@@ -1,0 +1,19 @@
+$('#addDrink').foundation('reveal', 'close')
+
+$('#addDrink .button').click( function(event){
+  event.preventDefault();
+  var drink = $('#drink_name').val();  
+  $( ".side-nav" ).append( "<li>" + drink + "</li>" )
+  .appendTo('#side-nav');  
+})
+
+
+
+
+// $.ajax({
+//   type: "POST",
+//   url: shops/shop_id/drinks/id,
+//   data: data,
+//   success: success,
+//   dataType: dataType
+// });
