@@ -19,7 +19,7 @@ class DrinksController < ApplicationController
         format.html { redirect_to @shop }
         format.js
       else
-        format.html { render :new }
+        format.js
       end
     end
   end
