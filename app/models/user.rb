@@ -17,6 +17,11 @@ class User < ActiveRecord::Base
       [:name, :last_name]
     ]
   end
+
+  def favorites
+    favorites.collect { |x| x.favorable }
+  end
+
 end
 
 
