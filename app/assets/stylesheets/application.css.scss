@@ -50,6 +50,12 @@ a:hover {
   background-color: rgba(3, 87, 103, .8);
    transition: background-color 0.5s ease;
 }
+.cafe_description_index{
+  min-height: 5em;
+  max-height: 6em;
+  white-space: pre-line;
+  overflow: hidden;
+}
 
 //large screen media query
 @media (min-width: 1017px) {
@@ -82,18 +88,11 @@ a:hover {
   // width: 250px;
   min-height: 12.5em;
   max-height: 12.5em;
-
-  overflow: hidden;
   text-overflow: ellipsis;
-}
-.cafe_description_index{
-  min-height: 4.5em;
-  max-height: 4.5em;
-  white-space: pre-line;
 }
 }
 @import "reviews";
-
+//small screen
 @media (max-width: 640px){
   .row, section, .main_shop_page{
     text-align: center;
