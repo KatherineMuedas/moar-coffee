@@ -14,10 +14,15 @@ class DrinksController < ApplicationController
 
   def create
     @drink = @shop.drinks.create(drink_params)
-    if @drink.save
-      redirect_to @shop
-    else
-      render :new
+
+    respond_to do |format|
+      if @drink.save
+        @drinks = @shop.drinks
+        format.html { redirect_to @shop }
+        format.js
+      else
+        format.js
+      end
     end
   end
 

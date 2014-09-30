@@ -6,7 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
 shops = ["Java Shop", "Sunset Cafe", "Coffee Break", "SLC Roasting Company"]
 
 shops.each do |shop|
