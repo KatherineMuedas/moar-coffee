@@ -41,22 +41,6 @@ a:hover {
 //   color: #896115;
 // }
 
-
-////body////
-.top_background {
-  margin-top: 0;
-  width: 100%;
-  background-color: #894615;//color is not working?
-}
-
-.top_background h2{
-  margin-top: 0; 
-  text-align: center;
-}
-.row{
-text-align: center;
-}
-
 //buttons
 .button {
   border-radius: 5px;
@@ -66,9 +50,15 @@ text-align: center;
   background-color: rgba(3, 87, 103, .8);
    transition: background-color 0.5s ease;
 }
+.cafe_description_index{
+  min-height: 5em;
+  max-height: 6em;
+  white-space: pre-line;
+  overflow: hidden;
+}
 
 //large screen media query
-@media (min-width: 700px) {
+@media (min-width: 1017px) {
 // moar-coffee name
 .top-bar{
  background-color: #8C5F09;
@@ -92,9 +82,19 @@ text-align: center;
 //why cant margins be added 
 .box {
   box-sizing: padding-box; 
-  max-width: 62.5em;
+  // max-width: 62.5em;
   padding:1em;
   background-color: rgba(206, 210, 57, .4);
+  // width: 250px;
+  min-height: 12.5em;
+  max-height: 12.5em;
+  text-overflow: ellipsis;
 }
 }
 @import "reviews";
+//small screen
+@media (max-width: 640px){
+  .row, section, .main_shop_page{
+    text-align: center;
+  }
+}
