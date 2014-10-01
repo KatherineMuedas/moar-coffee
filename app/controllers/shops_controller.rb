@@ -2,7 +2,11 @@ class ShopsController < ApplicationController
   before_action :authenticate_user!, only:[:new, :create, :edit, :update]
   before_action :set_shop, only:[:show, :edit, :update]
   def index
-    @shops = Shop.all.order(:name)
+    if params[:search].present?
+      @shops = Location.near(params[:search], 50).map{|x| x.shop}
+    else
+      @shops = Shop.all.order(:name)
+    end
   end
 
   def show
@@ -26,6 +30,7 @@ class ShopsController < ApplicationController
   end
 
   def edit
+    @location = @shop.build_location
   end
 
   def update

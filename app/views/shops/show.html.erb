@@ -10,4 +10,11 @@
       <% end %>
     <h2><%= @shop.description %></h2>
     <h2><%= link_to @shop.website, url_with_http_protocol(@shop.website), :target => '_blank' %></h2> 
+    <% if @shop.location %>
+      <p><%= @shop.location.street_address %></p>
+      <p><%= @shop.location.city %>,<%= @shop.location.state %> <%= @shop.location.zipcode %></p>
+      <p><%= @shop.location.latitude %>, <%= @shop.location.longitude %></p>
+      <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@shop.location.latitude},#{@shop.location.longitude}&zoom=16&size=400x400" %>
+    <% end %>
+    <br>
   </div> 

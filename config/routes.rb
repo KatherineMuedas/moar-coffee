@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
  
   resources :favorites, only: [:create, :destroy]
-
   devise_for :users
   resources :users, only: [:show, :index]
   resources :shops, except: [:destroy] do
