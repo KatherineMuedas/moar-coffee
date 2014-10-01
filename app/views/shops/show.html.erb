@@ -1,13 +1,15 @@
 <%= render 'shops/sidebar' %>
   <div class= "small-10 columns"> 
-    <h1><%= @shop.name %></h1>
-      <% if current_user %>
-        <% if @favorite.nil? || false %>
-            <%= link_to '<i class="fa fa-star"></i>'.html_safe, favorites_path(shop_id: @shop), method: :post, class: "button" %>
-        <% elsif @favorite.favorable %>
-          <%= link_to "<i class='fa fa-plus'></i> Unfavoritize".html_safe, favorite_path(@favorite.favorable_id), method: :delete, class: "button" %>
+    <h1 class = "shop-name"><%= @shop.name %></h1>
+      <div class = "favorite-buttons">
+        <% if current_user %>
+          <% if @favorite.nil? || false %>
+            <%= render 'favorites/favorite_button' %>
+          <% elsif @favorite.favorable %>
+            <%= render 'favorites/unfavorite_button' %>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     <h2><%= @shop.description %></h2>
     <h2><%= link_to @shop.website, url_with_http_protocol(@shop.website), :target => '_blank' %></h2> 
   </div> 
