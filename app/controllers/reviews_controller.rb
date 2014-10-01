@@ -43,7 +43,7 @@ class ReviewsController < ApplicationController
   end
 
   def find_drink  
-    @drink = Drink.find(params[:drink_id])
+    @drink = Drink.friendly.find(params[:drink_id])
   end
 end
 
