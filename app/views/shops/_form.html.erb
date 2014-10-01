@@ -11,19 +11,27 @@
   </div>
     <% end %>
   <div class='row'>
-   <div class='small-12 small-centered'>
-    <div class="form-group">
-      <%= f.input :name %><br>
-    </div>
-   
-    <div class="form-group">
-      <%= f.input :description %><br>
-    </div>
+    <div class='small-12 small-centered'>
+      <div class="form-group">
+        <%= f.input :name %><br>
+      </div>
+     
+      <div class="form-group">
+        <%= f.input :description %><br>
+      </div>
 
-    <div class="form-group">
-      <%= f.input :website %><br>
+      <div class="form-group">
+        <%= f.input :website %><br>
+      </div>
+      <%= f.fields_for :location, @location do |location| %>
+        <div class="nested-fields">
+          <%= location.input :street_address %>
+          <%= location.input :city %>
+          <%= location.input :state %>
+          <%= location.input :zipcode %>
+        </div>
+      <% end %>  
     </div>
-   </div>
   </div>
   <div class='row'>
    <div class='small-12 small-centered'>

@@ -15,6 +15,11 @@
       <%= render 'layouts/navigation' %>
     </header>
     <main role="main">
+      <%= form_tag root_path, :method => :get do %>
+        <p>
+          <%= text_field_tag :search, params[:search] %>
+          <%= submit_tag "Search Near", :name => nil %>
+      <% end %>
        <%= render 'layouts/messages' %>
        <%= yield %>
     </main>

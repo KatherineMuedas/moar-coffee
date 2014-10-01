@@ -1,15 +1,2 @@
 <h3> Edit Caf&eacute; </h3>
-<%= form_for @shop do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-
-  <%= f.label :website %>
-  <%= f.text_field :website %>
-
-  <%= f.submit "Update Cafe" %>
-<% end %>
-  <%= link_to 'Back', shops_path, class: 'button left'%>
-  <%= link_to 'Show Café', shop_path(@shop.id), class: 'button'%>
+<%= render 'form' %>

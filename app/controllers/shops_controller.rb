@@ -2,7 +2,11 @@ class ShopsController < ApplicationController
   before_action :authenticate_user!, only:[:new, :create, :edit, :update]
   before_action :set_shop, only:[:show, :edit, :update]
   def index
-    @shops = Shop.all.order(:name)
+    if params[:search].present?
+      @shops = Location.near(params[:search], 50).map{|x| x.shop}
+    else
+      @shops = Shop.all.order(:name)
+    end
   end
 
   def show
@@ -12,6 +16,7 @@ class ShopsController < ApplicationController
 
   def new
     @shop = Shop.new
+    @location = @shop.build_location
   end
 
   def create
@@ -25,6 +30,7 @@ class ShopsController < ApplicationController
   end
 
   def edit
+    @location = @shop.build_location
   end
 
   def update
@@ -35,10 +41,13 @@ class ShopsController < ApplicationController
     end
   end
 
+
   private
 
   def shop_params
-    params.require(:shop).permit(:name, :description, :website)
+    location_attributes = [:id, :shop_id, :city, :state, :zipcode, :street_address]
+    params.require(:shop).permit(:name, :description, :website, location_attributes: location_attributes)
+    
   end
 
   def set_shop

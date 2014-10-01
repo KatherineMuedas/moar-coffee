@@ -92,6 +92,7 @@ GEM
       sass (>= 3.2.0)
     friendly_id (5.0.4)
       activerecord (>= 4.0.0)
+    geocoder (1.2.5)
     guard (2.6.1)
       formatador (>= 0.2.4)
       listen (~> 2.7)
@@ -296,6 +297,7 @@ DEPENDENCIES
   font-awesome-rails
   foundation-rails (= 5.4.3.0)
   friendly_id (~> 5.0.0)
+  geocoder
   guard
   guard-bundler
   guard-livereload
