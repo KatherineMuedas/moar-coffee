@@ -1,0 +1,3 @@
+$(".favorite-button").remove();
+var unfavorite = "<%= j render( partial: 'favorites/unfavorite_button', locals: { shop: @shop } ) %>";
+$(".favorite-buttons").html(unfavorite);
