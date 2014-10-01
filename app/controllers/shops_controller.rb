@@ -12,6 +12,7 @@ class ShopsController < ApplicationController
 
   def new
     @shop = Shop.new
+    @location = @shop.build_location
   end
 
   def create
@@ -35,10 +36,13 @@ class ShopsController < ApplicationController
     end
   end
 
+
   private
 
   def shop_params
-    params.require(:shop).permit(:name, :description, :website)
+    location_attributes = [:id, :shop_id, :city, :state, :zipcode, :street_address]
+    params.require(:shop).permit(:name, :description, :website, location_attributes: location_attributes)
+    
   end
 
   def set_shop
