@@ -19,11 +19,7 @@
     </ul>
 
     <h3>My Favorite Coffee Shops</h3>
-      <ul>
-        <% @user.favorited_shops.each do |shop| %>
-          <li><%= link_to shop.name, shop_path(shop.id) %> | <%= link_to '', favorite_path(shop.id), class:"fa fa-bomb", method: :delete, data: { confirm: 'Are you sure?' } %></li>
-        <% end %>
-      </ul>
+      <%= render 'users/favorite_shops' %>
       
     <h3>My Reviews</h3>
     <hr>

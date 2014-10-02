@@ -21,7 +21,7 @@ before_action :authenticate_user!
     respond_to do |format|
       if current_user.id == @favorite.user_id
         @favorite.destroy
-        format.html { redirect_to @shop }
+        format.html { redirect_to :back}
         format.js
       else
         format.html { redirect_to @shop, alert: "You cannot do that!" }
