@@ -1,5 +1,14 @@
 <%= render 'shops/sidebar' %>
-<div class= "small-10 columns"> 
+<div class= "small-10 columns">
+  <div class = "favorite-buttons">
+    <% if current_user %>
+        <% if @favorite.nil? || false %>
+            <%= render 'favorites/favorite_button' %>
+        <% elsif @favorite.favorable %>
+            <%= render 'favorites/unfavorite_button' %>
+        <% end %>
+    <% end %>
+  </div>
   <% if user_signed_in? %>
   <a href="#" data-reveal-id="addReview" class= "button right"><i class="fa fa-plus"></i> Add a new review</a>
   <% else %>
@@ -7,6 +16,7 @@
   <% end %>
   <h1 class="text-center"> <%= @drink.name %></h1>
   <p> <%= @drink.description %></p>
+
   <div class="row">
     <% 4.times do %>
       <div class="small-3 columns">

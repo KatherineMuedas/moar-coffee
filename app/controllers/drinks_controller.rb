@@ -6,6 +6,7 @@ class DrinksController < ApplicationController
 
   def show
     @drinks = @shop.drinks.all
+    @favorite = Favorite.find_by_favorable_id(@drink.id)
   end
 
   def new

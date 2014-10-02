@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
     ]
   end
 
-  def favorited_shops
+  def favorited_drinks
     favorites.collect { |x| x.favorable }
   end
 

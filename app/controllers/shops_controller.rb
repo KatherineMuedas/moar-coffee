@@ -11,7 +11,7 @@ class ShopsController < ApplicationController
 
   def show
     @drinks = @shop.drinks.all
-    @favorite = Favorite.find_by_favorable_id(@shop.id)
+
   end
 
   def new
