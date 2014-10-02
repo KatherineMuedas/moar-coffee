@@ -1,3 +1,6 @@
+$light: #eee7e1;
+$primary-color: #8C5F09;
+
 @import "framework_and_overrides";
 @import "font-awesome";
 body{
@@ -6,8 +9,10 @@ body{
 main {
   padding-left: 0px;
   padding-right: 0px;
-  background-color: rgba(140, 95, 9, .09);
+  background-color: $light;
 }
+
+
 
 //entire nav bar
 .no_margin, .top-bar {
@@ -21,10 +26,10 @@ main {
 background-color: #3D2800;
 }
 #color_nav {
-   background-color: #8C5F09;
+   background-color: $primary-color;
 }
 .top-bar.expanded .title-area{
-  background-color: #8C5F09;
+  background-color: $primary-color;
 }
 li {
     list-style-type: none;
@@ -46,6 +51,7 @@ a:hover {
   border-radius: 5px;
   background-color:#3E8E9D;
 }
+
 .button:hover{
   background-color: rgba(3, 87, 103, .8);
    transition: background-color 0.5s ease;
@@ -61,7 +67,7 @@ a:hover {
 @media (min-width: 1017px) {
 // moar-coffee name
 .top-bar{
- background-color: #8C5F09;
+ background-color: $primary-color;
  height: 12%; 
  width: 100%;
 }
@@ -78,14 +84,17 @@ a:hover {
 .top-bar-section ul li > a {
   font-size: 1em;
 }
+
+.darker {
+  background: darken($light, 10%);
+}
+
 //boxes on shop page
 //why cant margins be added 
 .box {
   box-sizing: padding-box; 
-  // max-width: 62.5em;
   padding:1em;
-  background-color: rgba(206, 210, 57, .4);
-  // width: 250px;
+  background-color: darken($light, 5%);
   min-height: 12.5em;
   max-height: 12.5em;
   text-overflow: ellipsis;
