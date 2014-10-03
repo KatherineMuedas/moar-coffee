@@ -18,6 +18,7 @@ class DrinksController < ApplicationController
 
     respond_to do |format|
       if @drink.save
+        @drink.create_activity :create, owner: current_user
         @drinks = @shop.drinks
         format.html { redirect_to @shop }
         format.js
