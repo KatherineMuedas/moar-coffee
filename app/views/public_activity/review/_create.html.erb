@@ -1,7 +1,8 @@
 added a review
 
 <% if activity.trackable %>
-  for <%= activity.trackable.drink.name %> at <%= activity.trackable.shop.name %>
+  for <%= link_to activity.trackable.drink.name, shop_drink_path(activity.trackable.shop.friendly_id, activity.trackable.drink.friendly_id) %> at
+  <%= link_to activity.trackable.shop.name, shop_path(activity.trackable.shop.friendly_id) %>
 <% else %>
   that has since been deleted.
 <% end %>
