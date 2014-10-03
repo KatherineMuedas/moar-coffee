@@ -1,1 +1,7 @@
-added the drink <%= activity.trackable.name%> at <%= activity.trackable.shop.name %>
+added
+
+<% if activity.trackable %>
+  the drink <%= activity.trackable.name%> at <%= activity.trackable.shop.name %>
+<% else %>
+  a drink that has since been deleted.
+<% end %>

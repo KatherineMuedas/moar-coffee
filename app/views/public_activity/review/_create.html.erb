@@ -1,1 +1,7 @@
-added a review for <%= activity.trackable.drink.name %> at <%= activity.trackable.shop.name %>
+added a review
+
+<% if activity.trackable %>
+  for <%= activity.trackable.drink.name %> at <%= activity.trackable.shop.name %>
+<% else %>
+  that has since been deleted.
+<% end %>
