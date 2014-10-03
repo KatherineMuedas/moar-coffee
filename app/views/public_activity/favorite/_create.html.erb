@@ -1,0 +1,7 @@
+has added
+
+<% if activity.trackable %>
+  <%= link_to activity.trackable.favorable.name, shop_drink_path(activity.trackable.favorable.shop.id, activity.trackable.favorable.id) %> to their Favorites!
+<% else %>
+  a favorite that has since been destroyed.
+<% end %>
