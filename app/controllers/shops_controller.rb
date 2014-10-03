@@ -11,7 +11,6 @@ class ShopsController < ApplicationController
 
   def show
     @drinks = @shop.drinks.all
-
   end
 
   def new

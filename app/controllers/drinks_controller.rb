@@ -6,6 +6,7 @@ class DrinksController < ApplicationController
 
   def show
     @drinks = @shop.drinks.all
+    @pictures = @drink.pictures.all
     @favorite = Favorite.find_by_favorable_id(@drink.id)
   end
 
@@ -33,7 +34,7 @@ class DrinksController < ApplicationController
 
   def update
     if @drink.update_attributes(drink_params)
-      redirect_to @shop
+      redirect_to shop_drink_path(@shop, @drink)
     else
       render :edit
     end
@@ -41,7 +42,8 @@ class DrinksController < ApplicationController
 
   private
   def drink_params
-    params.require(:drink).permit(:name, :description)
+    pictures_attributes = [:id, :caption, :photo, :user_id]
+    params.require(:drink).permit(:name, :description, pictures_attributes: pictures_attributes)
   end
 
   def set_shop

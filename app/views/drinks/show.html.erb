@@ -17,13 +17,19 @@
   <h1 class="text-center"> <%= @drink.name %></h1>
   <p> <%= @drink.description %></p>
 
+  <%= link_to '#', class: "button", data: {"reveal-id" => "addPhoto"} do %>
+    <i class= "fa fa-camera"></i> Add a photo
+  <% end %>
   <div class="row">
-    <% 4.times do %>
+    <% @pictures.first(4).each do |picture| %>
       <div class="small-3 columns">
-        <img src="http://placehold.it/250x250">
+        <%= image_tag picture.photo.url(:medium) %>
       </div>
     <% end %>
   </div>
+  <% unless @pictures[4].nil? %>
+    <%= link_to 'View all photos...', '#', class: 'right' %>
+  <% end %>  
   <hr>
   <%= render 'reviews/drink_reviews' %>
 </div>
@@ -31,5 +37,9 @@
 <!-- Modal Divs -->
 <div id="addReview" class="reveal-modal small" data-reveal>
   <%= render "reviews/form_reviews" %>
+  <a class="close-reveal-modal">&#215;</a>
+</div> 
+<div id="addPhoto" class="reveal-modal small" data-reveal>
+  <%= render "drinks/photo_upload" %>
   <a class="close-reveal-modal">&#215;</a>
 </div> 
