@@ -11,6 +11,7 @@ class ShopsController < ApplicationController
 
   def show
     @drinks = @shop.drinks.all
+    @pictures = @shop.pictures.all
   end
 
   def new
@@ -44,8 +45,9 @@ class ShopsController < ApplicationController
   private
 
   def shop_params
+    pictures_attributes = [:id, :caption, :photo, :user_id]
     location_attributes = [:id, :shop_id, :city, :state, :zipcode, :street_address]
-    params.require(:shop).permit(:name, :description, :website, location_attributes: location_attributes)
+    params.require(:shop).permit(:name, :description, :website, location_attributes: location_attributes, pictures_attributes: pictures_attributes)
     
   end
 
