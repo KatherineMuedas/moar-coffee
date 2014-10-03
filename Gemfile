@@ -17,6 +17,7 @@ gem 'ffi', '~> 1.9.5'
 gem "paperclip", "~> 4.2"
 gem 'friendly_id', '~> 5.0.0'
 gem "geocoder"
+gem "public_activity"
 # gem 'haml-rails'
 
 group :development do
