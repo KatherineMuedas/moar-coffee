@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   validates :name, :zipcode, presence: true
 
+  devise :omniauthable, :omniauth_providers => [:facebook]
+
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged
   def slug_candidates
