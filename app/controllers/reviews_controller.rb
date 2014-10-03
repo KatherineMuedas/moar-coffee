@@ -2,9 +2,6 @@ class ReviewsController < ApplicationController
   before_action :find_drink, only: [:new, :create]
   before_action :authenticate_user!
 
-  def new
-  end
-
   def create
     @review = @drink.reviews.new(reviews_params)
     @review.user_id = current_user.id 
@@ -39,7 +36,8 @@ class ReviewsController < ApplicationController
   private
 
   def reviews_params
-    params.require(:review).permit(:title, :body, :drink_rating, :drink_id)
+    picture_attributes = [:id, :caption, :photo, :user_id]
+    params.require(:review).permit(:title, :body, :drink_rating, :drink_id, picture_attributes: picture_attributes)
   end
 
   def find_drink  
