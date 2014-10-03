@@ -2,6 +2,7 @@
 <li class="<%= "active" if params[:action] == "index" %>"><%= link_to 'Cafes', root_path('root') %></li>
 <li><%= link_to 'About', page_path('about') %></li>
 <% if user_signed_in? %>
+  <li><%= link_to 'News Feed', activities_path %></li>
   <li><%= link_to 'Add Cafe', new_shop_path %></li>
   <li><%= link_to 'My account', user_path(current_user) %></li>
   <li><%= link_to 'Edit account', edit_user_registration_path %></li>

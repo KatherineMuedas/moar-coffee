@@ -1,4 +1,6 @@
 class Drink < ActiveRecord::Base
+  include PublicActivity::Common
+
   belongs_to :shop
   has_many :reviews
   has_many :favorites, as: :favorable

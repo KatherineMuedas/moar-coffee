@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
- 
+
+  resources :activities
   resources :favorites, only: [:create, :destroy]
   devise_for :users
   resources :users, only: [:show, :index]
