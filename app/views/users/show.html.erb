@@ -11,14 +11,16 @@
     <hr>  
 
     <ul class="small-block-grid-2 medium-block-grid-4">
-      <% 4.times do %>
-        <li>
-          <img src="http://placehold.it/150x150">
-        </li>
+      <% @pictures.first(4).each do |picture| %>
+        <li><%= image_tag(picture.photo.url(:medium)) %></li>
       <% end %>
+      <% unless @pictures[4].nil? %>
+        <%= link_to 'View all photos...', '#', class: 'right' %>
+      <% end %>  
     </ul>
 
     <h3>My Favorite Coffee Shops</h3>
+    <hr> 
       <%= render 'users/favorite_shops' %>
       
     <h3>My Reviews</h3>

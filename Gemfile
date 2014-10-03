@@ -41,14 +41,14 @@ group :development, :test do
   gem 'ffaker'
   gem 'pry-rails'
   gem 'pry-rescue'
-  gem 'rspec-rails' # stupid rspec
+  gem 'rspec-rails' # rspec
 end
 
 group :test do
   gem 'minitest-rails'
   gem 'capybara' 
   gem 'database_cleaner'
-  gem 'launchy' #no idea what this is. must be for stupid rspec
+  gem 'launchy' #no idea what this is. must be for rspec
   gem 'selenium-webdriver' # for capybara
   gem 'simplecov', require: false
 end
