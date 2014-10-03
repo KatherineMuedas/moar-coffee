@@ -18,6 +18,7 @@ gem "paperclip", "~> 4.2"
 gem 'friendly_id', '~> 5.0.0'
 gem "geocoder"
 gem "figaro" #To protect secret keys
+gem 'omniauth-facebook'
 # gem 'haml-rails'
 
 group :development do
