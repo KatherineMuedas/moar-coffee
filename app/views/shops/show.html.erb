@@ -12,15 +12,8 @@
       <%= link_to "Follow", shop_follows_path(shop_id: @shop ), method: :post %>
     <% end %>
     <div class="row">
-      <% @pictures.first(4).each do |picture| %>
-        <div class="small-3 columns">
-          <%= image_tag picture.photo.url(:medium) %>
-        </div>
-      <% end %>
+      <%= render 'pictures/display_photos' %>
     </div>
-    <% unless @pictures[4].nil? %>
-      <%= link_to 'View all photos...', '#', class: 'right' %>
-    <% end %>  
     <hr>
   
     <% if @shop.location %>
