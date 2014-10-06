@@ -10,4 +10,5 @@ class FollowsController < ApplicationController
     current_user.stop_following(@shop)
     redirect_to :back
   end
+
 end
