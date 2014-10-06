@@ -3,6 +3,21 @@
     <h1 class = "shop-name"><%= @shop.name %></h1>
     <h2><%= @shop.description %></h2>
     <h2><%= link_to @shop.website, url_with_http_protocol(@shop.website), :target => '_blank' %></h2> 
+    <%= link_to '#', class: "button", data: {"reveal-id" => "addPhoto"} do %>
+      <i class= "fa fa-camera"></i> Add a photo
+    <% end %>
+    <div class="row">
+      <% @pictures.first(4).each do |picture| %>
+        <div class="small-3 columns">
+          <%= image_tag picture.photo.url(:medium) %>
+        </div>
+      <% end %>
+    </div>
+    <% unless @pictures[4].nil? %>
+      <%= link_to 'View all photos...', '#', class: 'right' %>
+    <% end %>  
+    <hr>
+  
     <% if @shop.location %>
       <p><%= @shop.location.street_address %></p>
       <p><%= @shop.location.city %>,<%= @shop.location.state %> <%= @shop.location.zipcode %></p>
@@ -10,4 +25,8 @@
       <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@shop.location.latitude},#{@shop.location.longitude}&zoom=16&size=400x400" %>
     <% end %>
     <br>
+  </div> 
+  <div id="addPhoto" class="reveal-modal small" data-reveal>
+  <%= render "shops/photo_upload" %>
+  <a class="close-reveal-modal">&#215;</a>
   </div> 

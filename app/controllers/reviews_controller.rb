@@ -7,6 +7,7 @@ class ReviewsController < ApplicationController
     @review.user_id = current_user.id 
     @shop = Shop.find(@drink.shop_id)
     if @review.save
+      @review.create_activity :create, owner: current_user
       redirect_to :back
     else
       redirect_to :back, notice: 'Review was not created'
@@ -29,8 +30,11 @@ class ReviewsController < ApplicationController
 
   def destroy
     @review = Review.find(params[:id])
-    @review.destroy
-    redirect_to :back, notice: 'Your review was succesfully deleted'
+    @activity =  PublicActivity::Activity.find_by_trackable_id(@review)
+    if @review.destroy
+      @activity.destroy
+      redirect_to :back, notice: 'Your review was successfully deleted'
+    end
   end
 
   private

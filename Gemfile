@@ -17,6 +17,7 @@ gem 'ffi', '~> 1.9.5'
 gem "paperclip", "~> 4.2"
 gem 'friendly_id', '~> 5.0.0'
 gem "geocoder"
+gem "public_activity"
 gem "figaro" #To protect secret keys
 gem 'omniauth-facebook'
 # gem 'haml-rails'
@@ -41,14 +42,14 @@ group :development, :test do
   gem 'ffaker'
   gem 'pry-rails'
   gem 'pry-rescue'
-  gem 'rspec-rails' # stupid rspec
+  gem 'rspec-rails' # rspec
 end
 
 group :test do
   gem 'minitest-rails'
   gem 'capybara' 
   gem 'database_cleaner'
-  gem 'launchy' #no idea what this is. must be for stupid rspec
+  gem 'launchy' #no idea what this is. must be for rspec
   gem 'selenium-webdriver' # for capybara
   gem 'simplecov', require: false
 end

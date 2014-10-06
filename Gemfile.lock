@@ -189,6 +189,11 @@ GEM
     pry-rescue (1.4.1)
       interception (>= 0.5)
       pry
+    public_activity (1.4.2)
+      actionpack (>= 3.0.0)
+      activerecord (>= 3.0)
+      i18n (>= 0.5.0)
+      railties (>= 3.0.0)
     quiet_assets (1.0.3)
       railties (>= 3.1, < 5.0)
     rack (1.5.2)
@@ -334,6 +339,7 @@ DEPENDENCIES
   pg
   pry-rails
   pry-rescue
+  public_activity
   quiet_assets
   rack-livereload
   rails (= 4.1.5)

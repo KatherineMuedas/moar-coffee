@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   def show
     @user = User.friendly.find(params[:id])
     @reviews = @user.reviews
+    @pictures = @user.pictures
   end
 
   def create

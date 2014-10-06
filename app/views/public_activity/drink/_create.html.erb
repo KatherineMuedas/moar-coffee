@@ -1,0 +1,8 @@
+added
+
+<% if activity.trackable %>
+  the drink <%= link_to activity.trackable.name, shop_drink_path(activity.trackable.shop.friendly_id, activity.trackable.friendly_id)%> at
+  <%= link_to activity.trackable.shop.name, shop_path(activity.trackable.shop.friendly_id) %>
+<% else %>
+  a drink that has since been deleted.
+<% end %>
