@@ -20,6 +20,7 @@ gem "geocoder"
 gem "public_activity"
 gem "figaro" #To protect secret keys
 gem "acts_as_follower"
+gem 'omniauth-facebook'
 # gem 'haml-rails'
 
 group :development do

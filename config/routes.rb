@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
   resources :activities
   resources :favorites, only: [:create, :destroy]
-  devise_for :users
+
+  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
   resources :users, only: [:show, :index] do
     resources :follows, only: [:create, :destroy]
   end
