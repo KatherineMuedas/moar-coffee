@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     @user = User.friendly.find(params[:id])
     @reviews = @user.reviews
     @pictures = @user.pictures
+    @follows = @user.all_following
   end
 
   def create
