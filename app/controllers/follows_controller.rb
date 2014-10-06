@@ -1,11 +1,13 @@
 class FollowsController < ApplicationController
   def create
-    @user = User.find(params[:user_id])
-    current_user.follow(@user)
+    @shop = Shop.friendly.find(params[:shop_id])
+    current_user.follow(@shop)
+    redirect_to :back
   end
 
   def destroy
-    @user = User.find(params[:user_id])
-    current_user.stop_following(@user)
+    @shop = Shop.friendly.find(params[:shop_id])
+    current_user.stop_following(@shop)
+    redirect_to :back
   end
 end
