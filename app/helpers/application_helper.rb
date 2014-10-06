@@ -1,4 +1,7 @@
 module ApplicationHelper
+  def countlines 
+    # find . -iname "*.rb" -type f -exec cat {} \; | wc -l
+  end
   def twitter_link()
     share_url = "https://twitter.com/share"
     anchor = link_to "Tweet", share_url, class: 'twitter-share-button', data: "your_screen_name"
