@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   resources :activities
   resources :favorites, only: [:create, :destroy]
   devise_for :users
-  resources :users, only: [:show, :index]
+  resources :users, only: [:show, :index] do
+    resources :follows, only: [:create, :destroy]
+  end
+
   resources :shops, except: [:destroy] do
     resources :drinks, except: [:index, :destroy] 
   end
