@@ -30,8 +30,11 @@ class ReviewsController < ApplicationController
 
   def destroy
     @review = Review.find(params[:id])
-    @review.destroy
-    redirect_to :back, notice: 'Your review was successfully deleted'
+    @activity =  PublicActivity::Activity.find_by_trackable_id(@review)
+    if @review.destroy
+      @activity.destroy
+      redirect_to :back, notice: 'Your review was successfully deleted'
+    end
   end
 
   private
