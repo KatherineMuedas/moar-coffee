@@ -19,9 +19,19 @@
       <% end %>  
     </ul>
 
-    <h3>My Favorite Coffee Shops</h3>
+    <h3>My Favorite Drinks</h3>
     <hr> 
       <%= render 'users/favorite_shops' %>
+
+    <h3>Shops I'm Following</h3>
+    <hr>
+      <% if current_user.id == @user.id %>
+        <% @user.all_following.each do |follow| %>
+        <li><%= link_to follow[:name], shop_path(follow.friendly_id) %> | <%= link_to '',
+                                                                                      shop_follow_path(shop_id: follow.id),class:"fa fa-bomb", method: :delete %></li>
+        <% end %>
+
+      <% end %>
       
     <h3>My Reviews</h3>
     <hr>
