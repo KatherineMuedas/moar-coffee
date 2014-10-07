@@ -4,11 +4,11 @@
       <p>We will put things</p>
     </div>
   </div>
-
   <div class="small-12 large-8 columns">
     <div class= "container row-list">
       <% @shops.each do |shop| %>
         <div class="row row-item">
+
           <div class="small-2 columns photo-item">
             <% if shop.pictures.first %>
               <%= link_to image_tag(shop.pictures.first.photo.url(:thumb), class: "th radius"), shop_path(shop)  %>
@@ -22,6 +22,7 @@
           </div>
         </div> 
       <%end%>
+      </ul>
     </div>
   </div>  
 </div>
