@@ -4,6 +4,7 @@ $primary-color: #8C5F09;
 @import "framework_and_overrides";
 @import "font-awesome";
 @import "users";
+@import "reviews";
 body{
   background-color: rgba(140, 95, 9, .3);
 }
@@ -48,60 +49,59 @@ a:hover {
 // }
 
 //buttons
-.button {
-  border-radius: 5px;
-  background-color:#3E8E9D;
-}
+// .button {
+//   border-radius: 5px;
+//   background-color:#3E8E9D;
+// }
 
-.button:hover{
-  background-color: rgba(3, 87, 103, .8);
-   transition: background-color 0.5s ease;
-}
-.cafe_description_index{
-  min-height: 5em;
-  max-height: 6em;
-  white-space: pre-line;
-  overflow: hidden;
-}
+// .button:hover{
+//   background-color: rgba(3, 87, 103, .8);
+//    transition: background-color 0.5s ease;
+// }
+// .cafe_description_index{
+//   min-height: 5em;
+//   max-height: 6em;
+//   white-space: pre-line;
+//   overflow: hidden;
+// }
 
 //large screen media query
 @media (min-width: 1140px) {
 // moar-coffee name
-.top-bar{
- background-color: $primary-color;
- height: 12%; 
- width: 100%;
-}
-.top-bar .name {
- font-size: 2.3em;
- margin-top: .6em;
+// .top-bar{
+//  background-color: $primary-color;
+//  height: 12%; 
+//  width: 100%;
+// }
+// .top-bar .name {
+//  font-size: 2.3em;
+//  margin-top: .6em;
 
-}
-// set of nav bar links
-.top-bar-section li a {
-  margin: 1.4em 1em;
-}
-// individual nav bar links
-.top-bar-section ul li > a {
-  font-size: 1em;
-}
+// }
+// // set of nav bar links
+// .top-bar-section li a {
+//   margin: 1.4em 1em;
+// }
+// // individual nav bar links
+// .top-bar-section ul li > a {
+//   font-size: 1em;
+// }
 
-.darker {
-  background: darken($light, 10%);
-}
+// .darker {
+//   background: darken($light, 10%);
+// }
 
 //boxes on shop page
-//why cant margins be added 
-.box {
-  box-sizing: padding-box; 
-  padding:1em;
-  background-color: darken($light, 5%);
-  min-height: 12.5em;
-  max-height: 12.5em;
-  text-overflow: ellipsis;
+// //why cant margins be added 
+// .box {
+//   // box-sizing: padding-box; 
+//   // padding:1em;
+//   // background-color: darken($light, 5%);
+//   // min-height: 12.5em;
+//   // max-height: 12.5em;
+//   // text-overflow: ellipsis;
+// }
 }
-}
-@import "reviews";
 //small screen
 @media (max-width: 705px){
   .row, section, .main_shop_page{
