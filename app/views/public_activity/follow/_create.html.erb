@@ -1,5 +1,6 @@
 <% if activity.trackable %>
-  started following <%= link_to activity.trackable.shop.name, shop_path(activity.trackable.shop.friendly_id) %>
+  started following <%= link_to activity.trackable.followable.name, shop_path(activity.trackable.followable
+                                                                              .friendly_id) %>!
 <% else %>
-  that has since been deleted.
+
 <% end %>

@@ -1,15 +1,11 @@
 <h3>Activities</h3>
 
-<% if @activities %>
   <% @activities.each do |activity| %>
-  <div class="activities">
-    <%= link_to image_tag(activity.owner.avatar.url(:thumb), class: "user-thumb radius"), user_path(activity.owner)%> <%= activity.owner.name if activity.owner %>
-    <%= render_activity activity %>
-    <%#= activity.inspect %>
-    <hr>
+    <% if activity.trackable %>
+      <div class="activities">
+        <%= link_to image_tag(activity.owner.avatar.url(:thumb), class: "user-thumb radius"), user_path(activity.owner)%> <%= activity.owner.name if activity.owner %>
+        <%= render_activity activity %>
+        <hr>
     <% end %>
+  <% end %>
   </div>
-
-<% else %>
-
-<% end %>
