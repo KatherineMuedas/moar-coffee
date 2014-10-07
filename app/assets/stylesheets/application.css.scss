@@ -65,7 +65,7 @@ a:hover {
 }
 
 //large screen media query
-@media (min-width: 1017px) {
+@media (min-width: 1140px) {
 // moar-coffee name
 .top-bar{
  background-color: $primary-color;
@@ -103,7 +103,7 @@ a:hover {
 }
 @import "reviews";
 //small screen
-@media (max-width: 640px){
+@media (max-width: 705px){
   .row, section, .main_shop_page{
     text-align: center;
   }

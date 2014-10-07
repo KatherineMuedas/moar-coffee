@@ -20,6 +20,7 @@ gem "geocoder"
 gem "public_activity"
 gem "figaro" #To protect secret keys
 gem 'omniauth-facebook'
+# gem 'rmagick', '2.13.2'
 # gem 'haml-rails'
 
 group :development do
