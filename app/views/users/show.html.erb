@@ -1,7 +1,7 @@
 <div class="row">
   <div class="small-12 medium-3 columns">
     <h1><%= @user.name%></h1>
-    <%= image_tag @user.avatar.url(:medium), class: 'user-medium' %>
+    <%= image_tag @user.avatar.url(:medium), class: 'user-medium ' %>
     <% if current_user && @user.id == current_user.id %> 
       <p><%= link_to 'Edit My Account', edit_user_registration_path, class: "button tiny" %></p> 
     <% end %> 
@@ -10,18 +10,22 @@
     <h3>My Photos</h3>
     <hr>  
 
-    <ul class="small-block-grid-2 medium-block-grid-4">
-      <% @pictures.first(4).each do |picture| %>
-        <li><%= image_tag(picture.photo.url(:medium)) %></li>
-      <% end %>
-      <% unless @pictures[4].nil? %>
-        <%= link_to 'View all photos...', '#', class: 'right' %>
-      <% end %>  
-    </ul>
+    <%= render 'pictures/display_photos' %>
 
-    <h3>My Favorite Coffee Shops</h3>
-    <hr> 
-      <%= render 'users/favorite_shops' %>
+    <h3>My Favorite Drinks</h3>
+    <hr>
+      <%= render 'users/favorite_drinks' %>
+
+    <h3>Shops I'm Following</h3>
+    <hr>
+      <ul>
+        <% if current_user.id == @user.id %>
+          <% @follows.each do |follow| %>
+          <li><%= link_to follow[:name], shop_path(follow.friendly_id) %> | <%= link_to '',
+                                                                                      shop_follow_path(shop_id: follow.id),class:"fa fa-bomb", method: :delete %></li>
+          <% end %>
+        <% end %>
+      </ul>
       
     <h3>My Reviews</h3>
     <hr>

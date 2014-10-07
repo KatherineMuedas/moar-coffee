@@ -26,24 +26,26 @@
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
     <div id="fb-root"></div>
-    <header>
-      <%= render 'layouts/navigation' %>
-    </header>
-    <main role="main">
-      <%= form_tag root_path, :method => :get do %>
-      <li class="has-form">
-        <div class="row collapse">
-          <div class="large-8 small-9 columns">
-            <%= text_field_tag :search, params[:search] %>
-          </div>
-          <div class="large-4 small-3 columns">
-            <%= submit_tag "Search Near", :name => nil, class: "alert button expand" %>
-          </div>
-        </div>
-      </li>
-      <% end %>
-       <%= render 'layouts/messages' %>
-       <%= yield %>
-    </main>
+    <div class="off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">        
+        <header>
+          <%= render 'layouts/navigation' %>
+        </header>
+        <main role="main">
+          <div class="row">
+        <!--     <%#= form_tag root_path, :method => :get do %>
+              <p>
+                <%#= text_field_tag :search, params[:search] %>
+                <%#= submit_tag "Search Near", :name => nil %>
+              </p>  
+            <%# end %> -->
+            <%= render 'layouts/messages' %>
+            <%= yield %>
+          </div>   
+        </main>
+        <a class="exit-off-canvas"></a>
+      </div>
+    </div>  
+>>>>>>> master
   </body>
 </html>

@@ -8,7 +8,8 @@ class UsersController < ApplicationController
   def show
     @user = User.friendly.find(params[:id])
     @reviews = @user.reviews
-    @pictures = @user.pictures
+    @follows = @user.all_following
+    @pictures = @user.pictures.order(created_at: :desc)
   end
 
   def create

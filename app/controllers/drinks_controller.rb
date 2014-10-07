@@ -6,7 +6,7 @@ class DrinksController < ApplicationController
 
   def show
     @drinks = @shop.drinks.all
-    @pictures = @drink.pictures.all
+    @pictures = @drink.pictures.all.order(created_at: :desc)
     @favorite = Favorite.find_by_favorable_id(@drink.id)
   end
 

@@ -19,6 +19,7 @@ gem 'friendly_id', '~> 5.0.0'
 gem "geocoder"
 gem "public_activity"
 gem "figaro" #To protect secret keys
+gem "acts_as_follower"
 gem 'omniauth-facebook'
 # gem 'rmagick', '2.13.2'
 # gem 'haml-rails'

@@ -1,20 +1,20 @@
-module DevisePermittedParameters
-  extend ActiveSupport::Concern
+# module DevisePermittedParameters
+#   extend ActiveSupport::Concern
 
-  included do
-    before_filter :configure_permitted_parameters
-  end
+#   included do
+#     before_filter :configure_permitted_parameters
+#   end
 
-  protected
+#   protected
 
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << [:name, :last_name, :zipcode, :gender, :avatar]
-    devise_parameter_sanitizer.for(:account_update) << [:name, :last_name, :zipcode, :gender, :avatar]
-  end
+#   def configure_permitted_parameters
+#     devise_parameter_sanitizer.for(:sign_up) << [:name, :last_name, :zipcode, :gender, :avatar]
+#     devise_parameter_sanitizer.for(:account_update) << [:name, :last_name, :zipcode, :gender, :avatar]
+#   end
 
-end
+# end
 
-DeviseController.send :include, DevisePermittedParameters
+# DeviseController.send :include, DevisePermittedParameters
 
 
 

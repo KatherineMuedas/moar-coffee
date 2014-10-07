@@ -1,13 +1,11 @@
-<div class= "small-2 columns">
-  <h4 class = "heading shop-name"><%= link_to @shop.name, shop_path(@shop) %></h4>
-  <div class='drinksPartial'>
-    <%= render partial: 'drinks/drinks_list', locals: { drinks: @drinks, shop: @shop } %>
-  </div>
-  <a href="#" data-reveal-id="addDrink" class= "button"><i class="fa fa-plus"></i> Add a Coffee</a>
-
-  <div id="addDrink" class="reveal-modal small" data-reveal>
-  <%= render "drinks/form" %>
-  <a class="close-reveal-modal">&#215;</a>
-  </div> 
+<h4 class = "heading shop-name"><%= link_to @shop.name, shop_path(@shop) %></h4>
+<div class='drinksPartial'>
+  <%= render partial: 'drinks/drinks_list', locals: { drinks: @drinks, shop: @shop } %>
+  
 </div>
+
+<div id="addDrink" class="reveal-modal small" data-reveal>
+<%= render "drinks/form" %>
+<a class="close-reveal-modal">&#215;</a>
+</div> 
 

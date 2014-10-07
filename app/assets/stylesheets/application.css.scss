@@ -1,12 +1,16 @@
-$light: #eee7e1;
-$primary-color: #8C5F09;
-
+@import "variables";
+@import "foundation_customize";
 @import "framework_and_overrides";
 @import "font-awesome";
+@import "sitewide";
 @import "users";
 @import "reviews";
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 body{
-  background-color: rgba(140, 95, 9, .3);
+  background-color: $light;
 }
 main {
   padding-left: 0px;
@@ -14,35 +18,40 @@ main {
   background-color: $light;
 }
 
+.nav-icon{
+  padding-left: 13px;
+}
 
-
+.middle .small-title-color a{
+  color: white;
+}
 //entire nav bar
-.no_margin, .top-bar {
-  margin: 0;
-}
+// .no_margin, .top-bar {
+//   margin: 0;
+// }
 //right links
-.top-bar-section ul li, .top-bar-section li:not(.has-form) a:not(.button){
-  background-color: #614000;
-}
-.top-bar-section li:not(.has-form) a:not(.button):hover{
-background-color: #3D2800;
-}
-#color_nav {
-   background-color: $primary-color;
-}
-.top-bar.expanded .title-area{
-  background-color: $primary-color;
-}
+// .top-bar-section ul li, .top-bar-section li:not(.has-form) a:not(.button){
+//   background-color: #614000;
+// }
+// .top-bar-section li:not(.has-form) a:not(.button):hover{
+// background-color: #3D2800;
+// }
+// #color_nav {
+//    background-color: $primary-color;
+// }
+// .top-bar.expanded .title-area{
+//   background-color: $primary-color;
+// }
 li {
-    list-style-type: none;
+  list-style-type: none;
 }
-a {
+p a {
   color: #897515;
 }
 a:hover {
-     transition: background-color 0.5s ease;
-    color: #896115;
-  }
+  transition: background-color 0.5s ease;
+  color: #896115;
+}
 //active does not work here need to reasearch 
 //a:active {
 //   color: #896115;
@@ -58,15 +67,18 @@ a:hover {
 //   background-color: rgba(3, 87, 103, .8);
 //    transition: background-color 0.5s ease;
 // }
-// .cafe_description_index{
-//   min-height: 5em;
-//   max-height: 6em;
-//   white-space: pre-line;
-//   overflow: hidden;
-// }
+.cafe_description_index{
+  min-height: 5em;
+  max-height: 6em;
+  white-space: pre-line;
+  overflow: hidden;
+}
 
+.darker {
+  background: darken($light, 10%);
+}
 //large screen media query
-@media (min-width: 1140px) {
+@media (min-width: 1017px) {
 // moar-coffee name
 // .top-bar{
 //  background-color: $primary-color;
@@ -101,6 +113,21 @@ a:hover {
 //   // max-height: 12.5em;
 //   // text-overflow: ellipsis;
 // }
+
+
+
+
+
+
+}
+.box {
+  padding:1em;
+  background-color: darken($light, 5%);
+  box-sizing: padding-box; 
+  padding:1em;
+  min-height: 12.5em;
+  max-height: 12.5em;
+  text-overflow: ellipsis;
 }
 //small screen
 @media (max-width: 705px){
