@@ -32,13 +32,16 @@
           <%= render 'layouts/navigation' %>
         </header>
         <main role="main">
-          <%= form_tag root_path, :method => :get do %>
-            <p>
-              <%= text_field_tag :search, params[:search] %>
-              <%= submit_tag "Search Near", :name => nil %>
-          <% end %>
-           <%= render 'layouts/messages' %>
-           <%= yield %>
+          <div class="row">
+        <!--     <%#= form_tag root_path, :method => :get do %>
+              <p>
+                <%#= text_field_tag :search, params[:search] %>
+                <%#= submit_tag "Search Near", :name => nil %>
+              </p>  
+            <%# end %> -->
+            <%= render 'layouts/messages' %>
+            <%= yield %>
+          </div>   
         </main>
         <a class="exit-off-canvas"></a>
       </div>

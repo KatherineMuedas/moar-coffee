@@ -2,11 +2,12 @@
 @import "foundation_customize";
 @import "framework_and_overrides";
 @import "font-awesome";
+@import "sitewide";
 @import "users";
 @import "reviews";
 
 body{
-  background-color: rgba(140, 95, 9, .3);
+  background-color: $light;
 }
 main {
   padding-left: 0px;
