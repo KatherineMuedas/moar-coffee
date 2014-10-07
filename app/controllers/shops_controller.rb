@@ -11,7 +11,7 @@ class ShopsController < ApplicationController
 
   def show
     @drinks = @shop.drinks.all
-    @pictures = @shop.pictures.all
+    @pictures = @shop.pictures.all.order(created_at: :desc)
   end
 
   def new

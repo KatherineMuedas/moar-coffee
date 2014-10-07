@@ -1,0 +1,17 @@
+<nav class="top-bar show-for-large-up" data-options="sticky_on: all" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <h1>
+        <%= link_to 'Moar Coffee', root_path%>
+      </h1>
+    </li>
+  </ul>
+  <section class="top-bar-section">
+    <ul class="right">
+      <%= render 'layouts/navigation_links' %>
+      <% if user_signed_in? %>
+        <%= render 'layouts/user_links' %>
+      <% end %>
+    </ul>
+  </section>
+</nav>

@@ -1,0 +1,32 @@
+<nav class="tab-bar hide-for-large-up" >
+  <div class="left-small">
+    <a class="left-off-canvas-toggle menu-icon">
+      <span></span>
+    </a>
+  </div>
+  <div class="middle tab-bar-section">
+    <h1 class="title text-center small-title-color">
+     <%= link_to 'Moar Coffee', root_path%>
+    </h1>
+  </div>
+  <% if user_signed_in? %>
+    <div class="right-small">
+      <a class="right-off-canvas-toggle ">
+        <span><i class="fa fa-user fa-lg white nav-icon"></i></span>  
+        
+      </a>
+    </div>
+  <% end %>
+</nav>
+<aside class="left-off-canvas-menu">
+  <ul class="off-canvas-list">
+    <%= render 'layouts/navigation_links' %>
+  </ul>
+</aside>
+<% if user_signed_in? %>
+  <aside class="right-off-canvas-menu">
+    <ul class="off-canvas-list">
+      <%= render 'layouts/user_links' %>
+    </ul>
+  </aside>
+<% end %>
