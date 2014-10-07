@@ -38,6 +38,7 @@
             </p>  
           </div>
         </div>
+      <%= link_to 'Edit Café', edit_shop_path(@shop.id), class: 'edit'%> 
       </div>
     </div> 
   
@@ -46,9 +47,9 @@
     </div>
 
     <div class= "container activity-display">
-      <div class="row">
-        <h3>Activity of the coffee shop</h3>
-      </div>
+      <h3 class= 'activity'>Activity of the coffee shop</h3>
+        <div class="row">
+        </div>
     </div> 
   </div> 
 </div> 
@@ -59,7 +60,7 @@
   </div> 
 <% end %>
 
-<!--       <%# if @shop.location %>
+<!-- <%## if @shop.location %>
         <p><%#= @shop.location.street_address %></p>
         <p><%#= @shop.location.city %>,<%#= @shop.location.state %> <%#= @shop.location.zipcode %></p>
         <p><%#= @shop.location.latitude %>, <%#= @shop.location.longitude %></p>

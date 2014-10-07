@@ -4,17 +4,6 @@
       <p>We will put things</p>
     </div>
   </div>
- <div class="row">
-    <div class ='row main_shop_page'>
-    <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
-      <% @shops.each do |shop| %>
-        <div class='large-4 columns box'>
-        <li>
-          <div class="box">
-            <h3> <%=link_to shop.name,shop_path(shop) %></h3>
-            <p class='cafe_description_index'><%= shop.description %></p>
-            <%= link_to 'Edit Café', edit_shop_path(shop.id)%> |
-            <%= link_to 'Show Café', shop_path(shop.id) %>
 
   <div class="small-12 large-8 columns">
     <div class= "container row-list">

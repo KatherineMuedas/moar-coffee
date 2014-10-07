@@ -42,28 +42,21 @@ main {
 li {
   list-style-type: none;
 }
-p a {
-  color: #897515;
-}
 a:hover {
   transition: background-color 0.5s ease;
   color: #896115;
 }
-//active does not work here need to reasearch 
-//a:active {
-//   color: #896115;
-// }
 
-//buttons
-// .button {
-//   border-radius: 5px;
-//   background-color:#3E8E9D;
-// }
+// buttons
+.button {
+  border-radius: 5px;
+  background-color:$button-color;
+}
 
-// .button:hover{
-//   background-color: rgba(3, 87, 103, .8);
-//    transition: background-color 0.5s ease;
-// }
+.button:hover{
+  background-color: rgba(41, 170, 115, .5);
+   transition: background-color 0.5s ease;
+}
 .cafe_description_index{
   min-height: 5em;
   max-height: 6em;
@@ -99,24 +92,18 @@ a:hover {
 // .darker {
 //   background: darken($light, 10%);
 // }
-
-//boxes on shop page
-// //why cant margins be added 
-// .box {
-//   // box-sizing: padding-box; 
-//   // padding:1em;
-//   // background-color: darken($light, 5%);
-//   // min-height: 12.5em;
-//   // max-height: 12.5em;
-//   // text-overflow: ellipsis;
-// }
-
-
-
-
-
-
+// show page
+.activity {
+  margin: 0 .5em;
 }
+.sidebar {
+  padding: 1em;
+}
+.edit{
+  padding:0 2em;
+}
+
+
 .box {
   padding:1em;
   background-color: darken($light, 5%);
@@ -125,6 +112,7 @@ a:hover {
   min-height: 12.5em;
   max-height: 12.5em;
   text-overflow: ellipsis;
+}
 }
 //small screen
 @media (max-width: 705px){
