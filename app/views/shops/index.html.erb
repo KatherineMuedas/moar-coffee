@@ -17,7 +17,7 @@
           </div>
           <div class="small-10 columns" >
             <h3><%=link_to shop.name,shop_path(shop) %></h3>
-            <p class=''><%= shop.location %></p>
+            <p class=''><%= "#{shop.location.city},#{shop.location.state}" if shop.location %></p>
           </div>
         </div> 
       <%end%>
