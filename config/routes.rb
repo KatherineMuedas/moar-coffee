@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
   resources :users, only: [:show, :index] do
-    resources :follows, only: [:create, :destroy]
+    resources :follow_users, only: [:create, :destroy]
   end
 
   resources :shops, except: [:destroy] do
