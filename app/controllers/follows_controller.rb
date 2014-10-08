@@ -2,7 +2,10 @@ class FollowsController < ApplicationController
   def create
     @shop = Shop.friendly.find(params[:shop_id])
     current_user.follow(@shop)
-    redirect_to :back
+    respond_to |format|
+      format.html{redirect_to :back}
+      format.js
+    end
   end
 
   def destroy
