@@ -1,9 +1,11 @@
 class User < ActiveRecord::Base
+  include PublicActivity::Common
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, default_url: :set_default_for_gender
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   acts_as_follower
+  acts_as_followable
   has_many :reviews
   has_many :favorites
   has_many :pictures
