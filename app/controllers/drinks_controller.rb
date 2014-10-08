@@ -19,7 +19,7 @@ class DrinksController < ApplicationController
 
     respond_to do |format|
       if @drink.save
-        @drink.create_activity :create, owner: current_user
+        @drink.create_activity :create, owner: current_user, follow_id: @shop.id
         @drinks = @shop.drinks
         format.html { redirect_to @shop }
         format.js
