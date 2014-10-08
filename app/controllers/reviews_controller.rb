@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
     @review.user_id = current_user.id 
     @shop = Shop.find(@drink.shop_id)
     if @review.save
-      @review.create_activity :create, owner: current_user, follow_id: @shop.id
+      @review.create_activity :create, owner: current_user, follow_id: current_user.id
       redirect_to :back
     else
       redirect_to :back, notice: 'Review was not created'
