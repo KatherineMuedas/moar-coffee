@@ -8,6 +8,7 @@
     <div class= "container row-list">
       <% @shops.each do |shop| %>
         <div class="row row-item">
+
           <div class="small-2 columns photo-item">
             <% if shop.pictures.first %>
               <%= link_to image_tag(shop.pictures.first.photo.url(:thumb), class: "th radius"), shop_path(shop)  %>
@@ -17,10 +18,11 @@
           </div>
           <div class="small-10 columns" >
             <h3><%=link_to shop.name,shop_path(shop) %></h3>
-            <p class=''><%= shop.location %></p>
+            <p class=''><%= "#{shop.location.city},#{shop.location.state}" if shop.location %></p>
           </div>
         </div> 
       <%end%>
+      </ul>
     </div>
   </div>  
 </div>

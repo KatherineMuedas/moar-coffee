@@ -16,7 +16,7 @@
         </div>
         <div class="small-12 medium-9 columns">
           <h1><%= @shop.name %></h1>
-          <p class='location'><%= "#{@shop.location.city}, #{@shop.location.state}" if @shop.location %></p>
+          <p class='location'><%= "#{@shop.location.city}, #{@shop.location.state}" if @shop.location %><%= link_to "(Show on map)", "https://www.google.com/maps/place/#{@shop.name.gsub(" ","+")}/@#{@shop.location.try(:latitude)},#{@shop.location.try(:longitude)}", target: "_blank" %></p>
           <p><%= @shop.description %></p>
           <div class="info-links center-on-small">
             <p>
@@ -38,6 +38,7 @@
             </p>  
           </div>
         </div>
+      <%= link_to 'Edit Café', edit_shop_path(@shop.id), class: 'edit'%> 
       </div>
     </div> 
   
@@ -46,12 +47,15 @@
     </div>
 
     <div class= "container activity-display">
-      <div class="row">
-        <h3>Activity of the coffee shop</h3>
-      </div>
+      <h3 class= 'activity'>Activity of the coffee shop</h3>
+        <div class="row">
+        </div>
     </div> 
   </div> 
 </div> 
+
+
+
 <% if current_user %>
   <div id="addPhoto" class="reveal-modal small" data-reveal>
     <%= render "shops/photo_upload" %>
@@ -59,7 +63,7 @@
   </div> 
 <% end %>
 
-<!--       <%# if @shop.location %>
+<!-- <%## if @shop.location %>
         <p><%#= @shop.location.street_address %></p>
         <p><%#= @shop.location.city %>,<%#= @shop.location.state %> <%#= @shop.location.zipcode %></p>
         <p><%#= @shop.location.latitude %>, <%#= @shop.location.longitude %></p>

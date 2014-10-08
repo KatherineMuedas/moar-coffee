@@ -1,32 +1,63 @@
-<%= render 'shops/sidebar' %>
-<div class= "small-10 columns">
-  <div class = "favorite-buttons">
+<div class="row ">
+  <div class="large-3 columns show-for-large-up ">
+    <div class= "container sidebar">
+      <%= render 'shops/sidebar' %>
+    </div>
+  </div>  
+  <div class="small-12 large-9 columns">
+    <div class= "container information-display">
+      <div class="row">
+        <div class="hide-for-small-only medium-3 columns photo-item">
+          <% if @drink.pictures.first %>
+            <%= image_tag(@drink.pictures.first.photo.url(:medium), class: "th radius")  %>
+          <% else %>
+            <%= image_tag("http://placehold.it/300x300", class: "th radius")  %>
+          <% end %>  
+        </div>
+        <div class="small-12 medium-9 columns">
+          <h1><%= @drink.name %></h1>
+          <p><%= @drink.description %></p>
+          <div class="info-links center-on-small"> 
+            <p>
+              <% if current_user %>
+                <%= link_to '#', class: "button tiny primary", data: {"reveal-id" => "addPhoto"} do %>
+                  <i class="fa fa-camera fa-lg"></i>
+                <% end %> 
+                <div class = "favorite-buttons">     
+                  <% if @favorite.nil? || false %>
+                    <%= render 'favorites/favorite_button' %>
+                  <% elsif @favorite.favorable %>
+                    <%= render 'favorites/unfavorite_button' %>
+                  <% end %>
+                </div>
+              <% end %>
+            </p>       
+          </div>   
+        </div>    
+      </div> 
+    </div>   
+      
+    <div class="row">    
+      <%= render 'pictures/display_photos' %>
+    </div>  
+      <hr>
     <% if current_user %>
-        <% if @favorite.nil? || false %>
-            <%= render 'favorites/favorite_button' %>
-        <% elsif @favorite.favorable %>
-            <%= render 'favorites/unfavorite_button' %>
-        <% end %>
-    <% end %>
-  </div>
-  <% if user_signed_in? %>
-  <a href="#" data-reveal-id="addReview" class= "button right"><i class="fa fa-plus"></i> Add a new review</a>
-  <% else %>
-    <%= link_to "Sign in to write a review", new_user_registration_path, class: "button right" %>
-  <% end %>
-  <h1 class="text-center"> <%= @drink.name %></h1>
-  <p> <%= @drink.description %></p>
-  <% if current_user %>
-    <%= link_to '#', class: "button", data: {"reveal-id" => "addPhoto"} do %>
-      <i class= "fa fa-camera"></i> Add a photo
-    <% end %>
-  <% end %>
-  <%= render 'pictures/display_photos' %>
-  <hr>
-  <%= render 'reviews/drink_reviews' %>
-</div>
+              <a href="#" data-reveal-id="addReview" class= " Radius button primary"><i class="fa fa-plus fa-lg"></i> Add a new review</a>  
+    <% end %>              
+    <div class= "container activity-display">
+      <div class="row">  
+        <%= render 'reviews/drink_reviews' %>
+      </div>
+    </div>  
+  </div> 
+</div>   
 
-<!-- Modal Divs -->
+
+
+
+
+
+  <!-- Modal Divs -->
 <% if current_user %>
   <div id="addReview" class="reveal-modal small" data-reveal>
     <%= render "reviews/form_reviews" %>
@@ -37,3 +68,4 @@
     <a class="close-reveal-modal">&#215;</a>
   </div> 
 <% end %>
+
