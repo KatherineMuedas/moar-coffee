@@ -10,7 +10,7 @@ class Location < ActiveRecord::Base
     end
   end  
   after_validation :geocode
-  after_validation :reverse_geocode
+  # after_validation :reverse_geocode
 
   def full_street_address
   
