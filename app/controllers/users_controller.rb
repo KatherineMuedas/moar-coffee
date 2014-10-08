@@ -20,8 +20,6 @@ class UsersController < ApplicationController
     end
   end
 
-  end
-
 private
 
 # Use strong_parameters for attribute whitelisting
