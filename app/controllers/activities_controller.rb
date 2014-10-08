@@ -1,5 +1,6 @@
 class ActivitiesController < ApplicationController
   def index
-    @activities = PublicActivity::Activity.order("created_at desc")
+    @ids = current_user.all_following.map(&:id)
+    @activities = PublicActivity::Activity.order("created_at DESC").where(follow_id: @ids)
   end
 end
