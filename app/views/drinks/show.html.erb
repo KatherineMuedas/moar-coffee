@@ -23,13 +23,13 @@
                 <%= link_to '#', class: "button tiny primary", data: {"reveal-id" => "addPhoto"} do %>
                   <i class="fa fa-camera fa-lg"></i>
                 <% end %> 
-                <div class = "favorite-buttons">     
+                <span class = "favorite-buttons">     
                   <% if @favorite.nil? || false %>
                     <%= render 'favorites/favorite_button' %>
                   <% elsif @favorite.favorable %>
                     <%= render 'favorites/unfavorite_button' %>
                   <% end %>
-                </div>
+                </span>
               <% end %>
             </p>       
           </div>   
