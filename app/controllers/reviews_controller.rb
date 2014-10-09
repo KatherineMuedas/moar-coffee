@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
     @review = @drink.reviews.new(reviews_params)
     @review.user_id = current_user.id 
     if @review.save
-      @review.create_activity :create, owner: current_user
+      @review.create_activity :create, owner: current_user, follow_id: current_user.id
       redirect_to :back
     else
       redirect_to :back, notice: 'Review was not created'

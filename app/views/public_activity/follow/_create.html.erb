@@ -1,0 +1,6 @@
+<% if activity.trackable %>
+  started following <%= link_to activity.trackable.followable.name, shop_path(activity.trackable.followable
+                                                                              .friendly_id) %>!
+<% else %>
+
+<% end %>
