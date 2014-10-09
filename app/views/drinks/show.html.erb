@@ -20,6 +20,7 @@
           <div class="info-links center-on-small"> 
             <p>
               <% if current_user %>
+                <a href="#" data-reveal-id="addReview" class= " Radius button tiny primary"><i class="fa fa-plus fa-lg"></i> Add a new review</a>  
                 <%= link_to '#', class: "button tiny primary", data: {"reveal-id" => "addPhoto"} do %>
                   <i class="fa fa-camera fa-lg"></i>
                 <% end %> 
@@ -41,9 +42,7 @@
       <%= render 'pictures/display_photos' %>
     </div>  
       <hr>
-    <% if current_user %>
-      <a href="#" data-reveal-id="addReview" class= " Radius button primary"><i class="fa fa-plus fa-lg"></i> Add a new review</a>  
-    <% end %>              
+              
     <div class= "container activity-display">
         <%= render 'reviews/drink_reviews' %>
     </div>  
