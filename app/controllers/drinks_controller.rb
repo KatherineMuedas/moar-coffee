@@ -6,6 +6,7 @@ class DrinksController < ApplicationController
 
   def show
     @drinks = @shop.drinks.all
+    @reviews = @drink.reviews.where(review_type: :review)
     @pictures = @drink.pictures.all.order(created_at: :desc)
     @favorite = Favorite.find_by_favorable_id(@drink.id)
   end
@@ -51,7 +52,7 @@ class DrinksController < ApplicationController
   end
 
   def set_drink
-    @drink = Drink.friendly.find(params[:id])
+    @drink = @shop.drinks.friendly.find(params[:id])
   end
 
 end

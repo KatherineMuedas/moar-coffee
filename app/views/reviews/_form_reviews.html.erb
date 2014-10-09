@@ -21,6 +21,9 @@
     <div class= 'form-group body small-10 small-centered columns'>
       <%= f.input :body, label: false, placeholder: "Enter your review here", input_html: { rows: 4 } %><br>
     </div>
+
+    <%= f.hidden_field :review_type, value: :review if f.object.review_type.nil?  %>
+
     <p class= "text-center">
       <%= f.submit 'Send', :class => 'button success' %> 
     </p>

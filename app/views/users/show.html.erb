@@ -1,11 +1,19 @@
 <div class="row">
-  <div class="small-12 medium-3 columns">
-    <h1><%= @user.name%></h1>
-    <%= image_tag @user.avatar.url(:medium), class: 'user-medium ' %>
-    <% if current_user && @user.id == current_user.id %> 
-      <p><%= link_to 'Edit My Account', edit_user_registration_path, class: "button tiny" %></p> 
-    <% end %> 
+  <div  class= "container ">
+    <div class="row">
+      <div class="small-4 columns medium-4 columns photo-item">
+         <%= image_tag @user.avatar.url(:medium), class: "th radius" %>
+      </div>
+      <div class="small-8 medium-8 columns">
+        <h1><%= @user.name%></h1>
+        <% if current_user && @user.id == current_user.id %> 
+          <p><%= link_to 'Edit My Account', edit_user_registration_path, class: "button tiny" %></p> 
+        <% end %> 
+      </div>
+
+    </div>
   </div>
+  
   <div class="small-12 medium-9 columns">
     <h3>My Photos</h3>
     <hr>  
@@ -27,7 +35,7 @@
         <% end %>
       </ul>
       
-    <h3>My Reviews</h3>
+    <h3>Recent Activity</h3>
     <hr>
     <% @reviews.each do |review|%>
       <div class='panel'>

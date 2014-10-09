@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.friendly.find(params[:id])
-    @reviews = @user.reviews
+    @reviews = @user.reviews.where(review_type: :review)
     @follows = @user.all_following
     @pictures = @user.pictures.order(created_at: :desc)
   end

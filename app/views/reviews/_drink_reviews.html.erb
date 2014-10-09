@@ -1,9 +1,9 @@
 <div class="row">
   <div class="reviews-section">
-    <% if @drink.reviews.empty? %>
+    <% if @reviews.empty? %>
       <h4> No Reviews to Display</h4>
     <% else %>
-      <% @drink.reviews.each do |review| %>
+      <% @reviews.each do |review| %>
         <div class="hide-for-small-only medium-2 columns text-center">
           <%= link_to image_tag(review.user.avatar.url(:thumb), class: "user-thumb radius"), user_path(review.user) %>
         </div>
