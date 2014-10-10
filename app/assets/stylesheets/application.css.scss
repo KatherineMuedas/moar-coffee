@@ -32,7 +32,23 @@ img{
 .FBB {
   margin-bottom: .5em;
 }
-
+.activity_review {
+  margin: 0px;
+}
+.margin_main_liine {
+ margin-top: 0px; 
+}
+h4 {
+  margin-left: 1.3em; 
+}
+//floats buttons for new review
+.new_review {
+  float: left;
+  margin-right: 4px;
+}
+.info-links {
+  float: left;
+}
 //
 //entire nav bar
 // .no_margin, .top-bar {

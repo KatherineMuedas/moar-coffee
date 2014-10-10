@@ -23,6 +23,7 @@
     </div>
 
     <%= f.hidden_field :review_type, value: :review if f.object.review_type.nil?  %>
+    <%= f.hidden_field :shop_id, value: @shop.id %>
 
     <p class= "text-center">
       <%= f.submit 'Send', :class => 'button success' %> 

@@ -19,10 +19,8 @@
           <p class='location'><%= "#{@shop.location.city}, #{@shop.location.state}" if @shop.location %><%= link_to "(Show on map)", "https://www.google.com/maps/place/#{@shop.name.gsub(" ","+")}/@#{@shop.location.try(:latitude)},#{@shop.location.try(:longitude)}", target: "_blank" %></p>
           <p><%= @shop.description %></p>
           <div class="info-links center-on-small">
-          
               <% if current_user %>
-                <a href="#" data-reveal-id="addDrink" class= "button tiny primary"><i class="fa fa-plus fa-lg"></i></a>
-
+                <a href="#" data-reveal-id="addDrink" class="button tiny primary"><i class="fa fa-plus fa-lg"></i></a>
                 <%= link_to '#', class: "button tiny primary", data: {"reveal-id" => "addPhoto"} do %>
                   <i class="fa fa-camera fa-lg"></i>
                 <% end %>
@@ -37,7 +35,6 @@
               <%= link_to url_with_http_protocol(@shop.website), class: "button tiny primary", :target => '_blank' do %>
                 <i class="fa fa-external-link fa-lg"></i>
               <% end %>
-          
           </div>
         </div>
       <%= link_to 'Edit Café', edit_shop_path(@shop.id), class: 'edit'%> 

@@ -22,8 +22,8 @@
           <p><%= @drink.description %></p>
           <span class="info-links center-on-small"> 
               <% if current_user %>
-                <a href="#" data-reveal-id="addReview" class= " Radius button tiny primary"><i class="fa fa-plus fa-lg"></i> Add a new review</a>  
-                <%= link_to '#', class: "button tiny primary", data: {"reveal-id" => "addPhoto"} do %>
+                <a href="#" data-reveal-id="addReview" class= "Radius button tiny primary"><i class="fa fa-plus fa-lg"></i> Add a new review</a>  
+                <%= link_to '#', class: "new_review button tiny primary", data: {"reveal-id" => "addPhoto"} do %>
                   <i class="fa fa-camera fa-lg"></i>
                 <% end %> 
                 <% @review = @drink.reviews.build %>
@@ -35,7 +35,7 @@
                   <% end %>
                 <% end %>
                 <!-- <a href="#" data-reveal-id="addCheckin" class= " "></a>  -->
-                <span class = "favorite-buttons">     
+                <span class = "new_review favorite-buttons">     
                   <% if @favorite.nil? || false %>
                     <%= render 'favorites/favorite_button' %>
                   <% elsif @favorite.favorable %>
@@ -43,19 +43,23 @@
                   <% end %>
                 </span>
               <% end %>
-        </span>    
-      </div> 
-    </div>   
-      
-      <%= render 'pictures/display_photos' %>
-      <hr>
-              
-    <div class= "container activity-display">
-        <%= render 'reviews/drink_reviews' %>    
-    </div>  
+            </span>    
+          </div> 
+       </div>  
+    </div> 
+    <div class= "container information-display">
+      <div class="row">
+        <%= render 'pictures/display_photos' %>
+      </div>
+      <h4 class='activity_review'>Activity</h4>
+      <hr class='margin_main_line'>
+      <div class="row">
+        <div class= "container activity-display">
+            <%= render 'reviews/drink_reviews' %>    
+        </div> 
+    </div> 
   </div> 
 </div>   
-
 
   <!-- Modal Divs -->
 <% if current_user %>
