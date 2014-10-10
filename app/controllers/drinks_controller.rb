@@ -6,6 +6,8 @@ class DrinksController < ApplicationController
 
   def show
     @drinks = @shop.drinks.all
+    @reviews = @drink.reviews.where(review_type: :review)
+    @checkins = @drink.reviews.where(review_type: :checkin)
     @pictures = @drink.pictures.all.order(created_at: :desc)
     @favorite = Favorite.find_by_favorable_id(@drink.id)
   end
@@ -19,7 +21,7 @@ class DrinksController < ApplicationController
 
     respond_to do |format|
       if @drink.save
-        @drink.create_activity :create, owner: current_user
+        @drink.create_activity :create, owner: current_user, follow_id: @shop.id
         @drinks = @shop.drinks
         format.html { redirect_to @shop }
         format.js
@@ -51,7 +53,7 @@ class DrinksController < ApplicationController
   end
 
   def set_drink
-    @drink = Drink.friendly.find(params[:id])
+    @drink = @shop.drinks.friendly.find(params[:id])
   end
 
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141006180632) do
+ActiveRecord::Schema.define(version: 20141009044247) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20141006180632) do
     t.string   "recipient_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "follow_id"
   end
 
   add_index "activities", ["owner_id", "owner_type"], name: "index_activities_on_owner_id_and_owner_type", using: :btree
@@ -119,6 +120,8 @@ ActiveRecord::Schema.define(version: 20141006180632) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "review_type"
+    t.integer  "shop_id"
   end
 
   add_index "reviews", ["drink_id"], name: "index_reviews_on_drink_id", using: :btree

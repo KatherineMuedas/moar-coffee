@@ -3,6 +3,9 @@
     <div class= "container sidebar">
       <%= render 'shops/sidebar' %>
     </div>
+    <div class= "container checkin-display">
+      <%= render 'reviews/drink_checkin' %>
+    </div>
   </div>  
   <div class="small-12 large-9 columns">
     <div class= "container information-display">
@@ -17,13 +20,21 @@
         <div class="small-12 medium-9 columns">
           <h1><%= @drink.name %></h1>
           <p><%= @drink.description %></p>
-          <div class="info-links center-on-small"> 
-            <p>
+          <span class="info-links center-on-small"> 
               <% if current_user %>
                 <a href="#" data-reveal-id="addReview" class= " Radius button tiny primary"><i class="fa fa-plus fa-lg"></i> Add a new review</a>  
                 <%= link_to '#', class: "button tiny primary", data: {"reveal-id" => "addPhoto"} do %>
                   <i class="fa fa-camera fa-lg"></i>
                 <% end %> 
+                <% @review = @drink.reviews.build %>
+                <%= simple_form_for [@drink, @review]  do |f| %>
+                  <%= f.hidden_field :review_type, value: :checkin%>
+                  <%= f.hidden_field :shop_id, value: @shop.id %>
+                  <%= button_tag(type: 'submit', class: "button tiny primary") do %>
+                    <i class="fa fa-check-square-o fa-lg"></i>
+                  <% end %>
+                <% end %>
+                <!-- <a href="#" data-reveal-id="addCheckin" class= " "></a>  -->
                 <span class = "favorite-buttons">     
                   <% if @favorite.nil? || false %>
                     <%= render 'favorites/favorite_button' %>
@@ -32,19 +43,15 @@
                   <% end %>
                 </span>
               <% end %>
-            </p>       
-          </div>   
-        </div>    
+        </span>    
       </div> 
     </div>   
       
-    <div class="row">    
       <%= render 'pictures/display_photos' %>
-    </div>  
       <hr>
               
     <div class= "container activity-display">
-        <%= render 'reviews/drink_reviews' %>
+        <%= render 'reviews/drink_reviews' %>    
     </div>  
   </div> 
 </div>   

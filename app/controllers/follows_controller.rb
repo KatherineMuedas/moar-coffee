@@ -1,4 +1,5 @@
 class FollowsController < ApplicationController
+
   def create
     @shop = Shop.friendly.find(params[:shop_id])
     respond_to do |format|
