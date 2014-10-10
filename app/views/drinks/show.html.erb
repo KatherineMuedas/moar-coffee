@@ -23,7 +23,7 @@
           <span class="info-links center-on-small"> 
               <% if current_user %>
                 <a href="#" data-reveal-id="addReview" class= "Radius button tiny primary"><i class="fa fa-plus fa-lg"></i> Add a new review</a>  
-                <%= link_to '#', class: "new_review button tiny primary", data: {"reveal-id" => "addPhoto"} do %>
+                <%= link_to '#', class: "button tiny primary", data: {"reveal-id" => "addPhoto"} do %>
                   <i class="fa fa-camera fa-lg"></i>
                 <% end %> 
                 <% @review = @drink.reviews.build %>
@@ -35,7 +35,7 @@
                   <% end %>
                 <% end %>
                 <!-- <a href="#" data-reveal-id="addCheckin" class= " "></a>  -->
-                <span class = "new_review favorite-buttons">     
+                <span class = "favorite-buttons">     
                   <% if @favorite.nil? || false %>
                     <%= render 'favorites/favorite_button' %>
                   <% elsif @favorite.favorable %>
@@ -63,7 +63,7 @@
 
   <!-- Modal Divs -->
 <% if current_user %>
-  <div id="addReview" class="reveal-modal small" data-reveal>
+  <div id="addReview" id="no_float" class="reveal-modal small" data-reveal>
     <%= render "reviews/form_reviews" %>
     <a class="close-reveal-modal">&#215;</a>
   </div> 

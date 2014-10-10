@@ -43,11 +43,14 @@ h4 {
 }
 //floats buttons for new review
 .new_review {
-  float: left;
+  float: inherit;
   margin-right: 4px;
 }
 .info-links {
   float: left;
+}
+#no_float{
+  float: none;
 }
 //
 //entire nav bar
