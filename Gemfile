@@ -21,9 +21,9 @@ gem "public_activity"
 gem "figaro" #To protect secret keys
 gem "acts_as_follower"
 gem 'omniauth-facebook'
-gem 'yelp', require: 'yelp'
 # gem 'rmagick', '2.13.2'
 # gem 'haml-rails'
+gem 'google_places'
 
 group :development do
   gem 'better_errors'
