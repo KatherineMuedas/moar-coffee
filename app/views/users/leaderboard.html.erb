@@ -1,7 +1,15 @@
 <h3>Leaderboard</h3>
 <% @users.each do |user| %>
   <div class= "container information-display">
-    <%= link_to image_tag(user.avatar.url(:thumb), class: "user-thumb radius"), user_path(user.id) %>
-    <%= link_to user.name, user_path(user.id) %> <%= user.points %> <%= user.rank %>
+    <div class="row">
+    <div class="small-2 columns photo-item">
+      <%= link_to image_tag(user.avatar.url(:thumb), class: "user-thumb radius"), user_path(user.id) %>
+    </div>  
+    <div class="small-10 columns" >  
+      <h1><%= link_to user.name, user_path(user.id) %></h1>
+      <p>Points: <%= user.points %></p>
+      <p>Rank: <%= user.rank %></p>
+    </div>
+  </div>  
   </div>  
 <% end %>  
