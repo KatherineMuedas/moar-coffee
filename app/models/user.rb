@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   include PublicActivity::Common
+  enum rank: [ :beginer, :half_and_half, :expert ]
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, default_url: :set_default_for_gender
@@ -45,6 +46,10 @@ class User < ActiveRecord::Base
     favorites.collect { |x| x.favorable }
   end
 
+  def give_points(points_to_give)
+    self.update_attributes(points: self.points += points_to_give)
+  end 
+  
   private
 
   def set_default_for_gender
@@ -53,7 +58,8 @@ class User < ActiveRecord::Base
     else 
       ":style/male-avatar.jpg"
     end 
-  end 
+  end
+
 
 end
 

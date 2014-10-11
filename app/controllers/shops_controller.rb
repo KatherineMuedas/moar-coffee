@@ -22,6 +22,8 @@ class ShopsController < ApplicationController
   def create
     @shop = Shop.new(shop_params)
     if @shop.save
+      current_user.give_points(5)
+    
       redirect_to @shop
     else
       render 'new'

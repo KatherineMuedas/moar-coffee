@@ -2,7 +2,6 @@ class FollowsController < ApplicationController
 
   def create
     @shop = Shop.friendly.find(params[:shop_id])
-
     if current_user.follow(@shop)
       current_user.follow(@shop).create_activity :create, owner: current_user, follow_id: @shop.id
     end

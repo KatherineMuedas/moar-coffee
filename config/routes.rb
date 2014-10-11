@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :favorites, only: [:create, :destroy]
 
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
+  get "/leaderboard", to: "users#leaderboard" , as: :leaderboard
   resources :users, only: [:show, :index] do
     resources :follow_users, only: [:create, :destroy]
   end
