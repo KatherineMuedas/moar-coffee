@@ -17,5 +17,4 @@ class Shop < ActiveRecord::Base
       :name
     ]
   end
-
 end

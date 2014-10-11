@@ -52,6 +52,12 @@ h4 {
 #no_float{
   float: none;
 }
+#addDrink, .open{
+  box-shadow: 0 0 0 .5px $button-color inset;
+}
+.reveal-modal {
+border:none;
+  }
 //
 //entire nav bar
 // .no_margin, .top-bar {
@@ -85,8 +91,9 @@ a:hover {
 }
 
 .button:hover{
+  box-shadow: 0 0 0 1px $button-color inset;
   background-color: rgba(41, 170, 115, .5);
-   transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
 }
 .cafe_description_index{
   min-height: 5em;
@@ -98,6 +105,7 @@ a:hover {
 .darker {
   background: darken($light, 10%);
 }
+
 //large screen media query
 @media (min-width: 1017px) {
 // moar-coffee name
