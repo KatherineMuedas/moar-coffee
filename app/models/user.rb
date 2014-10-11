@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   include PublicActivity::Common
-  enum rank: [ :beginer, :half_and_half, :expert ]
+  enum rank: [ :beginner, :half_and_half, :expert ]
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, default_url: :set_default_for_gender
@@ -48,8 +48,16 @@ class User < ActiveRecord::Base
 
   def give_points(points_to_give)
     self.update_attributes(points: self.points += points_to_give)
+    check_if_rank_up
   end 
-  
+
+def check_if_rank_up
+  if self.rank == "beginner" && self.points >=20
+    self.half_and_half!
+  elsif self.rank == "half_and_half" && self.points >=30
+    self.expert!
+  end   
+end  
   private
 
   def set_default_for_gender
