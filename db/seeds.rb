@@ -16,18 +16,18 @@
 #   puts 'CREATED SHOP: ' << shop
 # end
 
-# users = ["Phil", "Kat", "Chase"]
+users = ["Phil", "Kat", "Chase"]
 
-# users.each do |user|
-#   User.create!(
-#                name: user,
-#                email: "#{user}@email.com",
-#                password: "password",
-#                password_confirmation: "password",
-#                zipcode: 44444
-#                )
-#   puts "CREATED USER: " << user
-# end
+users.each do |user|
+  User.create!(
+               name: user,
+               email: "#{user}@email.com",
+               password: "password",
+               password_confirmation: "password",
+               zipcode: 44444
+               )
+  puts "CREATED USER: " << user
+end
 
 Shop.delete_all
 @client = GooglePlaces::Client.new(ENV['GOOGLEAPI'])
