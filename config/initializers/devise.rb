@@ -4,7 +4,7 @@ Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
-  config.secret_key = ENV["DEVISE_SECRET"] || '7d6dd797074af7ab9f4fdfbb9e78e7e59939000367b83db6b27094e3d3c7e5c36acce0464f37a7c01f9a4dbb8442e9fdb77e89698813a153e3b1f8b545cc8ced'
+  config.secret_key = ENV["DEVISE_SECRET"] || ENV['DEVISE_SECRET_2']
 
 
   # ==> Mailer Configuration
@@ -235,7 +235,7 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   # ######### this needs to be changed once deployed to heroku #############
-  config.omniauth :facebook, "719745478114450", "597768153b7c551fca065f90824ea7aa"
+  config.omniauth :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET']
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

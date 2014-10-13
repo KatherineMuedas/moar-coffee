@@ -20,9 +20,9 @@
         <div class="small-12 medium-9 columns">
           <h1><%= @drink.name %></h1>
           <p><%= @drink.description %></p>
-          <div class="info-links center-on-small"> 
-            <p>
+          <span class="info-links center-on-small"> 
               <% if current_user %>
+                <a href="#" data-reveal-id="addReview" class= "Radius button tiny primary"><i class="fa fa-plus fa-lg"></i> Add a new review</a>  
                 <%= link_to '#', class: "button tiny primary", data: {"reveal-id" => "addPhoto"} do %>
                   <i class="fa fa-camera fa-lg"></i>
                 <% end %> 
@@ -35,43 +35,36 @@
                   <% end %>
                 <% end %>
                 <!-- <a href="#" data-reveal-id="addCheckin" class= " "></a>  -->
-                <div class = "favorite-buttons">     
+                <span class = "favorite-buttons">     
                   <% if @favorite.nil? || false %>
                     <%= render 'favorites/favorite_button' %>
                   <% elsif @favorite.favorable %>
                     <%= render 'favorites/unfavorite_button' %>
                   <% end %>
-                </div>
+                </span>
               <% end %>
-            </p>       
-          </div>   
-        </div>    
-      </div> 
-    </div>   
-      
-    <div class="row">    
-      <%= render 'pictures/display_photos' %>
-    </div>  
-      <hr>
-    <% if current_user %>
-              <a href="#" data-reveal-id="addReview" class= " Radius button primary"><i class="fa fa-plus fa-lg"></i> Add a new review</a>  
-    <% end %>              
-    <div class= "container activity-display">
-      <div class="row"> 
-        <%= render 'reviews/drink_reviews' %>    
+            </span>    
+          </div> 
+       </div>  
+    </div> 
+    <div class= "container information-display">
+      <div class="row">
+        <%= render 'pictures/display_photos' %>
       </div>
-    </div>  
+      <h4 class='activity_review'>Activity</h4>
+      <hr class='margin_main_line'>
+      <div class="row">
+        <div class= "container activity-display">
+            <%= render 'reviews/drink_reviews' %>    
+        </div> 
+    </div> 
   </div> 
 </div>   
 
 
-
-
-
-
   <!-- Modal Divs -->
 <% if current_user %>
-  <div id="addReview" class="reveal-modal small" data-reveal>
+  <div id="addReview" id="no_float" class="reveal-modal small" data-reveal>
     <%= render "reviews/form_reviews" %>
     <a class="close-reveal-modal">&#215;</a>
   </div> 

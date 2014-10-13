@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!
+  
 
   def index
     @users = User.all
@@ -20,6 +21,11 @@ class UsersController < ApplicationController
      if @last_name.update_attributes(last_name, params)
     end
   end
+  def leaderboard
+    @users = User.all.order(points: :desc)
+  end  
+
+
 
 private
 

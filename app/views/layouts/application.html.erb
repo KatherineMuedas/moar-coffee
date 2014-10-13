@@ -33,12 +33,12 @@
         </header>
         <main role="main">
           <div class="row">
-        <!--     <%#= form_tag root_path, :method => :get do %>
+            <%= form_tag root_path, :method => :get do %>
               <p>
-                <%#= text_field_tag :search, params[:search] %>
-                <%#= submit_tag "Search Near", :name => nil %>
+                <%= text_field_tag :search, params[:search] %>
+                <%= submit_tag "Search Near", :name => nil %>
               </p>  
-            <%# end %> -->
+            <% end %> 
             <%= render 'layouts/messages' %>
             <%= yield %>
           </div>   

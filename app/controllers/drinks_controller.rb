@@ -7,6 +7,7 @@ class DrinksController < ApplicationController
   def show
     @drinks = @shop.drinks.all
     @reviews = @drink.reviews.where(review_type: :review)
+    @checkins = @drink.reviews.where(review_type: :checkin)
     @pictures = @drink.pictures.all.order(created_at: :desc)
     @favorite = Favorite.find_by_favorable_id(@drink.id)
   end
@@ -20,6 +21,7 @@ class DrinksController < ApplicationController
 
     respond_to do |format|
       if @drink.save
+        current_user.give_points(10)
         @drink.create_activity :create, owner: current_user, follow_id: @shop.id
         @drinks = @shop.drinks
         format.html { redirect_to @shop }
