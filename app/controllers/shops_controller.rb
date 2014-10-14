@@ -32,7 +32,7 @@ class ShopsController < ApplicationController
   end
 
   def edit
-    @location = @shop.build_location
+    @location = @shop.location
   end
 
   def update
