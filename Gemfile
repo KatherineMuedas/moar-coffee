@@ -24,6 +24,7 @@ gem 'omniauth-facebook'
 # gem 'rmagick', '2.13.2'
 # gem 'haml-rails'
 gem 'google_places'
+gem 'mail_form'
 
 group :development do
   gem 'better_errors'
