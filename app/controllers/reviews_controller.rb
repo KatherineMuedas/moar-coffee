@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
       @review.create_activity :create, owner: current_user, follow_id: current_user.id
       redirect_to :back
     else
-      redirect_to :back, notice: 'Review was not created'
+      redirect_to :back, alert: 'Review was not created'
     end
   end
 
