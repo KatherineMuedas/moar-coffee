@@ -5,11 +5,18 @@
   <li><%= link_to 'Add Cafe', new_shop_path %></li>
 <% else %>
   <li ><%= link_to 'Sign in', new_user_session_path, data: {"reveal-id" => "signIn"} %></li>
-  <li><%= link_to 'Sign up', new_user_registration_path %></li>
+  <li ><%= link_to 'Sign up', new_user_registration_path, data: {"reveal-id" => "signUp"} %></li>
+  <!--<li><%#= link_to 'Sign up', new_user_registration_path %></li>-->
 <% end %>
 
 
 <div id="signIn" id="no_float" class="reveal-modal small" data-reveal>
   <%= render "devise/sessions/sign_in" %>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+
+<div id="signUp" id="no_float" class="reveal-modal small" data-reveal>
+  <%= render "devise/registrations/sign_up" %>
   <a class="close-reveal-modal">&#215;</a>
 </div>
