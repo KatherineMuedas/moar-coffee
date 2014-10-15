@@ -22,7 +22,9 @@
           <p><%= @drink.description %></p>
           <span class="info-links center-on-small"> 
               <% if current_user %>
-                <a href="#" data-reveal-id="addReview" class= "Radius button tiny primary"><i class="fa fa-plus fa-lg"></i> Add a new review</a>
+                <%= link_to 'Add a new review', class: "Radius button tiny primary", data: {"reveal-id" => "addReview"} do %>
+                  Add a new review
+                <% end %>
                 <span data-tooltip aria-haspopup="true" class="has-tip" data-options="show_on:large" title="Add a photo"><%= link_to '#', class: "button tiny primary",
                                                                                                                            data: {"reveal-id" => "addPhoto"} do %>
                   <i class="fa fa-camera fa-lg"></i>
