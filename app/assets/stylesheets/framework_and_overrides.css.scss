@@ -4,8 +4,9 @@
 // import the CSS framework
 @import "foundation";
 
-$alert-transition-speed: 300ms;
 $alert-transition-ease: ease-out;
+$alert-transition-speed: 30ms;
+
 // override for the 'Home' navigation link
 .top-bar .name {
   font-size: rem-calc(13);
