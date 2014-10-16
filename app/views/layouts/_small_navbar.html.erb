@@ -5,14 +5,14 @@
     </a>
   </div>
   <div class="middle tab-bar-section">
-    <h1 class="title text-center small-title-color">
-     <%= link_to 'Moar Coffee', root_path%>
+    <h1 class="title text-center small-title-color fancy-font">
+     <%= link_to 'Moar Coffee', root_path, class: ""%>
     </h1>
   </div>
   <% if user_signed_in? %>
     <div class="right-small">
       <a class="right-off-canvas-toggle ">
-        <span><i class="fa fa-user fa-lg white nav-icon"></i></span>  
+        <span><i class="fa fa-user fa-lg nav-icon"></i></span>  
         
       </a>
     </div>

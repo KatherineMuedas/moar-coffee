@@ -13,7 +13,13 @@ body{
 main {
   padding-left: 0px;
   padding-right: 0px;
-  background-color: $light;
+  background-color: white;
+}
+.top-bar-section ul li > a{
+  &:hover{
+  text-decoration: underline;
+
+}
 }
 
 .nav-icon{
@@ -21,7 +27,7 @@ main {
 }
 
 .middle .small-title-color a{
-  color: white;
+  color: $primary-color;
 }
 img{
   margin: .5em;

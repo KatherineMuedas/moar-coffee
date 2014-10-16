@@ -3,7 +3,7 @@ $light: #eee7e1; //soft brown
 $hover-color: rgba(73, 178, 109, .5);
 
 // foundation
-$primary-color: #726457;
+$primary-color: #5ead79; // site green
 $secondary-color: #e7e7e7; // white-lilac
 $alert-color: #f04124;     // cinnabar
 $success-color: #43AC6A;   // sea-green
@@ -22,6 +22,10 @@ $button-color: #49B26D;  // green
 
 .bg-white{
   background-color: white;
+}
+
+.fancy-font{
+  font-family: 'Courgette', cursive;
 }
 $white         : #FFFFFF;
 // $ghost         : #FAFAFA;

@@ -3,7 +3,7 @@ class ShopsController < ApplicationController
   before_action :set_shop, only:[:show, :edit, :update]
   def index
     if params[:search].present?
-      @shops = Location.near(params[:search], exitex).map{|x| x.shop}
+      @shops = Location.near(params[:search], 50).map{|x| x.shop}
     else
       @shops = Shop.all.order(:name)
     end
