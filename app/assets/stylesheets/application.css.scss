@@ -59,6 +59,15 @@ h4 {
 .reveal-modal {
 border:none;
   }
+//sign in model
+.authform form {
+  border: none;
+  background-color: #fff;
+}
+.reveal-modal.small, dialog.small {
+  width: 32%;
+
+}
 //
 //entire nav bar
 // .no_margin, .top-bar {
