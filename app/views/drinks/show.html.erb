@@ -40,8 +40,7 @@
                   <% end %></span>
 
                 <% end %>
-                <!-- <a href="#" data-reveal-id="addCheckin" class= " "></a>  -->
-                <span class = "favorite-buttons">     
+                <span class = "favorite-buttons">
                   <% if @favorite.nil? || false %>
                     <%= render 'favorites/favorite_button' %>
                   <% elsif @favorite.favorable %>
@@ -79,4 +78,3 @@
     <a class="close-reveal-modal">&#215;</a>
   </div> 
 <% end %>
-
