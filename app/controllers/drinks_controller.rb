@@ -24,8 +24,9 @@ class DrinksController < ApplicationController
         current_user.give_points(10)
         @drink.create_activity :create, owner: current_user, follow_id: @shop.id
         @drinks = @shop.drinks
-        format.html { redirect_to @shop }
+        format.html { redirect_to @shop}
         format.js
+        flash[:notice] = "Coffee successfully created" 
       else
         format.js
       end

@@ -17,6 +17,7 @@ class ShopsController < ApplicationController
   def new
     @shop = Shop.new
     @location = @shop.build_location
+    # @shop.pictures = build_pictures
   end
 
   def create
@@ -24,6 +25,7 @@ class ShopsController < ApplicationController
     if @shop.save
       current_user.give_points(5)
       redirect_to @shop
+      flash[:notice] = "Cafe successfully created" 
     else
       render 'new'
     end

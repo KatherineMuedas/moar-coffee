@@ -42,6 +42,7 @@ group :development do
 end
 
 group :development, :test do
+  gem 'reek'
   gem 'factory_girl_rails'
   gem 'ffaker'
   gem 'pry-rails'

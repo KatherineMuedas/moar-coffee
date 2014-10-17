@@ -16,7 +16,9 @@
 #   puts 'CREATED SHOP: ' << shop
 # end
 
-# users = ["Phil", "Kat", "Chase"]
+User.delete_all
+users = ["Phil", "Kat", "Chase"]
+
 
 # users.each do |user|
 #   User.create!(
@@ -28,6 +30,7 @@
 #                )
 #   puts "CREATED USER: " << user
 # end
+
 
 Shop.delete_all
 @client = GooglePlaces::Client.new(ENV['GOOGLEAPI'])
@@ -51,5 +54,32 @@ results.each do |shop|
   end
   # set location city, state, street_address, and zip from final_address_array
   s.build_location(latitude: shop.lat, longitude: shop.lng, city: final_address_array[1], state: final_address_array[2], street_address: final_address_array[0], zipcode: final_address_array[3])
+  # s.pictures_attributes(photo: shop.photos)
+  # s.photo = shop.photos
+
   s.save
 end
+  # photo_file_size: shop.height & shop.width
+  # photo_file_name: shop.photo_reference
+
+  # create_table "pictures", force: true do |t|
+  #   t.string   "caption"
+  #   t.integer  "picable_id"
+  #   t.string   "picable_type"
+  #   t.string   "photo_file_name"
+  #   t.string   "photo_content_type"
+  #   t.integer  "photo_file_size"
+  #   t.datetime "photo_updated_at"
+  #   t.datetime "created_at"
+  #   t.datetime "updated_at"
+  #   t.integer  "user_id"
+
+   #  @photos=
+   # [#<GooglePlaces::Photo:0x00000106706410
+   #   @api_key="AIzaSyDWbsZx36yXPkRly0EAGHiJ_ot6aanKV08",
+   #   @height=446,
+   #   @html_attributions=[],
+   #   @photo_reference=
+   #    "CnRnAAAAMmKpaXxYqc1oRXoL7ZKQSPgu9QWzRrDG1hN1lG3F_l4_Lt_k6KQ9YGI1mHbMnv5WatVqaOikTEZUh0_JpiTzIJdIKbdbtKqBO4USiuS7S8rRhlpJQQ-cU6ZlSx52fMf4XBeV2ITyOJB0iSuwhFVE2hIQgL79mhKTtgwSMLXw23lJrBoUlLgHEfxCAWLQOGBB8eS2lMSgm1s",
+   #   @sensor=false,
+   #   @width=760>],

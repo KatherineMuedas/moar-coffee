@@ -15,7 +15,7 @@
       <%= f.label :zipcode %>
       <%= f.text_field :zipcode, class: 'form-control' %>
     </div>
-     <div class="form-group">
+    <div class="form-group">
       <%= f.label :gender, 'Gender:' %>
       <%= f.select :gender, [[nil, nil], ['Female',true], ['Male',false]], class: 'form-control' %>
     </div>
@@ -27,6 +27,6 @@
       <%= f.label :password_confirmation %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
     </div>
-     <%= f.submit 'Sign up', :class => 'button right' %>
+    <%= f.submit 'Sign up', :class => 'button right' %>
   <% end %>
 </div>
