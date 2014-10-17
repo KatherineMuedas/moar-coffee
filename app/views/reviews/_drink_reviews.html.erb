@@ -12,9 +12,9 @@
             <%= link_to review.user.name, user_path(review.user) %>: <%= review.title %>
           </h4>
           <p>
-          <% review.drink_rating.times do  %>
-            <span><i class = "fa fa-coffee coffee fa-lg"></i></span>  
-          <% end %>
+            <% review.drink_rating.times do  %>
+              <span><i class = "fa fa-coffee coffee fa-lg"></i></span>  
+            <% end %>  
           </p>
           <p>
             <%= review.body %>
