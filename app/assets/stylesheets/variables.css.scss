@@ -1,5 +1,6 @@
 // our variables
-$light: #eee7e1;
+$light: #eee7e1; //soft brown
+$hover-color: rgba(73, 178, 109, .5);
 
 // foundation
 $primary-color: #726457;
@@ -8,7 +9,7 @@ $alert-color: #f04124;     // cinnabar
 $success-color: #43AC6A;   // sea-green
 $warning-color: #f08a24;   // carrot
 $info-color: #a0d3e8;      // cornflower
-$button-color: #49B26D;
+$button-color: #49B26D;  // green
 
 .white{
   color: white;

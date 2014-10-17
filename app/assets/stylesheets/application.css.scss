@@ -61,10 +61,20 @@ h4 {
 .reveal-modal {
 border:none;
   }
+
 .flash {
   z-index: 2;
   transition-duration: 1s;
   transition-timing-function: ease-out; 
+}
+
+//sign in model
+.authform form {
+  border: none;
+  background-color: #fff;
+}
+.reveal-modal.small, .small {
+  width: 32%;
 }
 //
 //entire nav bar
@@ -89,7 +99,7 @@ li {
 }
 a:hover {
   transition: background-color 0.5s ease;
-  color: #896130;
+  color: #896130 ; // light($button-color, 50%)
 }
 
 // buttons
@@ -100,7 +110,7 @@ a:hover {
 
 .button:hover{
   box-shadow: 0 0 0 1px $button-color inset;
-  background-color: rgba(41, 170, 115, .5);
+  background-color: $hover-color ; //rgba(41, 170, 115, .5)
   transition: background-color 0.5s ease;
 }
 .cafe_description_index{
