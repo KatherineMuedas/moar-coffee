@@ -1,6 +1,20 @@
+<li class="has-form main_search_bar">
+  <div class="row collapse">
+    <div class="large-10 small-9 columns inside_search_bar">
+      <%= form_tag root_path, :method => :get do %>
+        <%= text_field_tag :search, params[:search], placeholder: 'Search for Cafes' %>
+      <% end %>
+    </div>
+     <%#= submit_tag "Search Near", :name => nil %>
+   <!--  <div class="large-4 small-3 columns">
+      <a href="#" class="alert button expand">Search</a>
+    </div> -->
+  </div>
+</li>
 <%# add navigation links to this file %>
 <li class="<%= "active" if params[:action] == "index" %>"><%= link_to 'Cafes', root_path('root') %></li>
 <li><%= link_to 'About', page_path('about') %></li>
+
 <% if user_signed_in? %>
   <li><%= link_to 'Add Cafe', new_shop_path %></li>
 <% else %>

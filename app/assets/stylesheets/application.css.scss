@@ -76,24 +76,7 @@ border:none;
 .reveal-modal.small, .small {
   width: 32%;
 }
-//
-//entire nav bar
-// .no_margin, .top-bar {
-//   margin: 0;
-// }
-//right links
-// .top-bar-section ul li, .top-bar-section li:not(.has-form) a:not(.button){
-//   background-color: #614000;
-// }
-// .top-bar-section li:not(.has-form) a:not(.button):hover{
-// background-color: #3D2800;
-// }
-// #color_nav {
-//    background-color: $primary-color;
-// }
-// .top-bar.expanded .title-area{
-//   background-color: $primary-color;
-// }
+
 li {
   list-style-type: none;
 }
@@ -126,6 +109,13 @@ a:hover {
 
 //large screen media query
 @media (min-width: 1017px) {
+  .top-bar-section .main_search_bar {
+    float: right;
+    padding: 0px;
+  }
+  .inside_search_bar{
+    margin-top: 11px;
+  }
 // moar-coffee name
 // .top-bar{
 //  background-color: $primary-color;
