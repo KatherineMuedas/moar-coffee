@@ -1,3 +1,5 @@
+$alert-transition-speed: 300ms;
+$alert-transition-ease: ease-out;
 @import "variables";
 @import "foundation_customize";
 @import "framework_and_overrides";
@@ -59,6 +61,21 @@ h4 {
 .reveal-modal {
 border:none;
   }
+
+.flash {
+  z-index: 2;
+  transition-duration: 1s;
+  transition-timing-function: ease-out; 
+}
+
+//sign in model
+.authform form {
+  border: none;
+  background-color: #fff;
+}
+.reveal-modal.small, .small {
+  width: 32%;
+}
 //
 //entire nav bar
 // .no_margin, .top-bar {
