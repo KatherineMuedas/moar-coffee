@@ -1,6 +1,6 @@
 <div class="">
   <% @review = @drink.reviews.build %>
-  <%= simple_form_for [@drink, @review ]  do |f| %>
+  <%= simple_form_for [@drink, @review ], :html => {'data-abide' => '' }, remote: true do |f| %>
     <%= f.error_notification %>
     <h3 class='text-center'>Add a Review</h3>
     <div class= 'form-group rating small-10 small-centered columns'>

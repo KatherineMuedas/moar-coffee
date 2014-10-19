@@ -1,0 +1,7 @@
+$modal = $('#addReview');
+
+$modal.foundation('reveal', 'close');
+var partial =  "<%= j render(partial: 'reviews/drink_reviews', locals: { reviews: @reviews}) %>";
+$('.activity-display').html(partial);
+
+//TODO: clear form after submit

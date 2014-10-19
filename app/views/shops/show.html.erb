@@ -20,10 +20,12 @@
           <p><%= @shop.description %></p>
           <div class="info-links center-on-small">
               <% if current_user %>
-                <a href="#" data-reveal-id="addDrink" class="button tiny primary"><i class="fa fa-plus fa-lg"></i></a>
-                <%= link_to '#', class: "button tiny primary", data: {"reveal-id" => "addPhoto"} do %>
-                  <i class="fa fa-camera fa-lg"></i>
-                <% end %>
+                <span data-tooltip aria-haspopup="true" class="has-tip" data-options="show_on:large" title="Add a Coffee"><a href="#" data-reveal-id="addDrink" class="button
+                tiny primary"><i class="fa fa-plus fa-lg"></i></a></span>
+                <span data-tooltip aria-haspopup="true" class="has-tip" data-options="show_on:large" title="Add a photo"><%= link_to '#', class: "button tiny primary",
+                                                                                                                           data: {"reveal-id" => "addPhoto"} do %>
+                    <i class="fa fa-camera fa-lg"></i>
+                <% end %></span>
                 <span class='follow_buttons'>
                   <% if @shop.followed_by?(current_user) %>
                     <%= render 'follows/unfollow' %>
@@ -32,9 +34,17 @@
                   <% end %>
                 </span>
               <% end %>
-              <%= link_to url_with_http_protocol(@shop.website), class: "button tiny primary", :target => '_blank' do %>
+            <% if @shop.website && @shop.website != "" %>
+            <span data-tooltip aria-haspopup="true" class="has-tip" data-options="show_on:large" title="Go to website"><%= link_to url_with_http_protocol(@shop.website),
+                                                                                                                       class: "button tiny primary", :target => '_blank' do %>
                 <i class="fa fa-external-link fa-lg"></i>
-              <% end %>
+              <% end %></span>
+            <% else %>
+            <span data-tooltip aria-haspopup="true" class="has-tip" data-options="show_on:large" title="No website available"><%= link_to "#",
+                                                                                                                                   class: "button tiny disabled" do %>
+                <i class="fa fa-external-link fa-lg"></i>
+              <% end %></span>
+             <% end %>
           </div>
         </div>
       <%= link_to 'Edit Café', edit_shop_path(@shop.id), class: 'edit'%> 

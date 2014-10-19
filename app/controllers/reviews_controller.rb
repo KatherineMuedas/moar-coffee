@@ -4,8 +4,11 @@ class ReviewsController < ApplicationController
   before_action :authenticate_user!
 
   def create
+    @reviews = current_user.reviews.all.where.not(review_type: "checkin")
     @review = @drink.reviews.new(reviews_params)
     @review.user_id = current_user.id 
+
+    respond_to do |format|
     if @review.save
       if @review.review_type == :review
       current_user.give_points(5)
@@ -14,9 +17,11 @@ class ReviewsController < ApplicationController
       end  
 
       @review.create_activity :create, owner: current_user, follow_id: current_user.id
-      redirect_to :back
-    else
-      redirect_to :back, notice: 'Review was not created'
+      format.html { redirect_to :back }
+      format.js
+      else
+        format.html { redirect_to :back, alert: 'Review was not created' }
+      end
     end
   end
 

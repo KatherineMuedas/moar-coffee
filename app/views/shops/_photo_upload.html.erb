@@ -1,13 +1,13 @@
-<%= simple_form_for @shop do |f| %>
+<%= simple_form_for @shop, remote: true do  |f| %>
   <%= f.fields_for :pictures, @shop.pictures.build do |picture| %>
     <div class="nested-fields">
       <%= picture.input :caption %>
       <%= picture.input :photo %>
       <%= picture.input :user_id, input_html: {value: current_user.id}, as: :hidden %>
+      <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
     </div> 
   <% end %>  
   <p>
-  <%= f.submit 'Submit', :class => 'button right' %> 
-  <%= link_to 'Back', shops_path %>
+  <%= f.submit 'Submit', :class => 'button right' %>
   </p>  
 <% end %>
