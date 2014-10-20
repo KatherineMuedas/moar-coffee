@@ -25,14 +25,15 @@
             <% end %>
           </p>
           <span>
-          <%= twitter_link()  %>
-          <span class="fb-share-button FBB" data-href="( document.URL.contains("")) "></span>
-        </span>
+            <%= twitter_link()  %>
+            <span class="fb-share-button FBB" data-href="( document.URL.contains("")) "></span>
+          </span>
          <!-- how do you share the url you are on -->
         </div> 
         <div class ="small-2 columns">
           <%= image_tag review.picture.photo.url(:thumb) if review.picture.present? %>
-        </div>                             
+        </div>
+        <hr>
       <% end %>
     <% end %>
   </div>

@@ -1,7 +1,7 @@
 <nav class="top-bar show-for-large-up" data-options="sticky_on: all" data-topbar>
   <ul class="title-area">
     <li class="name">
-      <h1>
+      <h1 class="brand">
         <%= link_to 'Moar Coffee', root_path%>
       </h1>
     </li>
@@ -12,6 +12,11 @@
       <% if user_signed_in? %>
         <%= render 'layouts/user_links' %>
       <% end %>
+      <li class="has-form">
+        <div class="nav-search">
+          <input id="search-name" name= "search_for" type="hidden">
+        </div>
+      </li>
     </ul>
   </section>
 </nav>

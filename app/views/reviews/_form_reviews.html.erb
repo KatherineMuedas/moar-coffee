@@ -1,6 +1,6 @@
 <div class="">
   <% @review = @drink.reviews.build %>
-  <%= simple_form_for [@drink, @review ]  do |f| %>
+  <%= simple_form_for [@drink, @review ], :html => {'data-abide' => '' }, remote: true do |f| %>
     <%= f.error_notification %>
     <h3 class='text-center'>Add a Review</h3>
     <div class= 'form-group rating small-10 small-centered columns'>
@@ -10,12 +10,13 @@
       <%= f.input :title, label: false, placeholder: "Title", input_html: { rows: 1 } %><br>
     </div>
     <div class= 'form-group picture small-10 small-centered columns'>
-      <%= f.fields_for :picture, @review.build_picture do |picture| %>
+      <%= f.fields_for :picture, @review.build_picture, remote: true do |picture| %>
         <div class="nested-fields">
           <%= picture.input :photo %>
-          <%= picture.input :caption %>
+          <%= picture.input :caption, label: "Photo Caption" %>
           <%= picture.input :user_id, input_html: {value: current_user.id}, as: :hidden %>
-        </div> 
+          <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
+        </div>
       <% end %>  
     </div>
     <div class= 'form-group body small-10 small-centered columns'>

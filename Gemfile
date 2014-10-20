@@ -26,6 +26,7 @@ gem 'omniauth-facebook'
 gem 'google_places'
 gem 'mail_form'
 gem 'unobtrusive_flash', '>=3'
+gem "select2-rails"
 
 group :development do
   gem 'better_errors'

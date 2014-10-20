@@ -7,7 +7,7 @@
 // Navigation
 // Background color for the top bar
 $topbar-bg-color: $primary-color;
-$topbar-bg: $topbar-bg-color;
+$topbar-bg: white;
 
 // // Height and margin
 $topbar-height: 65px;
@@ -18,30 +18,30 @@ $topbar-height: 65px;
 $topbar-title-font-size: rem-calc(20);
 
 // // Style the top bar dropdown elements
-$topbar-dropdown-bg: $primary-color;
-// $topbar-dropdown-link-color: $white;
-$topbar-dropdown-link-bg: $primary-color;
+$topbar-dropdown-bg: white;
+$topbar-dropdown-link-color: black;
+$topbar-dropdown-link-bg: white;
 // $topbar-dropdown-link-weight: $font-weight-normal;
 // $topbar-dropdown-toggle-size: 5px;
 // $topbar-dropdown-toggle-color: $white;
 // $topbar-dropdown-toggle-alpha: 0.4;
 
 // // Set the link colors and styles for top-level nav
-// $topbar-link-color: $white;
-// $topbar-link-color-hover: $white;
+$topbar-link-color: black;
+$topbar-link-color-hover: black;
 // $topbar-link-color-active: $white;
 // $topbar-link-color-active-hover: $white;
 // $topbar-link-weight: $font-weight-normal;
-// $topbar-link-font-size: rem-calc(13);
+ $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
-$topbar-link-bg-hover: darken($primary-color, 10%);
+$topbar-link-bg-hover: white;
 // $topbar-link-bg-color-hover: $charcoal;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
-// $topbar-link-font-family: $body-font-family;
-// $topbar-link-text-transform: none;
-// $topbar-link-padding: $topbar-height / 3;
+ $topbar-link-font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+ $topbar-link-text-transform: uppercase;
+ //$topbar-link-padding: $topbar-height / 3;
 // $topbar-back-link-size: $h5-font-size;
 // $topbar-link-dropdown-padding: 20px;
 // $topbar-button-font-size: 0.75rem;
@@ -70,14 +70,14 @@ $topbar-menu-icon-color: white;
 
 // // Divider Styles
 // $topbar-divider-border-bottom: solid 1px scale-color($topbar-bg-color, $lightness: 13%);
-// $topbar-divider-border-top: solid 1px scale-color($topbar-bg-color, $lightness: -50%);
+// $topbar-divider-border-top: solid 5px $primary-color;
 
 // Offcanvas
- $tabbar-bg: $primary-color;
+ $tabbar-bg: white;
 // $tabbar-height: rem-calc(45);
 // $tabbar-icon-width: $tabbar-height;
 // $tabbar-line-height: $tabbar-height;
-// $tabbar-color: $white;
+ $tabbar-color: black;
 // $tabbar-middle-padding: 0 rem-calc(10);
 
 // // Off Canvas Divider Styles
@@ -93,7 +93,7 @@ $topbar-menu-icon-color: white;
 
 // // Off Canvas Menu Variables
 // $off-canvas-width: rem-calc(250);
-$off-canvas-bg: $primary-color;
+$off-canvas-bg: white;
 $off-canvas-bg-hover: darken($primary-color, 10%);
 
 // // Off Canvas Menu List Variables
@@ -107,7 +107,7 @@ $off-canvas-bg-hover: darken($primary-color, 10%);
 // $off-canvas-label-border-bottom: none;
 // $off-canvas-label-margin:0;
 // $off-canvas-link-padding: rem-calc(10, 15);
-$off-canvas-link-color: $white;
+$off-canvas-link-color: black;
 // $off-canvas-link-border-bottom: 1px solid scale-color($off-canvas-bg, $lightness: -25%);
 // $off-canvas-back-bg: #444;
 // $off-canvas-back-border-top: $off-canvas-label-border-top;
@@ -117,7 +117,7 @@ $off-canvas-link-color: $white;
 // $off-canvas-back-hover-border-bottom: none;
 
 // // Off Canvas Menu Icon Variables
-$tabbar-menu-icon-color: $white;
+$tabbar-menu-icon-color: black;
 // $tabbar-menu-icon-hover: scale-color($tabbar-menu-icon-color, $lightness: -30%);
 
 // $tabbar-menu-icon-text-indent: rem-calc(35);

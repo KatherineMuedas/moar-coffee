@@ -3,7 +3,7 @@
     <div class= "container sidebar">
       <%= render 'shops/sidebar' %>
     </div>
-    <div class= "container checkin-display">
+    <div class= "container checkin-display sidebar">
       <%= render 'reviews/drink_checkin' %>
     </div>
   </div>  
@@ -14,7 +14,7 @@
           <% if @drink.pictures.first %>
             <%= image_tag(@drink.pictures.first.photo.url(:medium), class: "th radius")  %>
           <% else %>
-            <%= image_tag("http://placehold.it/300x300", class: "th radius")  %>
+            <%= image_tag("300x300.gif", class: "th radius")  %>
           <% end %>  
         </div>
         <div class="small-12 medium-9 columns">
@@ -22,20 +22,23 @@
           <p><%= @drink.description %></p>
           <span class="info-links center-on-small"> 
               <% if current_user %>
-                <a href="#" data-reveal-id="addReview" class= "Radius button tiny primary"><i class="fa fa-plus fa-lg"></i> Add a new review</a>  
-                <%= link_to '#', class: "button tiny primary", data: {"reveal-id" => "addPhoto"} do %>
+                <%= link_to 'Add a new review', class: "Radius button tiny primary", data: {"reveal-id" => "addReview"} do %>
+                  Add a new review
+                <% end %>
+                <span data-tooltip aria-haspopup="true" class="has-tip" data-options="show_on:large" title="Add a photo"><%= link_to '#', class: "button tiny primary", data: {"reveal-id" => "addPhoto"} do %>
                   <i class="fa fa-camera fa-lg"></i>
-                <% end %> 
+                <% end %></span>
+
                 <% @review = @drink.reviews.build %>
                 <%= simple_form_for [@drink, @review]  do |f| %>
                   <%= f.hidden_field :review_type, value: :checkin%>
                   <%= f.hidden_field :shop_id, value: @shop.id %>
-                  <%= button_tag(type: 'submit', class: "button tiny primary") do %>
+                  <span data-tooltip aria-haspopup="true" class="has-tip" data-options="show_on:large" title="Check In"><%= button_tag(type: 'submit', class: "button tiny primary") do %>
                     <i class="fa fa-check-square-o fa-lg"></i>
-                  <% end %>
+                  <% end %></span>
+
                 <% end %>
-                <!-- <a href="#" data-reveal-id="addCheckin" class= " "></a>  -->
-                <span class = "favorite-buttons">     
+                <span class = "favorite-buttons">
                   <% if @favorite.nil? || false %>
                     <%= render 'favorites/favorite_button' %>
                   <% elsif @favorite.favorable %>
@@ -47,22 +50,22 @@
           </div> 
        </div>  
     </div> 
+    <div class="row">
+      <%= render 'pictures/display_photos' %>
+    </div>
     <div class= "container information-display">
-      <div class="row">
-        <%= render 'pictures/display_photos' %>
-      </div>
-      <h4 class='activity_review'>Activity</h4>
-      <hr class='margin_main_line'>
+      <h4 class='activity_review'>Recent Activity</h4>
+      <hr>
       <div class="row">
         <div class= "container activity-display">
-            <%= render 'reviews/drink_reviews' %>    
+          <%= render 'reviews/drink_reviews' %>    
         </div> 
     </div> 
   </div> 
 </div>   
 
 
-  <!-- Modal Divs -->
+<!-- Modal Divs -->
 <% if current_user %>
   <div id="addReview" id="no_float" class="reveal-modal small" data-reveal>
     <%= render "reviews/form_reviews" %>
@@ -73,4 +76,3 @@
     <a class="close-reveal-modal">&#215;</a>
   </div> 
 <% end %>
-

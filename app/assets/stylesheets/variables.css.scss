@@ -1,9 +1,12 @@
 // our variables
-$light: #eee7e1; //soft brown
+// $light: #eee7e1; //soft brown
+// $darker: darken($primary-color, 10%);
+// $lighter: lighten($primary-color, 15%);
 $hover-color: rgba(73, 178, 109, .5);
+$our-gray: #f2f2f2;
 
 // foundation
-$primary-color: #726457;
+$primary-color: #5ead79; // site green
 $secondary-color: #e7e7e7; // white-lilac
 $alert-color: #f04124;     // cinnabar
 $success-color: #43AC6A;   // sea-green
@@ -11,34 +14,54 @@ $warning-color: #f08a24;   // carrot
 $info-color: #a0d3e8;      // cornflower
 $button-color: #49B26D;  // green
 
+$white         : #FFFFFF;
+$ghost         : #FAFAFA;
+$snow          : #F9F9F9;
+$vapor         : #F6F6F6;
+$white-smoke   : #F5F5F5;
+$silver        : #EFEFEF;
+$smoke         : #EEEEEE;
+$gainsboro     : #DDDDDD;
+$iron          : #CCCCCC;
+$base          : #AAAAAA;
+$aluminum      : #999999;
+$jumbo         : #888888;
+$monsoon       : #777777;
+$steel         : #666666;
+$charcoal      : #555555;
+$tuatara       : #444444;
+$oil           : #333333;
+$jet           : #222222;
+$black         : #000000;
+
 .white{
-  color: white;
+  color: $white;
 }
-.black{ color: black;}
+.black{ color: $black;}
 
 .primary{
   color: $primary-color;
 }
 
+.secondary{
+  color: $secondary-color;
+}
+
+.succes{
+  color: $success-color;
+}
+
+.our-gray{
+  color: $our-gray;
+}
+
+.danger{
+  color: $alert-color;
+}
 .bg-white{
   background-color: white;
 }
-$white         : #FFFFFF;
-// $ghost         : #FAFAFA;
-// $snow          : #F9F9F9;
-// $vapor         : #F6F6F6;
-// $white-smoke   : #F5F5F5;
-// $silver        : #EFEFEF;
-// $smoke         : #EEEEEE;
-// $gainsboro     : #DDDDDD;
-// $iron          : #CCCCCC;
-// $base          : #AAAAAA;
-// $aluminum      : #999999;
-// $jumbo         : #888888;
-// $monsoon       : #777777;
-// $steel         : #666666;
-// $charcoal      : #555555;
-// $tuatara       : #444444;
-// $oil           : #333333;
-// $jet           : #222222;
-// $black         : #000000;
+
+.fancy-font{
+  font-family: 'Courgette', cursive;
+}

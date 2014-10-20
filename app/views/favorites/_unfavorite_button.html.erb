@@ -1,2 +1,2 @@
-<%= link_to "Unfavorites".html_safe, favorite_path(id: @drink.id), method: :delete, remote: true, class: "button tiny primary" %>
+<%= link_to "Unfavorite", favorite_path(id: @drink.id), method: :delete, remote: true, class: "button tiny primary" %>
 

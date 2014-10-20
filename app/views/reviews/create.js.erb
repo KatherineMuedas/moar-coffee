@@ -1,0 +1,11 @@
+$modal = $('#addReview');
+
+$modal.foundation('reveal', 'close');
+$('#review_title').val('');
+$('#review_picture_attributes_caption').val('');
+$('#review_body').val('');
+$('#review_drink_rating').prop('selectedIndex', 0);
+var partial =  "<%= j render(partial: 'reviews/drink_reviews', locals: { reviews: @reviews}) %>";
+$('.activity-display').html(partial);
+
+//TODO: clear form after submit

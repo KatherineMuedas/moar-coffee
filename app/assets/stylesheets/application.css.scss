@@ -1,21 +1,29 @@
 $alert-transition-speed: 300ms;
 $alert-transition-ease: ease-out;
 @import "variables";
+@import "utilities";
 @import "foundation_customize";
 @import "framework_and_overrides";
+@import "select2";
 @import "font-awesome";
 @import "sitewide";
 @import "users";
 @import "reviews";
 
-
 body{
-  background-color: $light;
+  background-color: white;
 }
 main {
   padding-left: 0px;
   padding-right: 0px;
-  background-color: $light;
+  background-color: $our-gray;
+}
+.top-bar-section ul li > a{
+  &:hover{
+    border-bottom: .2em solid $button-color;
+  // text-decoration: underline;
+
+}
 }
 
 .nav-icon{
@@ -23,7 +31,7 @@ main {
 }
 
 .middle .small-title-color a{
-  color: white;
+  color: $primary-color;
 }
 img{
   margin: .5em;
@@ -42,7 +50,7 @@ img{
  margin-top: 0px; 
 }
 h4 {
-  margin-left: 1.3em; 
+  // margin-left: 1.3em; 
 }
 //floats buttons for new review
 .new_review {
@@ -80,14 +88,22 @@ border:none;
 li {
   list-style-type: none;
 }
-a:hover {
-  transition: background-color 0.5s ease;
-  color: #896130 ; // light($button-color, 50%)
+
+// text-decoration-color
+// a:hover {
+//   transition: background-color 0.5s ease;
+//   color: blue ; // light($button-color, 50%)
+// }
+.main-link{
+  color: $primary-color;
+  &:hover{
+    color: lighten($primary-color, 15%);
+
+}
 }
 
 // buttons
 .button {
-  border-radius: 5px;
   background-color:$button-color;
 }
 
@@ -104,11 +120,15 @@ a:hover {
 }
 
 .darker {
-  background: darken($light, 10%);
+  background: darken($primary-color, 10%);
 }
 //search icon
 .fa-search {
   z-index: 2;
+}
+
+.has-tip:hover, .has-tip:focus {
+  border-bottom: none;
 }
 //for mid to small-screens for search bar
 //large screen media query
@@ -148,16 +168,15 @@ a:hover {
   margin: 0 .5em;
 }
 .sidebar {
-  padding: 1em;
+  // padding: 1em;
 }
 .edit{
-  padding:0 2em;
+  // padding:0 2em;
 }
 
 
 .box {
-  padding:1em;
-  background-color: darken($light, 5%);
+  background-color: darken($primary-color, 5%);
   box-sizing: padding-box; 
   padding:1em;
   min-height: 12.5em;
@@ -165,8 +184,11 @@ a:hover {
   text-overflow: ellipsis;
 }
 #search {
-    border-radius: 13px;
+    border-radius: 13px 0px 0px 13px;
   }
+.postfix {
+  border-radius: 0px 13px 13px 0px
+}
 }
 
 @media (max-width: 1024px) {
@@ -180,3 +202,10 @@ a:hover {
     text-align: center;
   }
 }
+.footer-style {
+  background: #60605e;
+  color: white;
+//   margin-top: 50px;
+//   height: 300px;
+//   text-align: center;
+ }
