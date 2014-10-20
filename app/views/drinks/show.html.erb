@@ -14,7 +14,7 @@
           <% if @drink.pictures.first %>
             <%= image_tag(@drink.pictures.first.photo.url(:medium), class: "th radius")  %>
           <% else %>
-            <%= image_tag("http://placehold.it/300x300", class: "th radius")  %>
+            <%= image_tag("300x300.gif", class: "th radius")  %>
           <% end %>  
         </div>
         <div class="small-12 medium-9 columns">
