@@ -39,12 +39,13 @@
       <ul>
         <% if current_user.id == @user.id %>
           <% @shop_follows.each do |follow| %>
-          <li><%= link_to follow[:name], shop_path(follow.friendly_id) %> | <%= link_to '',shop_follow_path(shop_id: follow.id),class:"fa fa-bomb", method: :delete %></li>
+          <li><%= link_to follow[:name], shop_path(follow.friendly_id) %> | <%= link_to '',shop_follows_delete_path(shop_id: follow.id),class:"fa fa-bomb",
+                                                                                        method: :delete %></li>
           <% end %>
         <% end %>
       </ul>
 
-    <h3>Users I"m Following</h3>
+    <h3>Users I'm Following</h3>
     <hr>
       <ul>
         <% if current_user.id == @user.id %>
