@@ -1,7 +1,7 @@
-<h4 class = "heading shop-name"><%= link_to @shop.name, shop_path(@shop) %></h4>
+<h5 class="heading shop-name pad-top-20 pad-left-15"><%= link_to @shop.name, shop_path(@shop) %></h5>
+<hr>
 <div class='drinksPartial'>
   <%= render partial: 'drinks/drinks_list', locals: { drinks: @drinks, shop: @shop } %>
-  
 </div>
 
 <div id="addDrink" class="reveal-modal small" data-reveal>

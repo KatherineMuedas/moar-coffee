@@ -25,3 +25,21 @@ header nav.top-bar.show-for-large-up .top-bar-section .right .has-form{
   }
   
 }
+
+main{
+  min-height: 88vh;
+  @media (min-width: 1025px) {
+    min-height: 85vh;
+  }
+}
+
+.contain-to-grid {
+  box-shadow: 0 -7px 0px 7px $primary-color;
+  border-bottom: 10px solid $our-gray; 
+  margin-top: 5px;
+}
+ 
+.left-off-canvas-menu, .right-off-canvas-menu{
+ border-top: 5px $primary-color solid; 
+ border-bottom: 2px $primary-color solid; 
+}

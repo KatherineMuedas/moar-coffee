@@ -15,8 +15,13 @@
           <% end %>  
         </div>
         <div class="small-12 medium-9 columns">
-          <h1><%= @shop.name %></h1>
-          <p class='location'><%= "#{@shop.location.city}, #{@shop.location.state}" if @shop.location %><%= link_to "(Show on map)", "https://www.google.com/maps/place/#{@shop.name.gsub(" ","+")}/@#{@shop.location.try(:latitude)},#{@shop.location.try(:longitude)}", target: "_blank" %></p>
+          <h1><%= @shop.name %></h1> 
+          <p class='location'><%= raw "#{@shop.location.street_address}<br>#{@shop.location.city}, #{@shop.location.state} " if @shop.location %><%= link_to "(Show on map)", "https://www.google.com/maps/?q=#{@shop.name}@#{@shop.location.latitude},#{@shop.location.longitude}", target: "_blank" %>
+            <!-- http://maps.google.com/?q=MY%20LOCATION@lat,long -->
+            <%= link_to edit_shop_path(@shop.id), class: 'edit' do %>
+              <i class="fa fa-pencil"></i>
+            <% end %> 
+          </p>
           <p><%= @shop.description %></p>
           <div class="info-links center-on-small">
               <% if current_user %>
@@ -33,20 +38,17 @@
                   <% end %>
                 </span>
               <% end %>
-            <% if @shop.website && @shop.website != "" %>
-            <span data-tooltip aria-haspopup="true" class="has-tip" data-options="show_on:large" title="Go to website"><%= link_to url_with_http_protocol(@shop.website),
-                                                                                                                       class: "button tiny primary", :target => '_blank' do %>
+            <% if @shop.website && @shop.website.blank? %>
+            <span data-tooltip aria-haspopup="true" class="has-tip" data-options="show_on:large" title="Go to website"><%= link_to url_with_http_protocol(@shop.website), class: "button tiny primary", :target => '_blank' do %>
                 <i class="fa fa-external-link fa-lg"></i>
               <% end %></span>
             <% else %>
-            <span data-tooltip aria-haspopup="true" class="has-tip" data-options="show_on:large" title="No website available"><%= link_to "#",
-                                                                                                                                   class: "button tiny disabled" do %>
+            <span data-tooltip aria-haspopup="true" class="has-tip" data-options="show_on:large" title="No website available"><%= link_to "#", class: "button tiny disabled" do %>
                 <i class="fa fa-external-link fa-lg"></i>
               <% end %></span>
              <% end %>
           </div>
         </div>
-      <%= link_to 'Edit Café', edit_shop_path(@shop.id), class: 'edit'%> 
       </div>
     </div> 
   
@@ -55,7 +57,7 @@
     </div>
 
     <div class= "container activity-display">
-      <h3 class= 'activity'>Activity of the coffee shop</h3>
+      <h3 class= 'activity'>Recent Activity</h3>
         <div class="row">
         </div>
     </div> 

@@ -1,40 +1,37 @@
-<div class="row">
-  <div class="reviews-section">
-    <% if @reviews.empty? %>
-      <h4> No Reviews to Display</h4>
-    <% else %>
-      <% @reviews.each do |review| %>
-        <div class="hide-for-small-only medium-2 columns text-center">
-          <%= link_to image_tag(review.user.avatar.url(:thumb), class: "user-thumb radius"), user_path(review.user) %>
-        </div>
-        <div class="small-10 medium-8 columns">
-          <h4>
-            <%= link_to review.user.name, user_path(review.user) %>: <%= review.title %>
-          </h4>
-          <p>
-            <% review.drink_rating.times do  %>
-              <span><i class = "fa fa-coffee coffee fa-lg"></i></span>  
-            <% end %>  
-          </p>
-          <p>
-            <%= review.body %>
-          </p>
-          <p>
-            <% if current_user && review.user_id == current_user.id %> 
-              <%= link_to 'Delete', drink_review_path(@drink.id , review.id), method: :delete, data: {confirm: 'Are you sure you want to delete this review?'} %>
-            <% end %>
-          </p>
-          <span>
-          <%= twitter_link()  %>
-          <span class="fb-share-button FBB" data-href="( document.URL.contains("")) "></span>
+<div class="reviews-section">
+  <% unless @reviews.empty? %>
+    <% @reviews.each do |review| %>
+      <div class="hide-for-small-only medium-2 columns text-center">
+        <%= link_to image_tag(review.user.avatar.url(:thumb), class: "user-thumb radius"), user_path(review.user) %>
+      </div>
+      <div class="small-12 medium-10 columns">
+        <h4>
+          <%= link_to review.user.name, user_path(review.user) %>: <%= review.title %>
+        </h4>
+        <p>
+          <% review.drink_rating.times do  %>
+            <span><i class = "fa fa-coffee coffee fa-lg"></i></span>  
+          <% end %>  
+        </p>
+        <p>
+          <%= review.body %>
+        </p>
+        <p>
+          <% if current_user && review.user_id == current_user.id %> 
+            <%= link_to 'Delete', drink_review_path(@drink.id , review.id), method: :delete, data: {confirm: 'Are you sure you want to delete this review?'} %>
+          <% end %>
+        </p>
+        <span>
+          <%= twitter_link() %>
         </span>
-         <!-- how do you share the url you are on -->
-        </div> 
-        <div class ="small-2 columns">
-          <%= image_tag review.picture.photo.url(:thumb) if review.picture.present? %>
-        </div>
-        <hr>
-      <% end %>
+        <span class="fb-share-button FBB" data-href="( document.URL.contains("")) "></span>
+      </div> 
+      <div class ="small-2 columns">
+        <%= image_tag review.picture.photo.url(:thumb) if review.picture.present? %>
+      </div>
+      <hr>
     <% end %>
-  </div>
+  <% else %>
+    <h4 class="pad-left-15">No Reviews to Display</h4>
+  <% end %>
 </div>

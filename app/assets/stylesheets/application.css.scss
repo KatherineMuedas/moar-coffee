@@ -1,6 +1,7 @@
 $alert-transition-speed: 300ms;
 $alert-transition-ease: ease-out;
 @import "variables";
+@import "utilities";
 @import "foundation_customize";
 @import "framework_and_overrides";
 @import "select2";
@@ -15,7 +16,7 @@ body{
 main {
   padding-left: 0px;
   padding-right: 0px;
-  background-color: white;
+  background-color: $our-gray;
 }
 .top-bar-section ul li > a{
   &:hover{
@@ -48,7 +49,7 @@ img{
  margin-top: 0px; 
 }
 h4 {
-  margin-left: 1.3em; 
+  // margin-left: 1.3em; 
 }
 //floats buttons for new review
 .new_review {
@@ -166,15 +167,14 @@ li {
   margin: 0 .5em;
 }
 .sidebar {
-  padding: 1em;
+  // padding: 1em;
 }
 .edit{
-  padding:0 2em;
+  // padding:0 2em;
 }
 
 
 .box {
-  padding:1em;
   background-color: darken($primary-color, 5%);
   box-sizing: padding-box; 
   padding:1em;

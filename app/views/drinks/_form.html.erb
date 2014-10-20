@@ -1,15 +1,15 @@
-<%= simple_form_for ([@shop, @shop.drinks.build]), remote: true do |f| %>
+<%= simple_form_for [@shop, @shop.drinks.build], remote: true do |f| %>
   
   <h3 class='text-center'>Add a Coffee</h3>
   <div class="form-group">
-    <%= f.input :name %><br>
+    <%= f.input :name, label: 'Coffee Name', placeholder: "Example: Mocha Latte" %><br>
   </div>
  
   <div class="form-group">
-    <%= f.input :description %><br>
+    <%= f.input :description, input_html: { rows: 7 }, placeholder: "This field is optional but we would love it if you share information about the features of the coffee.\n\nExamples: Ingredients, flavors, brewing process, type of coffee beans etc." %>
   </div>
 
-  <p>
-  <%= f.submit 'Submit', :class => 'button right' %> 
+  <p class="text-center">
+    <%= f.submit 'Submit', class: 'button' %> 
   </p>  
 <% end %>
