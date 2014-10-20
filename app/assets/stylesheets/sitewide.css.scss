@@ -1,5 +1,6 @@
 .container{
   background-color: white;
+  border-color: blue;
   margin-bottom: 24px;
   box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
 } 
@@ -16,4 +17,29 @@
 
 .information-display{
   padding: 18px;
+}
+header nav.top-bar.show-for-large-up .top-bar-section .right .has-form{
+  padding: 0;
+  .nav-search{
+    padding-top: 18px;
+  }
+  
+}
+
+main{
+  min-height: 88vh;
+  @media (min-width: 1025px) {
+    min-height: 85vh;
+  }
+}
+
+.contain-to-grid {
+  box-shadow: 0 -7px 0px 7px $primary-color;
+  border-bottom: 10px solid $our-gray; 
+  margin-top: 5px;
+}
+ 
+.left-off-canvas-menu, .right-off-canvas-menu{
+ border-top: 5px $primary-color solid; 
+ border-bottom: 2px $primary-color solid; 
 }

@@ -1,0 +1,55 @@
+@for $i from 0 to 20 {
+  $multiplier: $i * 5;
+  .pad-#{$multiplier} {
+    padding: #{$multiplier}px;
+  }
+  .pad-horizontal-#{$multiplier} {
+    padding-left: #{$multiplier}px;
+    padding-right: #{$multiplier}px;
+  }
+  .pad-vertical-#{$multiplier} {
+    padding-top: #{$multiplier}px;
+    padding-bottom: #{$multiplier}px;
+  }
+  .pad-top-#{$multiplier} {
+    padding-top: #{$multiplier}px;
+  }
+  .pad-bottom-#{$multiplier} {
+    padding-bottom: #{$multiplier}px;
+  }
+  .pad-left-#{$multiplier} {
+    padding-left: #{$multiplier}px;
+  }
+  .pad-right-#{$multiplier} {
+    padding-right: #{$multiplier}px;
+  }
+  .margin-#{$multiplier} {
+    margin: #{$multiplier}px;
+  }
+  .margin-horizontal-#{$multiplier} {
+    margin-left: #{$multiplier}px;
+    margin-right: #{$multiplier}px;
+  }
+  .margin-vertical-#{$multiplier} {
+    margin-top: #{$multiplier}px;
+    margin-bottom: #{$multiplier}px;
+  }
+  .margin-top-#{$multiplier} {
+    margin-top: #{$multiplier}px;
+  }
+  .margin-left-#{$multiplier} {
+    margin-left: #{$multiplier}px;
+  }
+  .margin-right-#{$multiplier} {
+    margin-right: #{$multiplier}px;
+  }
+  .margin-bottom-#{$multiplier} {
+    margin-bottom: #{$multiplier}px;
+  }
+  .negative-top-#{$multiplier} {
+    margin-top: -#{$multiplier}px !important;
+  }
+  .negative-bottom-#{$multiplier} {
+    margin-bottom: -#{$multiplier}px !important;
+  }
+}

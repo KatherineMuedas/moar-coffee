@@ -13,7 +13,7 @@
       <%= f.fields_for :picture, @review.build_picture, remote: true do |picture| %>
         <div class="nested-fields">
           <%= picture.input :photo %>
-          <%= picture.input :caption %>
+          <%= picture.input :caption, label: "Photo Caption" %>
           <%= picture.input :user_id, input_html: {value: current_user.id}, as: :hidden %>
           <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
         </div>

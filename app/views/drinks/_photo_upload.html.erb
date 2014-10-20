@@ -1,4 +1,4 @@
-<%= simple_form_for ([@shop, @drink]) do |f| %>
+<%= simple_form_for [@shop, @drink] do |f| %>
   <%= f.fields_for :pictures, @drink.pictures.build do |picture| %>
     <div class="nested-fields">
       <%= picture.input :caption %>
@@ -6,8 +6,7 @@
       <%= picture.input :user_id, input_html: {value: current_user.id}, as: :hidden %>
     </div> 
   <% end %>  
-  <p>
-  <%= f.submit 'Submit', :class => 'button right' %> 
-  <%= link_to 'Back', shop_path(@shop) %>
+  <p class="text-center">
+    <%= f.submit 'Submit', class: 'button' %> 
   </p>  
 <% end %>

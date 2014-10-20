@@ -1,11 +1,11 @@
 class ShopsController < ApplicationController
   before_action :authenticate_user!, only:[:new, :create, :edit, :update]
   before_action :set_shop, only:[:show, :edit, :update]
+  respond_to :html, :json
   def index
     if params[:search].present?
       @shops = Location.near(params[:search], 50).map{|x| x.shop}
-    else
-      @shops = Shop.all.order(:name)
+      @shops = Shop.where("name ilike ?", "%#{params[:search]}%") if @shops.empty?
     end
   end
 
@@ -44,6 +44,10 @@ class ShopsController < ApplicationController
     end
   end
 
+  def find_shops  
+    @shops = Shop.where("name ilike ?", "%#{params[:keyword]}%")
+    respond_with @shops
+  end
 
   private
 

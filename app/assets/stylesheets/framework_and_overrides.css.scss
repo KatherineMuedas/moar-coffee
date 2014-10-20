@@ -11,10 +11,16 @@ $alert-transition-speed: 30ms;
 .top-bar .name {
   font-size: rem-calc(13);
   line-height: 45px; }
-.top-bar .name a {
+.top-bar .name {
   font-weight: normal;
   color: white;
-  padding: 0 15px; }
+  padding: 0 15px;
+  .brand a{
+    color: $primary-color; 
+    font-family: 'Courgette', cursive;
+    
+  }
+}
 .top-bar .title-area {
   z-index: 10;
 }

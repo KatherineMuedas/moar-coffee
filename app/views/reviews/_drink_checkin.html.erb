@@ -1,25 +1,22 @@
-<div class="row">
+<% unless @checkins.empty? %>
   <div class="reviews-section">
-    <% if @checkins.empty? %>
-      <h4> No Checkin to Display</h4>
-    <% else %>
-      <% @checkins.each do |review| %>
-<!--         <div class="hide-for-small-only medium-3 columns text-center">
-          <%#= link_to image_tag(review.user.avatar.url(:thumb), class: "user-thumb radius"), user_path(review.user) %>
-        </div> -->
-        <div class="small-12 columns">
+    <h5 class= "pad-top-20 pad-left-15">Recent Check-ins</h5>
+    <hr>
+    <ul>
+      <% @checkins.each do |review| %>          
+        <li>
           <p>
             <%= link_to review.user.name, user_path(review.user) %> is drinking <%= link_to review.drink.name, shop_drink_path(review.shop.id, review.drink.id) %> from <%= link_to review.shop.name, shop_path(review.shop.id) %>
           </p>
           <p>
             <% if current_user && review.user_id == current_user.id %> 
-              <%= link_to 'Delete', drink_review_path(@drink.id , review.id), method: :delete, data: {confirm: 'Are you sure you want to delete this checkin?'} %>
+              <%= link_to drink_review_path(@drink.id , review.id), method: :delete, data: {confirm: 'Are you sure you want to delete this checkin?'} do %>
+                <i class="fa fa-trash danger"></i>
+              <% end %>
             <% end %>
           </p>
-         
-        </div>                          
-        <hr>
+        </li>
       <% end %>
-    <% end %>
+    </ul>
   </div>
-</div>
+<% end %>

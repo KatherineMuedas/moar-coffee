@@ -9,16 +9,11 @@ class ReviewsController < ApplicationController
     @review.user_id = current_user.id 
 
     respond_to do |format|
-    if @review.save
-      if @review.review_type == :review
-      current_user.give_points(5)
-      else
-      current_user.give_points(2)
-      end  
-
-      @review.create_activity :create, owner: current_user, follow_id: current_user.id
-      format.html { redirect_to :back }
-      format.js
+      if @review.save
+        @review.review_type == :review ? current_user.give_points(5) : current_user.give_points(2)
+        @review.create_activity :create, owner: current_user, follow_id: current_user.id
+        format.html { redirect_to :back }
+        format.js
       else
         format.html { redirect_to :back, alert: 'Review was not created' }
       end
@@ -51,17 +46,18 @@ class ReviewsController < ApplicationController
   private
 
   def reviews_params
-    if 
+    if #TODO: define this conditional
       picture_attributes = [:id, :caption, :photo, :user_id]
       params.require(:review).permit(:title, :body, :drink_rating, :drink_id,:review_type, :shop_id, picture_attributes: picture_attributes)
     else
       flash[:notice] = "Please select a number"
     end
   end
-  
+
   def find_shop
     @shop = Shop.friendly.find(params[:review][:shop_id])
   end  
+
   def find_drink  
     @drink = @shop.drinks.friendly.find(params[:drink_id])
   end
