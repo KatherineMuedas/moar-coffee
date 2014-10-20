@@ -1,10 +1,10 @@
 class ReviewsController < ApplicationController
-  before_action :find_shop, only: [:new, :create]
-  before_action :find_drink, only: [:new, :create]
+  before_action :find_shop, only: [:create]
+  before_action :find_drink, only: [:create]
   before_action :authenticate_user!
 
   def create
-    @reviews = current_user.reviews.all.where.not(review_type: "checkin")
+    @reviews = current_user.reviews.all.where(drink_id: @drink).not(review_type: "checkin")
     @review = @drink.reviews.new(reviews_params)
     @review.user_id = current_user.id 
 
@@ -46,8 +46,12 @@ class ReviewsController < ApplicationController
   private
 
   def reviews_params
-    picture_attributes = [:id, :caption, :photo, :user_id]
-    params.require(:review).permit(:title, :body, :drink_rating, :drink_id,:review_type, :shop_id, picture_attributes: picture_attributes)
+    if #TODO: define this conditional
+      picture_attributes = [:id, :caption, :photo, :user_id]
+      params.require(:review).permit(:title, :body, :drink_rating, :drink_id,:review_type, :shop_id, picture_attributes: picture_attributes)
+    else
+      flash[:notice] = "Please select a number"
+    end
   end
 
   def find_shop
