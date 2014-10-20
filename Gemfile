@@ -25,6 +25,7 @@ gem 'omniauth-facebook'
 # gem 'haml-rails'
 gem 'google_places'
 gem 'mail_form'
+gem 'unobtrusive_flash', '>=3'
 
 group :development do
   gem 'better_errors'

@@ -14,8 +14,11 @@
 //= require jquery_ujs
 //= require foundation
 //= require_tree .
+//= require unobtrusive_flash
+//= require unobtrusive_flash_ui
 
 $(function() {
+  UnobtrusiveFlash.flashOptions['timeout'] = 50000; 
   $(document).foundation();
   $(document).ready(function(){
   setTimeout(function(){

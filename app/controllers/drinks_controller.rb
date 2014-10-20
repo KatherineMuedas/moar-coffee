@@ -2,6 +2,7 @@ class DrinksController < ApplicationController
   before_action :authenticate_user!, only:[:new, :create, :edit, :update]
   before_action :set_shop
   before_action :set_drink, only:[:show, :edit, :update]
+  after_filter :prepare_unobtrusive_flash
   
 
   def show

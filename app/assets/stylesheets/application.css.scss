@@ -106,9 +106,13 @@ a:hover {
 .darker {
   background: darken($light, 10%);
 }
-
+//search icon
+.fa-search {
+  z-index: 2;
+}
+//for mid to small-screens for search bar
 //large screen media query
-@media (min-width: 1017px) {
+@media (min-width: 1025px) {
   .top-bar-section .main_search_bar {
     float: right;
     padding: 0px;
@@ -160,6 +164,15 @@ a:hover {
   max-height: 12.5em;
   text-overflow: ellipsis;
 }
+#search {
+    border-radius: 13px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .inside_search_bar {
+    width: 100%
+  }
 }
 //small screen
 @media (max-width: 705px){
