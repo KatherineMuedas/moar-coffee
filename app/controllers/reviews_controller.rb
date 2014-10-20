@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
-  before_action :find_shop, only: [:new, :create]
-  before_action :find_drink, only: [:new, :create]
+  before_action :find_shop, only: [:create]
+  before_action :find_drink, only: [:create]
   before_action :authenticate_user!
 
   def create
@@ -52,13 +52,13 @@ class ReviewsController < ApplicationController
 
   def reviews_params
     if 
-    picture_attributes = [:id, :caption, :photo, :user_id]
-    params.require(:review).permit(:title, :body, :drink_rating, :drink_id,:review_type, :shop_id, picture_attributes: picture_attributes)
+      picture_attributes = [:id, :caption, :photo, :user_id]
+      params.require(:review).permit(:title, :body, :drink_rating, :drink_id,:review_type, :shop_id, picture_attributes: picture_attributes)
     else
-    flash[:notice] = "Please select a number" 
+      flash[:notice] = "Please select a number"
     end
-
   end
+  
   def find_shop
     @shop = Shop.friendly.find(params[:review][:shop_id])
   end  
