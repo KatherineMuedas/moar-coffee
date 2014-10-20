@@ -1,12 +1,10 @@
 <%# add navigation links to this file %>
-<li><%= link_to 'Cafes', root_path('root') %></li>
-<li><%= link_to 'About', page_path('about') %></li>
+<li><%= link_to 'Find Cafes', root_path('root') %></li>
 <% if user_signed_in? %>
   <li><%= link_to 'Add Cafe', new_shop_path %></li>
 <% else %>
   <li ><%= link_to 'Sign in', new_user_session_path, data: {"reveal-id" => "signIn"} %></li>
   <li ><%= link_to 'Sign up', new_user_registration_path, data: {"reveal-id" => "signUp"} %></li>
-  <!--<li><%#= link_to 'Sign up', new_user_registration_path %></li>-->
 <% end %>
 
 

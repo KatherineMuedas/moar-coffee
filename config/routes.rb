@@ -10,6 +10,9 @@
   end
 
   resources :shops, except: [:destroy] do
+    collection do
+      get "/find_shops", to: "shops#find_shops"
+    end
     resources :drinks, except: [:index, :destroy]
     resources :follows, only: [:create] do
     end

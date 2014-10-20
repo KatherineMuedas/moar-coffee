@@ -35,12 +35,6 @@
         </header>
         <main role="main">
           <div class="row">
-            <%= form_tag root_path, :method => :get do %>
-              <p>
-                <%= text_field_tag :search, params[:search] %>
-                <%= submit_tag "Search Near", :name => nil %>
-              </p>  
-            <% end %> 
             <%= render 'layouts/messages' %>
             <%= yield %>
           </div>   
@@ -49,4 +43,12 @@
       </div>
     </div>  
   </body>
+  <footer>
+    <div class="row ">
+      <div class= "container text-center footer-style">
+        <p>Moar Coffee</p>
+        <li><%= link_to 'About', page_path('about') %></li>
+      </div>  
+    </div> 
+  </footer>
 </html>

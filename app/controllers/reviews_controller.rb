@@ -9,16 +9,11 @@ class ReviewsController < ApplicationController
     @review.user_id = current_user.id 
 
     respond_to do |format|
-    if @review.save
-      if @review.review_type == :review
-      current_user.give_points(5)
-      else
-      current_user.give_points(2)
-      end  
-
-      @review.create_activity :create, owner: current_user, follow_id: current_user.id
-      format.html { redirect_to :back }
-      format.js
+      if @review.save
+        @review.review_type == :review ? current_user.give_points(5) : current_user.give_points(2)
+        @review.create_activity :create, owner: current_user, follow_id: current_user.id
+        format.html { redirect_to :back }
+        format.js
       else
         format.html { redirect_to :back, alert: 'Review was not created' }
       end

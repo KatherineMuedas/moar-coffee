@@ -1,5 +1,6 @@
 .container{
-  background-color: $our-gray;
+  background-color: white;
+  border-color: blue;
   margin-bottom: 24px;
   box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
 } 
@@ -16,4 +17,11 @@
 
 .information-display{
   padding: 18px;
+}
+header nav.top-bar.show-for-large-up .top-bar-section .right .has-form{
+  padding: 0;
+  .nav-search{
+    padding-top: 18px;
+  }
+  
 }

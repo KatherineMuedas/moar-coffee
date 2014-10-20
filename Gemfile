@@ -25,6 +25,7 @@ gem 'omniauth-facebook'
 # gem 'haml-rails'
 gem 'google_places'
 gem 'mail_form'
+gem "select2-rails"
 
 group :development do
   gem 'better_errors'
