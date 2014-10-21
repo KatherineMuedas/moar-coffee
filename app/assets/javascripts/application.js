@@ -15,11 +15,9 @@
 //= require select2
 //= require foundation
 //= require_tree .
-//= require unobtrusive_flash
-//= require unobtrusive_flash_ui
+
 
 $(function() {
-  UnobtrusiveFlash.flashOptions['timeout'] = 3000; 
   $(document).foundation();
   $(document).ready(function(){
   setTimeout(function(){
@@ -27,4 +25,3 @@ $(function() {
   }, 5000);
  })
 });
-    // $(".flash").delay(500).fadeOut("slow");

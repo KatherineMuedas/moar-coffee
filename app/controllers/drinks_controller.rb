@@ -27,7 +27,6 @@ class DrinksController < ApplicationController
         @drinks = @shop.drinks
         format.html { redirect_to @shop}
         format.js
-        flash[:notice] = "Coffee successfully created" 
       else
         format.js
       end

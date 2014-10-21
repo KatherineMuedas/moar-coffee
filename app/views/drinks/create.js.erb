@@ -7,11 +7,5 @@
   $('#addDrink #drink_name').val('');
   var partial =  "<%= j render(partial: 'drinks/drinks_list', locals: { drinks: @drinks, shop: @shop }) %>";
   $('.drinksPartial').html(partial);
-  <!-- $.ajax {
-    success: function('.flash')  
-    }; -->
-    $('#UnobtrusiveFlash').showFlashMessage('Coffee successfully created', {type: 'notice'})
-  <!-- $('.unobtrusive-flash-message').showFlashMessage('Coffee successfully created', {type: 'success'}) -->
-  <!-- UnobtrusiveFlash.showFlashMessage("Coffee successfully created", {type: 'sucess', timeout: 200}) -->
-  <!-- UnobtrusiveFlash.flashOptions['timeout'] = 200; -->
+  <!-- var error_msg = '<%#=flash[:notice] if flash[:notice]  %>'; -->
 <% end %>
