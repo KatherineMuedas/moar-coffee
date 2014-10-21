@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   acts_as_follower
   acts_as_followable
   has_many :reviews
-  has_many :favorites
+  has_many :favorites, dependent: :destroy
   has_many :pictures
 
   devise :database_authenticatable, :registerable,
