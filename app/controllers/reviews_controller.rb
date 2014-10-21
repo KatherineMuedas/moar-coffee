@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
     # @reviews = current_user.reviews.all.where(drink_id: @drink).not(review_type: "checkin")
     @review = @drink.reviews.new(reviews_params)
     @review.user_id = current_user.id 
-    if @review.save
+    if @review.save 
      if @review.review_type == :review
       current_user.give_points(5)
       else
@@ -17,7 +17,7 @@ class ReviewsController < ApplicationController
       @review.create_activity :create, owner: current_user, follow_id: current_user.id
       redirect_to :back
     else
-      redirect_to :back, notice: 'Review was not created'
+      redirect_to :back, notice: 'Review was not created please make sure you complete required feilds'
     end
   end
 
