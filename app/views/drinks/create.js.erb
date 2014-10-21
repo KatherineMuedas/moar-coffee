@@ -7,5 +7,5 @@
   $('#addDrink #drink_name').val('');
   var partial =  "<%= j render(partial: 'drinks/drinks_list', locals: { drinks: @drinks, shop: @shop }) %>";
   $('.drinksPartial').html(partial);
-  <!-- var error_msg = '<%#=flash[:notice] if flash[:notice]  %>'; -->
+  var flash_msg = '<%=flash[:notice] if flash[:notice] %>';
 <% end %>

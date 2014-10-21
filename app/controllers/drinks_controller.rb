@@ -2,7 +2,6 @@ class DrinksController < ApplicationController
   before_action :authenticate_user!, only:[:new, :create, :edit, :update]
   before_action :set_shop
   before_action :set_drink, only:[:show, :edit, :update]
-  after_filter :prepare_unobtrusive_flash
   
 
   def show
@@ -27,6 +26,7 @@ class DrinksController < ApplicationController
         @drinks = @shop.drinks
         format.html { redirect_to @shop}
         format.js
+        flash[:notice] = "Coffee successfully created" 
       else
         format.js
       end

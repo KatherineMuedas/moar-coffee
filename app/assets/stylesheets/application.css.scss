@@ -10,9 +10,28 @@ $alert-transition-ease: ease-out;
 @import "users";
 @import "reviews";
 
-body{
-  background-color: white;
+
+// body main{
+//   background: url("Coffee.jpg") no-repeat;
+//   -webkit-background-size: cover;
+//   background-size: cover;
+//   background-attachment: fixed;
+//   background-position: center top;
+//   overflow-x: hidden; 
+//   // background-size: 
+//   //view port scaling  
+//   // background-image: url("Coffee.jpg");
+//   // background-repeat: no-repeat;
+//   display: block;
+// }
+.container{
+  // background-color: rgba(255, 255, 255, .85);
 }
+// .img{
+//   // z-index: 1;
+//   position: static;
+//   background-image: url("Coffee.jpg");
+// }
 main {
   padding-left: 0px;
   padding-right: 0px;
@@ -22,10 +41,11 @@ main {
   &:hover{
     border-bottom: .2em solid $button-color;
   // text-decoration: underline;
-
+  }
 }
+.contain-to-grid {
+  padding: 7px;
 }
-
 .nav-icon{
   padding-left: 13px;
 }
