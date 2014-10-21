@@ -4,6 +4,7 @@
 // $lighter: lighten($primary-color, 15%);
 $hover-color: rgba(73, 178, 109, .5);
 $our-gray: #f2f2f2;
+$dark-gray:#60605e;
 
 // foundation
 $primary-color: #5ead79; // site green
@@ -33,11 +34,14 @@ $tuatara       : #444444;
 $oil           : #333333;
 $jet           : #222222;
 $black         : #000000;
-
+.dark-gray{
+  color: $dark-gray;
+}
 .white{
   color: $white;
 }
-.black{ color: $black;}
+.black{ color: $black;
+}
 
 .primary{
   color: $primary-color;
