@@ -1,6 +1,6 @@
 <div class="">
   <% @review = @drink.reviews.build %>
-  <%= simple_form_for [@drink, @review ], :html => {'data-abide' => '' }, remote: true do |f| %>
+  <%= simple_form_for [@drink, @review ] do |f| %>
     <%= f.error_notification %>
     <h3 class='text-center'>Add a Review</h3>
     <div class= 'form-group rating small-10 small-centered columns'>
@@ -10,7 +10,7 @@
       <%= f.input :title, label: false, placeholder: "Title", input_html: { rows: 1 } %><br>
     </div>
     <div class= 'form-group picture small-10 small-centered columns'>
-      <%= f.fields_for :picture, @review.build_picture, remote: true do |picture| %>
+      <%= f.fields_for :picture, @review.build_picture do |picture| %>
         <div class="nested-fields">
           <%= picture.input :photo %>
           <%= picture.input :caption, label: "Photo Caption" %>
