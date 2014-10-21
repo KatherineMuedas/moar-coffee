@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
     @review = @drink.reviews.new(reviews_params)
     @review.user_id = current_user.id 
     if @review.save
-      if @review.review_type == :review
+     if @review.review_type == :review
       current_user.give_points(5)
       else
       current_user.give_points(2)
