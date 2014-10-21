@@ -4,6 +4,7 @@ class ReviewsController < ApplicationController
   before_action :authenticate_user!
 
   def create
+    # @reviews = current_user.reviews.all.where(drink_id: @drink).not(review_type: "checkin")
     @review = @drink.reviews.new(reviews_params)
     @review.user_id = current_user.id 
     if @review.save
