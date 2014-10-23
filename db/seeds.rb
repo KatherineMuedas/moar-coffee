@@ -147,7 +147,7 @@ coffees = [
   {name: "Yuanyang", description: "Yuanyang, sometimes also called Ying Yong, is a popular beverage in Hong Kong, made of a mixture of coffee and Hong Kong-style milk tea. " }
 ]
  
-Shop.each do |shop|
+Shop.all.each do |shop|
   3..10.times do
     coffee = coffees.sample
     shop.drinks.create(name: coffee[:name], description: coffee[:description])
