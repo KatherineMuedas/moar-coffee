@@ -16,13 +16,38 @@ body{
 main {
   padding-left: 0px;
   padding-right: 0px;
-  background-color: $our-gray;
+//  background-color: $our-gray;
+  background-image: url("coffee.jpg");
 }
 .top-bar-section ul li > a{
   &:hover{
   text-decoration: underline;
 
 }
+}
+
+#search-box {
+  background: $our-gray;
+  border-radius: 10px;
+}
+
+#search-results{
+  background: $our-gray;
+  border-radius: 10px;
+}
+
+#newsfeed{
+  background: $our-gray;
+  border-radius: 10px;
+}
+
+#user-stuff{
+  background: #ffffff;
+//  border-radius: 10px;
+}
+
+.leaders{
+  background: white;
 }
 
 .nav-icon{
