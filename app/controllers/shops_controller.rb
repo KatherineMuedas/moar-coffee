@@ -10,7 +10,7 @@ class ShopsController < ApplicationController
   end
 
   def show
-    @activities = PublicActivity::Activity.where(shop_id: @shop.id).order(created_at: :desc)
+    @activities = PublicActivity::Activity.where(shop_id: @shop.id).order(created_at: :desc).limit(10)
     @drinks = @shop.drinks.all
     @pictures = @shop.pictures.all.order(created_at: :desc)
   end
