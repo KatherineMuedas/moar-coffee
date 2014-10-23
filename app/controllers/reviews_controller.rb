@@ -4,20 +4,20 @@ class ReviewsController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    # @reviews = current_user.reviews.all.where(drink_id: @drink).not(review_type: "checkin")
     @review = @drink.reviews.new(reviews_params)
-    @review.user_id = current_user.id 
-    if @review.save 
-     if @review.review_type == :review
-      current_user.give_points(5)
-      else
-      current_user.give_points(2)
-      end  
+    @review.user_id = current_user.id
 
-      @review.create_activity :create, owner: current_user, follow_id: current_user.id
+    if @review.save 
+      if @review.review_type == "review"
+        @review.create_activity :create, owner: current_user, follow_id: @shop.id, shop_id: @shop.id
+        current_user.give_points(5)
+      else
+        @review.create_activity :create, owner: current_user, follow_id: @shop.id, shop_id: @shop.id, is_checkin: true
+        current_user.give_points(2)
+      end
       redirect_to :back
     else
-      redirect_to :back, notice: 'Review was not created please make sure you complete required feilds'
+      redirect_to :back, notice: 'Review was not created please make sure you complete required fields'
     end
   end
 
