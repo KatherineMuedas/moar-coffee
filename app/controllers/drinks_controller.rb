@@ -17,6 +17,7 @@ class DrinksController < ApplicationController
 
   def create
     @drink = @shop.drinks.create(drink_params)
+    @activities = PublicActivity::Activity.where(shop_id: @shop.id).order(created_at: :desc)
 
     respond_to do |format|
       if @drink.save
