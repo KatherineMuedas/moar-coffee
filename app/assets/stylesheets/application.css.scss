@@ -175,6 +175,9 @@ li {
 .no_reviews {
   margin-left: 1.3em;
 }
+.container .top-container{
+  margin-top: 0px;
+}
 //for mid to small-screens for search bar
 //large screen media query
 @media (min-width: 1025px) {
