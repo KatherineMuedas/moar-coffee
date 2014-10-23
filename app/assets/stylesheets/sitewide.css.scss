@@ -1,9 +1,27 @@
-.container{
+
+.top-container{
+  background-color: darken($our-gray,5%);
+  text-transform: uppercase;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 15px;
+  color: $dark-gray;
+    a:hover{
+    color: darken($dark-gray,20%);
+    }
+}
+.big-container{
   background-color: white;
-  border-color: blue;
-  margin-bottom: 24px;
-  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
-} 
+  margin-left: 15px;
+  margin-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+ }
+
+
 
 .row-list{
   padding: 0 24px;
@@ -17,6 +35,7 @@
 
 .information-display{
   padding: 18px;
+  background-color: $white;
 }
 header nav.top-bar.show-for-large-up .top-bar-section .right .has-form{
   padding: 0;
@@ -43,3 +62,13 @@ main{
  border-top: 5px $primary-color solid; 
  border-bottom: 2px $primary-color solid; 
 }
+
+// .side-box{
+//   .top-container{
+//     background-color: darken($our-gray,5%);
+//     text-transform: uppercase;
+//       a:hover{
+//       color: darken($dark-gray,20%);
+//       }
+//   }
+// }
