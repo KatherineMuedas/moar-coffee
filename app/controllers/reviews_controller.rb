@@ -8,10 +8,11 @@ class ReviewsController < ApplicationController
     @review.user_id = current_user.id
 
     if @review.save 
-      if @review.review_type == :review
-        @review.create_activity :create, owner: current_user, follow_id: @shop.id
+      if @review.review_type == "review"
+        @review.create_activity :create, owner: current_user, follow_id: @shop.id, shop_id: @shop.id
         current_user.give_points(5)
       else
+        @review.create_activity :create, owner: current_user, follow_id: @shop.id, shop_id: @shop.id, is_checkin: true
         current_user.give_points(2)
       end
       redirect_to :back
