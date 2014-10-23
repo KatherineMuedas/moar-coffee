@@ -31,8 +31,8 @@ $alert-transition-ease: ease-out;
 main {
   padding-left: 0px;
   padding-right: 0px;
-//  background-color: $our-gray;
-  background-image: url("coffee.jpg");
+  background-color: $our-gray;
+  //background-image: url("coffee.jpg");
 }
 .top-bar-section ul li > a{
   &:hover{
