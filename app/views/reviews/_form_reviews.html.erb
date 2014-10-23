@@ -23,7 +23,7 @@
       <%= f.input :body, label: false, placeholder: "Enter your review here", input_html: { rows: 4 } %><br>
     </div>
 
-    <%= f.hidden_field :review_type, value: :review if f.object.review_type.nil?  %>
+    <%= f.hidden_field :review_type, value: "review"  %>
     <%= f.hidden_field :shop_id, value: @shop.id %>
 
     <p class= "text-center">
