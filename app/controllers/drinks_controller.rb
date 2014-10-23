@@ -21,7 +21,7 @@ class DrinksController < ApplicationController
     respond_to do |format|
       if @drink.save
         current_user.give_points(10)
-        @drink.create_activity :create, owner: current_user, follow_id: @shop.id
+        @drink.create_activity :create, owner: current_user, follow_id: @shop.id, shop_id: @shop.id
         @drinks = @shop.drinks
         format.html { redirect_to @shop}
         format.js

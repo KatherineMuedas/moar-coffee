@@ -3,11 +3,12 @@ before_action :authenticate_user!
 
   def create
     @drink = Drink.friendly.find(params[:drink_id])
+    @shop = Shop.friendly.find(params[:shop_id])
 
     respond_to do |format|
       @favorite = Favorite.find_or_create_by(favorable: @drink, user_id: current_user.id )
       if Favorite.find_or_create_by(favorable: @drink, user_id: current_user.id )
-        @favorite.create_activity :create, owner: current_user
+        @favorite.create_activity :create, owner: current_user, follow_id: @drink.id, shop_id: @shop.id
         format.html { redirect_to :back }
         format.js
       else
