@@ -9,10 +9,11 @@ $alert-transition-ease: ease-out;
 @import "sitewide";
 @import "users";
 @import "reviews";
+@import "shops";
 
 //example image can only be viewed in firefox 
 // body main{
-//   background: url("Coffee.jpg") no-repeat;
+//   background: url("coffee.jpg") no-repeat;
 //   -webkit-background-size: cover;
 //   background-size: cover;
 //   background-attachment: fixed;
@@ -32,7 +33,7 @@ main {
   padding-left: 0px;
   padding-right: 0px;
 //  background-color: $our-gray;
-  background-image: url("coffee.jpg");
+  // background-image: url("coffee.jpg");
 }
 .top-bar-section ul li > a{
   &:hover{
