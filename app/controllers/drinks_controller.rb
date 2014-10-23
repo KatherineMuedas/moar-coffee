@@ -17,11 +17,12 @@ class DrinksController < ApplicationController
 
   def create
     @drink = @shop.drinks.create(drink_params)
+    @activities = PublicActivity::Activity.where(shop_id: @shop.id).order(created_at: :desc)
 
     respond_to do |format|
       if @drink.save
         current_user.give_points(10)
-        @drink.create_activity :create, owner: current_user, follow_id: @shop.id
+        @drink.create_activity :create, owner: current_user, follow_id: @shop.id, shop_id: @shop.id
         @drinks = @shop.drinks
         format.html { redirect_to @shop}
         format.js

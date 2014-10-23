@@ -1,0 +1,12 @@
+<div id= "shop-newsfeed" class= "small-8 large-12 small-centered text-left columns">
+  <% @activities.each do |activity| %>
+    <% if activity.trackable %>
+      <div class="activities">
+        <%= link_to image_tag(activity.owner.avatar.url(:thumb), class: "user-thumb radius"), user_path(activity.owner)%> <%= link_to activity.owner.name,
+                                                                                                                                     user_path(activity.owner.friendly_id) %>
+       <%= render_activity activity %>
+        <hr>
+    <% end %>
+  <% end %>
+  </div>
+</div>
