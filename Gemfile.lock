@@ -73,9 +73,6 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
     docile (1.1.5)
-    em-websocket (0.5.1)
-      eventmachine (>= 0.12.9)
-      http_parser.rb (~> 0.6.0)
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.2.1)
@@ -110,10 +107,6 @@ GEM
     guard-bundler (2.0.0)
       bundler (~> 1.0)
       guard (~> 2.2)
-    guard-livereload (2.3.1)
-      em-websocket (~> 0.5)
-      guard (~> 2.0)
-      multi_json (~> 1.8)
     guard-minitest (2.3.2)
       guard (~> 2.0)
       minitest (>= 3.0)
@@ -123,7 +116,6 @@ GEM
     high_voltage (2.2.1)
     hike (1.2.3)
     hitimes (1.2.2)
-    http_parser.rb (0.6.0)
     httparty (0.13.1)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
@@ -209,8 +201,6 @@ GEM
     rack (1.5.2)
     rack-contrib (1.1.0)
       rack (>= 0.9.1)
-    rack-livereload (0.3.15)
-      rack
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.1.5)
@@ -353,7 +343,6 @@ DEPENDENCIES
   google_places
   guard
   guard-bundler
-  guard-livereload
   guard-minitest
   guard-rails
   high_voltage
@@ -370,7 +359,6 @@ DEPENDENCIES
   pry-rescue
   public_activity
   quiet_assets
-  rack-livereload
   rails (= 4.1.5)
   rails_12factor
   reek

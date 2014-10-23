@@ -8,7 +8,7 @@
     </div>
   </div>  
   <div class="small-12 large-9 columns">
-    <div class= "container information-display">
+    <div class= "container information-display bg-white">
       <div class="row">
         <div class="hide-for-small-only medium-3 columns photo-item">
           <% if @drink.pictures.first %>
@@ -18,8 +18,8 @@
           <% end %>  
         </div>
         <div class="small-12 medium-9 columns">
-          <h1><%= @drink.name %></h1>
-          <p><%= @drink.description %></p>
+          <h1 class="cap"><%= @drink.name %></h1>
+          <p class="cap"><%= @drink.description %></p>
           <span class="info-links center-on-small"> 
               <% if current_user %>
                 <%= link_to 'Add a new review', class: "Radius button tiny primary", data: {"reveal-id" => "addReview"} do %>
@@ -53,11 +53,11 @@
     <div class="row">
       <%= render 'pictures/display_photos' %>
     </div>
-    <div class= "container information-display">
-      <h4 class='activity_review'>Recent Activity</h4>
-      <hr>
+    <div class= "container ">
+      <h5 class='top-container margin-0'>Recent Activity</h5>
+      
       <div class="row">
-        <div class= "container activity-display">
+        <div class= "big-container ">
           <%= render 'reviews/drink_reviews' %>    
         </div> 
     </div> 

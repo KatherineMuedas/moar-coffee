@@ -10,9 +10,24 @@ $alert-transition-ease: ease-out;
 @import "users";
 @import "reviews";
 
-body{
-  background-color: white;
-}
+//example image can only be viewed in firefox 
+// body main{
+//   background: url("Coffee.jpg") no-repeat;
+//   -webkit-background-size: cover;
+//   background-size: cover;
+//   background-attachment: fixed;
+//   background-position: center top;
+//   overflow-x: hidden; 
+//   display: block;
+// }
+// .container{
+//   // background-color: rgba(255, 255, 255, .85);
+// }
+// .img{
+//   // z-index: 1;
+//   position: static;
+//   background-image: url("Coffee.jpg");
+// }
 main {
   padding-left: 0px;
   padding-right: 0px;
@@ -21,9 +36,12 @@ main {
 }
 .top-bar-section ul li > a{
   &:hover{
-  text-decoration: underline;
-
+    border-bottom: .2em solid $button-color;
+  // text-decoration: underline;
+  }
 }
+.contain-to-grid {
+  padding: 7px;
 }
 
 #search-box {
@@ -108,27 +126,12 @@ border:none;
 .reveal-modal.small, .small {
   width: 32%;
 }
-//
-//entire nav bar
-// .no_margin, .top-bar {
-//   margin: 0;
-// }
-//right links
-// .top-bar-section ul li, .top-bar-section li:not(.has-form) a:not(.button){
-//   background-color: #614000;
-// }
-// .top-bar-section li:not(.has-form) a:not(.button):hover{
-// background-color: #3D2800;
-// }
-// #color_nav {
-//    background-color: $primary-color;
-// }
-// .top-bar.expanded .title-area{
-//   background-color: $primary-color;
-// }
+
 li {
   list-style-type: none;
 }
+
+// text-decoration-color
 // a:hover {
 //   transition: background-color 0.5s ease;
 //   color: blue ; // light($button-color, 50%)
@@ -161,9 +164,27 @@ li {
 .darker {
   background: darken($primary-color, 10%);
 }
+//search icon
+.fa-search {
+  z-index: 2;
+}
 
+.has-tip:hover, .has-tip:focus {
+  border-bottom: none;
+}
+.no_reviews {
+  margin-left: 1.3em;
+}
+//for mid to small-screens for search bar
 //large screen media query
-@media (min-width: 1017px) {
+@media (min-width: 1025px) {
+  .top-bar-section .main_search_bar {
+    float: right;
+    padding: 0px;
+  }
+  .inside_search_bar{
+    margin-top: 11px;
+  }
 // moar-coffee name
 // .top-bar{
 //  background-color: $primary-color;
@@ -207,6 +228,18 @@ li {
   max-height: 12.5em;
   text-overflow: ellipsis;
 }
+#search {
+    border-radius: 13px 0px 0px 13px;
+  }
+.postfix {
+  border-radius: 0px 13px 13px 0px
+}
+}
+
+@media (max-width: 1024px) {
+  .inside_search_bar {
+    width: 100%
+  }
 }
 //small screen
 @media (max-width: 705px){
@@ -221,3 +254,6 @@ li {
 //   height: 300px;
 //   text-align: center;
  }
+
+ 
+

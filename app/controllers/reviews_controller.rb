@@ -1,21 +1,22 @@
 class ReviewsController < ApplicationController
-  before_action :find_shop, only: [:create]
-  before_action :find_drink, only: [:create]
+  before_action :find_shop, only: [:new, :create]
+  before_action :find_drink, only: [:new, :create]
   before_action :authenticate_user!
 
   def create
     @review = @drink.reviews.new(reviews_params)
-    @review.user_id = current_user.id 
+    @review.user_id = current_user.id
 
-    respond_to do |format|
-      if @review.save
-        @review.review_type == :review ? current_user.give_points(5) : current_user.give_points(2)
+    if @review.save 
+      if @review.review_type == :review
         @review.create_activity :create, owner: current_user, follow_id: @shop.id
-        format.html { redirect_to :back }
-        format.js
+        current_user.give_points(5)
       else
-        format.html { redirect_to :back, alert: 'Review was not created' }
+        current_user.give_points(2)
       end
+      redirect_to :back
+    else
+      redirect_to :back, notice: 'Review was not created please make sure you complete required fields'
     end
   end
 
@@ -45,18 +46,17 @@ class ReviewsController < ApplicationController
   private
 
   def reviews_params
-    if #TODO: define this conditional
-      picture_attributes = [:id, :caption, :photo, :user_id]
-      params.require(:review).permit(:title, :body, :drink_rating, :drink_id,:review_type, :shop_id, picture_attributes: picture_attributes)
+    if 
+    picture_attributes = [:id, :caption, :photo, :user_id]
+    params.require(:review).permit(:title, :body, :drink_rating, :drink_id,:review_type, :shop_id, picture_attributes: picture_attributes)
     else
-      flash[:notice] = "Please select a number"
+    flash[:notice] = "Please select a number" 
     end
-  end
 
+  end
   def find_shop
     @shop = Shop.friendly.find(params[:review][:shop_id])
   end  
-
   def find_drink  
     @drink = @shop.drinks.friendly.find(params[:drink_id])
   end

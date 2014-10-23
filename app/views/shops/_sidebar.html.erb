@@ -1,6 +1,7 @@
-<h5 class="heading shop-name pad-top-20 pad-left-15"><%= link_to @shop.name, shop_path(@shop), class:"" %></h5>
-<hr>
-<div class='drinksPartial'>
+<div class="container top-container pad-top-15 pad-bottom-10 pad-left-15 ">
+  <h5><%= link_to @shop.name, shop_path(@shop), class:"dark-gray" %></h5>
+</div>
+<div class='bg-white pad-top-10 margin-bottom-17'>
   <%= render partial: 'drinks/drinks_list', locals: { drinks: @drinks, shop: @shop } %>
 </div>
 

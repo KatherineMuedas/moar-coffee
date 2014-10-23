@@ -16,12 +16,12 @@
 //= require foundation
 //= require_tree .
 
+
 $(function() {
   $(document).foundation();
   $(document).ready(function(){
   setTimeout(function(){
     $('.flash').remove();
-  }, 5000);
+  }, 50000);
  })
 });
-    // $(".flash").delay(500).fadeOut("slow");

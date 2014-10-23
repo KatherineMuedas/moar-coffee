@@ -29,12 +29,13 @@
     }(document, 'script', 'facebook-jssdk'));</script>
     <div id="fb-root"></div>
     <div class="off-canvas-wrap" data-offcanvas>
+      <div class='img'></div>
       <div class="inner-wrap">        
         <header>
           <%= render 'layouts/navigation' %>
         </header>
         <main role="main">
-          <div class="row">
+          <div class="row"> 
             <%= render 'layouts/messages' %>
             <%= yield %>
           </div>   

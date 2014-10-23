@@ -15,7 +15,7 @@
       </div>
 
     </div>
-  <div class="small-12 medium-3 columns">
+  <div class="small-12 medium-4 columns">
     <% if @user.id != current_user.id %>
       <% if @user.followed_by?(current_user) %>
         <%= link_to "Unfollow", user_follow_user_path(user_id: @user), method: :delete, class: "button tiny primary" %>
@@ -25,28 +25,32 @@
     <% end %>
   </div>
   
-  <div id="user-stuff" class="small-12 medium-12 columns">
-    <h3>My Photos</h3>
-    <hr>
-    <%= render 'pictures/display_photos' %>
-
-    <h3>My Favorite Drinks</h3>
-    <hr>
+  <div  class="small-12 medium-4 columns">
+    <div class="top-container">
+      <h5 class="dark-gray">My Favorite Drinks</h5>
+    </div>
+    <div class='bg-white pad-top-10 margin-bottom-17'>
       <%= render 'users/favorite_drinks' %>
-
-    <h3>Shops I'm Following</h3>
-    <hr>
+    </div>
+    <div class="top-container">  
+    <h5 class="dark-gray">Shops I'm Following</h5>
+    </div>
+    <div class='bg-white pad-top-10 margin-bottom-17'>
       <ul>
         <% if current_user.id == @user.id %>
           <% @shop_follows.each do |follow| %>
           <li><%= link_to follow[:name], shop_path(follow.friendly_id) %> | <%= link_to '',shop_follows_delete_path(shop_id: follow.id),class:"fa fa-bomb",
                                                                                         method: :delete %></li>
+          <hr>
           <% end %>
+
         <% end %>
       </ul>
-
-    <h3>Users I'm Following</h3>
-    <hr>
+    </div>  
+    <div class="top-container">  
+    <h5 class="dark-gray">Users I'm Following</h5>
+    </div>
+    <div class='bg-white pad-top-10 margin-bottom-17'>
       <ul>
         <% if current_user.id == @user.id %>
         <% @user_follows.each do |follow| %>
@@ -54,6 +58,12 @@
           <% end %>
         <% end %>
       </ul>
+    </div>  
+  </div>  
+  <div id="user-stuff" class="small-12 medium-8 columns">
+    <h3>My Photos</h3>
+    <hr>
+    <%= render 'pictures/display_photos' %>
       
     <h3>Recent Activity</h3>
     <hr>

@@ -5,7 +5,7 @@
     </div>
   </div>
   <div class="small-12 large-9 columns">
-    <div class= "container information-display">
+    <div class= "container information-display bg-white">
       <div class="row">
         <div class="hide-for-small-only medium-3 columns photo-item">
           <% if @shop.pictures.first %>
@@ -14,8 +14,8 @@
             <%= image_tag("300x300.gif", class: "th radius")  %>
           <% end %>  
         </div>
-        <div class="small-12 medium-9 columns">
-          <h1><%= @shop.name %></h1> 
+        <div class="small-12 medium-9 columns ">
+          <h1 class="cap"><%= @shop.name %></h1> 
           <p class='location'><%= raw "#{@shop.location.street_address}<br>#{@shop.location.city}, #{@shop.location.state} " if @shop.location %><%= link_to "(Show on map)", "https://www.google.com/maps/?q=#{@shop.name}@#{@shop.location.latitude},#{@shop.location.longitude}", target: "_blank" %>
             <!-- http://maps.google.com/?q=MY%20LOCATION@lat,long -->
             <%= link_to edit_shop_path(@shop.id), class: 'edit' do %>
@@ -56,10 +56,12 @@
       <%= render 'pictures/display_photos' %>
     </div>
 
-    <div class= "container activity-display">
-      <h3 class= 'activity'>Recent Activity</h3>
-        <div class="row">
-        </div>
+    <div class= "">
+     
+        <h5 class= 'top-container margin-0'>Recent Activity</h5>
+          <div class="row">
+          </div>
+     
     </div> 
   </div> 
 </div> 
