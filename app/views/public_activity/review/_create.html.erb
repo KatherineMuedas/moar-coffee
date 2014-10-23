@@ -1,8 +1,17 @@
-left a review
+<% if activity.is_checkin %>
+    is drinking
+  <% else %>
+    left a review
+<% end %>
 
 <% if activity.trackable %>
-  for <%= link_to activity.trackable.drink.name, shop_drink_path(activity.trackable.shop.friendly_id, activity.trackable.drink.friendly_id) %> at
-  <%= link_to activity.trackable.shop.name, shop_path(activity.trackable.shop.friendly_id) %>
+  <% if activity.is_checkin %>
+    <%= link_to activity.trackable.drink.name, shop_drink_path(activity.trackable.shop.friendly_id, activity.trackable.drink.friendly_id) %> at
+    <%= link_to activity.trackable.shop.name, shop_path(activity.trackable.shop.friendly_id) %>
+    <% else %>
+      for <%= link_to activity.trackable.drink.name, shop_drink_path(activity.trackable.shop.friendly_id, activity.trackable.drink.friendly_id) %> at
+      <%= link_to activity.trackable.shop.name, shop_path(activity.trackable.shop.friendly_id) %>
+    <% end %>
 <% else %>
   that has since been deleted.
 <% end %>
