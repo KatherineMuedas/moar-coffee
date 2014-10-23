@@ -1,8 +1,9 @@
-<ul>
+<ul class="margin-0" >
   <% drinks.each do |drink| %>
-    <li><%= link_to drink.name , shop_drink_path(shop, drink) %></li>
+    <li class="margin-left-10"><%= link_to drink.name , shop_drink_path(shop, drink), class:"cap" %></li>
+  <hr class="margin-vertical-5">
   <% end %>
   <% if current_user %>
-    <li class="pad-vertical-10"><a href="#" data-reveal-id="addDrink"><i class="fa fa-plus"></i> Add a Coffee</a></li>  
+    <li class="pad-vertical-10 margin-left-10"><a href="#" data-reveal-id="addDrink"><i class="fa fa-plus"></i> Add a Coffee</a></li>  
   <% end %>
 </ul>

@@ -12,6 +12,7 @@ class ShopsController < ApplicationController
   def show
     @drinks = @shop.drinks.all
     @pictures = @shop.pictures.all.order(created_at: :desc)
+    # @checkins = @shop.drinks.reviews.where(review_type: :checkin)
   end
 
   def new
@@ -61,5 +62,7 @@ class ShopsController < ApplicationController
   def set_shop
     @shop = Shop.friendly.find(params[:id])
   end
+
+ 
 
 end

@@ -34,6 +34,13 @@ $tuatara       : #444444;
 $oil           : #333333;
 $jet           : #222222;
 $black         : #000000;
+
+.cap{
+  text-transform: capitalize;
+}
+.soft-gray{
+  color: $our-gray;
+}
 .dark-gray{
   color: $dark-gray;
 }
@@ -68,4 +75,7 @@ $black         : #000000;
 
 .fancy-font{
   font-family: 'Courgette', cursive;
+}
+.bg-soft-gray{
+  background-color: $our-gray;
 }

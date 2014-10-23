@@ -3,7 +3,6 @@ class DrinksController < ApplicationController
   before_action :set_shop
   before_action :set_drink, only:[:show, :edit, :update]
   
-
   def show
     @drinks = @shop.drinks.all
     @reviews = @drink.reviews.where(review_type: :review)

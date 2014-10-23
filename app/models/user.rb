@@ -7,9 +7,9 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   acts_as_follower
   acts_as_followable
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
   has_many :favorites, dependent: :destroy
-  has_many :pictures
+  has_many :pictures, dependent: :destroy
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

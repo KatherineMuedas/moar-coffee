@@ -10,7 +10,7 @@ $alert-transition-ease: ease-out;
 @import "users";
 @import "reviews";
 
-
+//example image can only be viewed in firefox 
 // body main{
 //   background: url("Coffee.jpg") no-repeat;
 //   -webkit-background-size: cover;
@@ -31,7 +31,8 @@ $alert-transition-ease: ease-out;
 main {
   padding-left: 0px;
   padding-right: 0px;
-  background-color: $our-gray;
+//  background-color: $our-gray;
+  background-image: url("coffee.jpg");
 }
 .top-bar-section ul li > a{
   &:hover{
@@ -42,6 +43,31 @@ main {
 .contain-to-grid {
   padding: 7px;
 }
+
+#search-box {
+  background: $our-gray;
+  border-radius: 10px;
+}
+
+#search-results{
+  background: $our-gray;
+  border-radius: 10px;
+}
+
+#newsfeed{
+  background: $our-gray;
+  border-radius: 10px;
+}
+
+#user-stuff{
+  background: #ffffff;
+//  border-radius: 10px;
+}
+
+.leaders{
+  background: white;
+}
+
 .nav-icon{
   padding-left: 13px;
 }
@@ -228,3 +254,6 @@ li {
 //   height: 300px;
 //   text-align: center;
  }
+
+ 
+
