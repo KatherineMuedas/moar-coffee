@@ -4,14 +4,13 @@ class ReviewsController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    # @reviews = current_user.reviews.all.where(drink_id: @drink).not(review_type: "checkin")
     @review = @drink.reviews.new(reviews_params)
     @review.user_id = current_user.id 
 
     respond_to do |format|
       if @review.save
         @review.review_type == :review ? current_user.give_points(5) : current_user.give_points(2)
-        @review.create_activity :create, owner: current_user, follow_id: current_user.id
+        @review.create_activity :create, owner: current_user, follow_id: @shop.id
         format.html { redirect_to :back }
         format.js
       else
