@@ -9,10 +9,11 @@ $alert-transition-ease: ease-out;
 @import "sitewide";
 @import "users";
 @import "reviews";
+@import "shops";
 
 //example image can only be viewed in firefox 
 // body main{
-//   background: url("Coffee.jpg") no-repeat;
+//   background: url("coffee.jpg") no-repeat;
 //   -webkit-background-size: cover;
 //   background-size: cover;
 //   background-attachment: fixed;
@@ -174,6 +175,9 @@ li {
 }
 .no_reviews {
   margin-left: 1.3em;
+}
+.container .top-container{
+  margin-top: 0px;
 }
 //for mid to small-screens for search bar
 //large screen media query

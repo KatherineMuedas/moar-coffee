@@ -1,11 +1,13 @@
 // Place all the styles related to the Shops controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-//top section on shop page
-.top_background {
-  margin-top: 0;
-  background-color: #894615;//color is not working?
+// top section on shop page
+main.pic{
+  background: url("coffee.jpg") no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center top;
+  overflow-x: hidden; 
+  display: block;
 }
-// h1 {
-//   margin-top: 0; 
-// }
