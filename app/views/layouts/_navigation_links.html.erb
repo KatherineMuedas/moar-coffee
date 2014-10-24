@@ -1,15 +1,4 @@
-<li class="has-form main_search_bar">
-  <div class="row collapse">
-    <div class="large-10 small-8 columns inside_search_bar">
-<!--       <%#= form_tag root_path, :method => :get do %>
-        <%#= text_field_tag :search, params[:search], placeholder: 'Search for Cafes' %>
-      <%# end %> -->
-    </div>
-  </div>
-</li>
-<%# add navigation links to this file %>
-
-<li><%= link_to 'Find Cafes', root_path('root') %></li>
+<li><%= link_to 'Find Cafes', shops_path %></li>
 <% if user_signed_in? %>
   <li><%= link_to 'Add Cafe', new_shop_path %></li>
 <% else %>

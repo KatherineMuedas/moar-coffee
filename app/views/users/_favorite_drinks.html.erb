@@ -1,6 +1,6 @@
-<ul class = "favorite-list">  
+<ul class = "favorite-list margin-left-0">  
   <% @user.favorited_drinks.each do |drink| %>
-    <li><%= link_to drink.name, shop_drink_path(drink.shop_id, drink) %> | <%= link_to '', favorite_path(drink.id), class:"fa fa-bomb", method: :delete, data: { confirm: 'Are you sure?' } %></li>
-    <hr>
+    <li class="margin-left-10"><%= link_to drink.name, shop_drink_path(drink.shop_id, drink) %> | <%= link_to '', favorite_path(drink.id), class:"fa fa-bomb", method: :delete, data: { confirm: 'Are you sure?' } %></li>
+  <hr>
   <% end %>
 </ul>
