@@ -14,7 +14,9 @@
           <% end %>  
         </h4>
         <p>
-          <%= image_tag review.picture.photo.url(:thumb), class: "right" if review.picture.present? %>
+          <li>
+            <%= image_tag review.picture.photo.url(:thumb), class: "right" if review.picture.present? %>
+          </li>
           <%= review.body %>
         </p>
        <!-- how do you share the url you are on -->

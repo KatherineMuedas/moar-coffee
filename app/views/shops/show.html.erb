@@ -2,10 +2,10 @@
   <div class="large-3 columns show-for-large-up ">
     <div class= "container sidebar">
       <%= render 'shops/sidebar' %>
-    </div>
+    </div> 
   </div>
   <div class="small-12 large-9 columns">
-    <div class= "container information-display bg-white">
+    <div class= "big-container">
       <div class="row">
         <div class="hide-for-small-only medium-3 columns photo-item">
           <% if @shop.pictures.first %>
@@ -15,7 +15,7 @@
           <% end %>  
         </div>
         <div class="small-12 medium-9 columns ">
-          <h1 class="cap"><%= @shop.name %></h1> 
+          <h1><%= @shop.name.capitalize %></h1> 
           <p class='location'><%= raw "#{@shop.location.street_address}<br>#{@shop.location.city}, #{@shop.location.state} " if @shop.location %><%= link_to "(Show on map)", "https://www.google.com/maps/?q=#{@shop.name}@#{@shop.location.latitude},#{@shop.location.longitude}", target: "_blank" %>
             <!-- http://maps.google.com/?q=MY%20LOCATION@lat,long -->
             <%= link_to edit_shop_path(@shop.id), class: 'edit' do %>

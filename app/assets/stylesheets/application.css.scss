@@ -33,12 +33,10 @@ main {
   padding-left: 0px;
   padding-right: 0px;
   background-color: $our-gray;
-  //background-image: url("coffee.jpg");
 }
 .top-bar-section ul li > a{
   &:hover{
     border-bottom: .2em solid $button-color;
-  // text-decoration: underline;
   }
 }
 .contain-to-grid {
@@ -213,25 +211,25 @@ li {
 //   background: darken($light, 10%);
 // }
 // show page
-.activity {
-  margin: 0 .5em;
-}
-.sidebar {
-  // padding: 1em;
-}
-.edit{
-  // padding:0 2em;
-}
+// .activity {
+//   margin: 0 .5em;
+// }
+// .sidebar {
+//   // padding: 1em;
+// }
+// .edit{
+//   // padding:0 2em;
+// }
 
 
-.box {
-  background-color: darken($primary-color, 5%);
-  box-sizing: padding-box; 
-  padding:1em;
-  min-height: 12.5em;
-  max-height: 12.5em;
-  text-overflow: ellipsis;
-}
+// .box {
+//   background-color: darken($primary-color, 5%);
+//   box-sizing: padding-box; 
+//   padding:1em;
+//   min-height: 12.5em;
+//   max-height: 12.5em;
+//   text-overflow: ellipsis;
+// }
 #search {
     border-radius: 13px 0px 0px 13px;
   }

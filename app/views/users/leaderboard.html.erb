@@ -1,15 +1,30 @@
-<h3 class="leaders">Leaderboard</h3>
-<% @users.each do |user| %>
-  <div class= "container information-display">
-    <div class="row">
-    <div class="small-2 columns photo-item">
-      <%= link_to image_tag(user.avatar.url(:thumb), class: "user-thumb radius"), user_path(user.id) %>
-    </div>  
-    <div class="small-10 columns" >  
-      <h1><%= link_to user.name, user_path(user.id) %></h1>
-      <p>Points: <%= user.points %></p>
-      <p>Rank: <%= user.rank %></p>
-    </div>
-  </div>  
-  </div>  
-<% end %>  
+<div class="text-center">
+  <h5>Leaderboard</h5>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th width="100">Position</th>
+      <th>Name</th>
+      <th width="150">Rank</th>
+      <th width="150">Points</th>
+      <th width="150">Follow</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr> 
+        <td>1</td>
+        <td><%= link_to user.name, user_path(user.id) %></td>
+        <td><span class="success round label"><%= user.rank %></span></td> 
+        <td><%= user.points %></td>
+        <td>
+          
+        </td>
+      </tr> 
+    <% end %>  
+  </tbody>
+</table> 
+     
+  

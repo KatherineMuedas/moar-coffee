@@ -1,9 +1,9 @@
-<div  class= "container ">
+<div  class= "big-container ">
   <div class="row">
     <div class="small-4 columns medium-4 columns photo-item">
        <%= image_tag @user.avatar.url(:medium), class: "user-medium" %>
     </div>
-    <div class="small-8 medium-8 columns">
+    <div class="small-8 medium-6 columns">
       <h1><%= @user.name%></h1>
       <td>Points: <%= @user.points %></td> 
       <br>
@@ -11,31 +11,27 @@
       <% if current_user && @user.id == current_user.id %> 
         <p><%= link_to 'Edit My Account', edit_user_registration_path, class: "button tiny" %></p> 
       <% end %> 
-  </div>
-</div>
-<div class="small-12 medium-4 columns">
-  <% if @user.id != current_user.id %>
-    <% if @user.followed_by?(current_user) %>
-      <%= link_to "Unfollow", user_follow_user_path(user_id: @user), method: :delete, class: "button tiny primary" %>
-    <% else %>
-      <%= link_to "Follow", user_follow_users_path(user_id: @user ), method: :post, class: "button tiny primary" %>
-    <% end %>
-  <% end %>
-</div>
+    </div>
+
+    <div class="small-12 medium-2 columns">
+      
+    </div>
+  </div>  
+</div>  
 
 <div class="row">
   <div  class="small-12 medium-4 columns">
     <div class="top-container">
-      <h5 class="dark-gray">My Favorite Drinks</h5>
+      <h5>My Favorite Drinks</h5>
     </div>
-    <div class='bg-white margin-bottom-17'>
+    <div class='bottom-container'>
       <%= render 'users/favorite_drinks' %>
     </div>
     <div class="top-container">  
-    <h5 class="dark-gray">Shops I'm Following</h5>
+    <h5>Shops I'm Following</h5>
     </div>
-    <div class='bg-white margin-bottom-17'>
-      <ul class="margin-left-0">
+    <div class="bottom-container">
+      <ul>
         <% if current_user.id == @user.id %>
           <% @shop_follows.each do |follow| %>
           <li class="margin-left-10"><%= link_to follow[:name], shop_path(follow.friendly_id) %> | <%= link_to '',shop_follows_delete_path(shop_id: follow.id),class:"fa fa-bomb",
@@ -47,10 +43,10 @@
       </ul>
     </div>  
     <div class="top-container">  
-    <h5 class="dark-gray">Users I'm Following</h5>
+    <h5>Users I'm Following</h5>
     </div>
-    <div class='bg-white margin-bottom-17'>
-      <ul class="margin-left-0">
+    <div class='bottom-container'>
+      <ul>
         <% if current_user.id == @user.id %>
         <% @user_follows.each do |follow| %>
           <li class="margin-left-10"><%= link_to follow[:name], user_path(follow.friendly_id) %> | <%= link_to '', user_follow_user_path(user_id: follow.id), class:"fa fa-bomb", method: :delete %></li>
@@ -61,7 +57,7 @@
   </div> 
   <div class="small-12 large-8 columns">
     <div class="top-container">
-      <h5 class="dark-gray">My Photos</h5>
+      <h5>My Photos</h5>
     </div>
     <%= render 'pictures/display_photos' %>
 
