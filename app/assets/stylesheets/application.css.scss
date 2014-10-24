@@ -10,67 +10,51 @@ $alert-transition-ease: ease-out;
 @import "users";
 @import "reviews";
 @import "shops";
+@import "about";
 
-//example image can only be viewed in firefox 
-// body main{
-//   background: url("coffee.jpg") no-repeat;
-//   -webkit-background-size: cover;
-//   background-size: cover;
-//   background-attachment: fixed;
-//   background-position: center top;
-//   overflow-x: hidden; 
-//   display: block;
-// }
-// .container{
-//   // background-color: rgba(255, 255, 255, .85);
-// }
-// .img{
-//   // z-index: 1;
-//   position: static;
-//   background-image: url("Coffee.jpg");
-// }
-main {
-  padding-left: 0px;
-  padding-right: 0px;
-//  background-color: $our-gray;
-//  background-image: url("coffee.jpg");
-}
+//used on all pages
+//nav
 .top-bar-section ul li > a{
   &:hover{
     border-bottom: .2em solid $button-color;
-  // text-decoration: underline;
   }
 }
-.contain-to-grid {
-  padding: 7px;
+.nav-icon{
+  padding-left: 13px;
 }
 
+//body
+//high level styleing for body
+main {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+
+//search function
 #search-box {
   background: $our-gray;
   border-radius: 10px;
 }
-
+#search {
+    border-radius: 13px 0px 0px 13px;
+}
 #search-results{
   background: $our-gray;
   border-radius: 10px;
 }
+.fa-search {
+  z-index: 2;
+}
+///end of search function
 
-#newsfeed{
-  background: $our-gray;
-  border-radius: 10px;
+
+.contain-to-grid {
+  padding: 7px;
 }
 
 #user-stuff{
   background: #ffffff;
-//  border-radius: 10px;
-}
-
-.leaders{
-  background: white;
-}
-
-.nav-icon{
-  padding-left: 13px;
 }
 
 .middle .small-title-color a{
@@ -79,6 +63,8 @@ main {
 img{
   margin: .5em;
 }
+
+
 //Facebook Share Icon
 .uiIconText {
   margin-bottom: .5em;
@@ -92,10 +78,11 @@ img{
 .margin_main_liine {
  margin-top: 0px; 
 }
-h4 {
-  // margin-left: 1.3em; 
-}
-//floats buttons for new review
+///end of Facebook share icon
+
+
+//modals
+//floats buttons for new review modal
 .new_review {
   float: inherit;
   margin-right: 4px;
@@ -103,22 +90,14 @@ h4 {
 .info-links {
   float: left;
 }
-#no_float{
-  float: none;
-}
+
+//add drink modal
 #addDrink, .open{
   box-shadow: 0 0 0 .5px $button-color inset;
 }
 .reveal-modal {
 border:none;
   }
-
-.flash {
-  z-index: 2;
-  transition-duration: 1s;
-  transition-timing-function: ease-out; 
-}
-
 //sign in model
 .authform form {
   border: none;
@@ -127,24 +106,31 @@ border:none;
 .reveal-modal.small, .small {
   width: 32%;
 }
+//end of modals
+
+//flash messages
+.flash {
+  z-index: 2;
+  transition-duration: 1s;
+  transition-timing-function: ease-out; 
+}
+//end of flash messages
+
+
+#no_float{
+  float: none;
+}
 
 li {
   list-style-type: none;
 }
 
-// text-decoration-color
-// a:hover {
-//   transition: background-color 0.5s ease;
-//   color: blue ; // light($button-color, 50%)
-// }
 .main-link{
   color: $primary-color;
   &:hover{
     color: lighten($primary-color, 15%);
-
+  }
 }
-}
-
 // buttons
 .button {
   background-color:$button-color;
@@ -155,21 +141,10 @@ li {
   background-color: $hover-color ; //rgba(41, 170, 115, .5)
   transition: background-color 0.5s ease;
 }
-.cafe_description_index{
-  min-height: 5em;
-  max-height: 6em;
-  white-space: pre-line;
-  overflow: hidden;
-}
-
+//end of buttons
 .darker {
   background: darken($primary-color, 10%);
 }
-//search icon
-.fa-search {
-  z-index: 2;
-}
-
 .has-tip:hover, .has-tip:focus {
   border-bottom: none;
 }
@@ -179,6 +154,45 @@ li {
 .container .top-container{
   margin-top: 0px;
 }
+//shops boxes
+.box {
+  background-color: darken($primary-color, 5%);
+  box-sizing: padding-box; 
+  padding:1em;
+  min-height: 12.5em;
+  max-height: 12.5em;
+  text-overflow: ellipsis;
+}
+.postfix {
+  border-radius: 0px 13px 13px 0px
+}
+//footer
+.footer-style {
+  background: #60605e;
+  color: white;
+}
+/////////used on specific pages/////////
+///used on cafe page
+.cafe_description_index{
+  min-height: 5em;
+  max-height: 6em;
+  white-space: pre-line;
+  overflow: hidden;
+}
+///drinks page 
+.top-container {
+  margin-top: 0px;
+}
+///used on leader board
+.leaders{
+  background: white;
+}
+///used news feed
+#newsfeed{
+  background: $our-gray;
+  border-radius: 10px;
+}
+
 //for mid to small-screens for search bar
 //large screen media query
 @media (min-width: 1025px) {
@@ -189,57 +203,11 @@ li {
   .inside_search_bar{
     margin-top: 11px;
   }
-// moar-coffee name
-// .top-bar{
-//  background-color: $primary-color;
-//  height: 12%; 
-//  width: 100%;
-// }
-// .top-bar .name {
-//  font-size: 2.3em;
-//  margin-top: .6em;
-
-// }
-// // set of nav bar links
-// .top-bar-section li a {
-//   margin: 1.4em 1em;
-// }
-// // individual nav bar links
-// .top-bar-section ul li > a {
-//   font-size: 1em;
-// }
-
-// .darker {
-//   background: darken($light, 10%);
-// }
-// show page
-.activity {
-  margin: 0 .5em;
-}
-.sidebar {
-  // padding: 1em;
-}
-.edit{
-  // padding:0 2em;
-}
-
-
-.box {
-  background-color: darken($primary-color, 5%);
-  box-sizing: padding-box; 
-  padding:1em;
-  min-height: 12.5em;
-  max-height: 12.5em;
-  text-overflow: ellipsis;
-}
-#search {
-    border-radius: 13px 0px 0px 13px;
+  .activity {
+    margin: 0 .5em;
   }
-.postfix {
-  border-radius: 0px 13px 13px 0px
 }
-}
-
+//mid size media query
 @media (max-width: 1024px) {
   .inside_search_bar {
     width: 100%
@@ -251,13 +219,6 @@ li {
     text-align: center;
   }
 }
-.footer-style {
-  background: #60605e;
-  color: white;
-//   margin-top: 50px;
-//   height: 300px;
-//   text-align: center;
- }
 
  
 
