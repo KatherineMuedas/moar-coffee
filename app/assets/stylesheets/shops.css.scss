@@ -4,10 +4,12 @@
 // top section on shop page
 main.pic{
   background: url("coffee.jpg") no-repeat;
-  -webkit-background-size: cover;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center top;
-  overflow-x: hidden; 
-  display: block;
+  // -webkit-background-size: cover;
+  // background-size: cover;
+  background-position: fixed;
+   background-size:100% auto;
+  // background-attachment: absolut;
+  // background-position: center top;
+  // overflow-x: hidden; 
+  // display: block;
 }
