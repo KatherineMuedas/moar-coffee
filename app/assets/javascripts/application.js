@@ -19,9 +19,13 @@
 
 $(function() {
   $(document).foundation();
-  $(document).ready(function(){
-  setTimeout(function(){
-    $('.flash').remove();
-  }, 50000);
- })
+    $(document).ready(function(){
+      $(window).scroll(function() {
+       var scrolledY = $(window).scrollTop();
+       $('.pic').css('background-position', 'center ' + ((scrolledY)) + 'px');
+    });
+    setTimeout(function(){
+      $('.flash').remove();
+    }, 5000);
+   })
 });
