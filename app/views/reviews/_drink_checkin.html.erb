@@ -1,29 +1,20 @@
-<div class= "">
-  <% unless @checkins.empty? %>
-    <div class="">
-      <h5 class= "top-container pad-top-15 pad-bottom-10 pad-left-15 dark-gray margin-bottom-0">Recent Check-ins</h5>
-      <div class='bg-white pad-top-10'>
-        <ul class="margin-0">
-          <% @checkins.each do |review| %>          
-            <li class="margin-left-10 margin-top-5">
-              <p>
-                <%= link_to review.user.name, user_path(review.user) %> is drinking <%= link_to review.drink.name, shop_drink_path(review.shop.id, review.drink.id) %> from <%= link_to review.shop.name, shop_path(review.shop.id) %>
-              </p>
-              <p>
-                <% if current_user && review.user_id == current_user.id %> 
-                  <%= link_to drink_review_path(@drink.id , review.id), method: :delete, data: {confirm: 'Are you sure you want to delete this checkin?'} do %>
-                    <i class="fa fa-trash danger"></i>
-                  <% end %>
-                <% end %>
-                
-              </p>
-              
-            </li>
-            <hr class="margin-vertical-5">
-            
+<% unless @checkins.empty? %>
+  <div class="top-container">
+    <h5>Recent Check-ins</h5>
+  </div>
+  <div class='bottom-container'>
+    <ul>
+      <% @checkins.each do |review| %>          
+        <li>
+          <%= link_to review.user.name, user_path(review.user) %> is drinking <%= link_to review.drink.name, shop_drink_path(review.shop.id, review.drink.id) %> from <%= link_to review.shop.name, shop_path(review.shop.id) %>
+          <% if current_user && review.user_id == current_user.id %> 
+            <%= link_to drink_review_path(@drink.id , review.id), method: :delete, data: {confirm: 'Are you sure you want to delete this checkin?'} do %>
+              <i class="fa fa-trash-o danger absolute-icon"></i>
+            <% end %>
           <% end %>
-        </ul>
-      </div>  
-    </div>
-  <% end %>
-</div>  
+        </li>
+        <hr>
+      <% end %>
+    </ul>
+  </div>  
+<% end %>

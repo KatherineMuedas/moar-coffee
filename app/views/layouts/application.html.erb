@@ -34,7 +34,7 @@
         <header>
           <%= render 'layouts/navigation' %>
         </header>
-        <main role="main" class="<%= background_image %>">
+        <main role="main" class="<%= 'pic' if current_page?(shops_path) %>">
           <div class="row"> 
             <%= render 'layouts/messages' %>
             <%= yield %>

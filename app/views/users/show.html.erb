@@ -63,15 +63,15 @@
     <div class="top-container">
       <h5 class="dark-gray">My Photos</h5>
     </div>
-      <%= render 'pictures/display_photos' %>
+    <%= render 'pictures/display_photos' %>
 
-      <div class="top-container">    
-        <h5 class="dark-gray">Recent Activity</h5>
-      </div>
-    <div class="row" >  
-      <div class='big-container '>
-        <% @reviews.each do |review|%>
-          <div class=''>
+    <div class="top-container">    
+      <h5>Recent Activity</h5>
+    </div> 
+    <div class='big-container'>
+      <% @reviews.each do |review|%>
+        <div class="each-box">
+          <div class="small-12 columns ">
             <p>
               Review <%= link_to review.drink.name, shop_drink_path(review.shop.id, review.drink.id) %> from <%= link_to review.shop.name, shop_path(review.shop.id) %>
             </p>
@@ -83,12 +83,17 @@
             <p>
               <%= review.body %>
             </p> 
-            <% if current_user && @user.id == current_user.id %>
-              <%= link_to 'Delete Review', drink_review_path(review.drink.id, review.id), method: :delete, data: { confirm: 'Are you sure you want to delete this review?' } %>
-            <% end %> 
           </div>
-        <% end %> 
-      </div>
+            <div class="links">
+              <% if current_user && @user.id == current_user.id %>
+                <%= link_to drink_review_path(review.drink.id, review.id), method: :delete, data: { confirm: 'Are you sure you want to delete this review?' } do %>
+                  <i class="fa fa-trash-o danger absolute-icon"></i>
+                <% end %>
+              <% end %> 
+            </div>
+          <hr>
+        </div>
+      <% end %> 
     </div>  
   </div>  
 </div>

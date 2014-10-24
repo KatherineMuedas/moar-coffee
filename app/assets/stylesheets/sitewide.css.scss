@@ -6,21 +6,65 @@
   padding-left: 15px;
   padding-right: 15px;
   margin-top: 15px;
-  color: $dark-gray;
-    a:hover{
-    color: darken($dark-gray,20%);
+  border-bottom: 2px solid $primary-color;
+  h5, h5 a{
+    color: $dark-gray;
+    &:hover{
+      color: darken($dark-gray,20%);
     }
+  }
 }
-.big-container{
+
+.bottom-container{
   background-color: white;
-  margin-left: 15px;
-  margin-right: 15px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-left: 15px;
- }
+  padding-top: 10px;
+  margin-bottom: 15px;
+  ul{
+    margin: 0;
+    li{
+      position: relative;
+      margin: 0 10px;
+      &:last-child {
+        padding-bottom: 10px;
+      }
+      .absolute-icon{
+        position: absolute;
+        top: -1px;
+        right: -5px;
+      }
+    }
+  }
+  hr{
+    margin: 5px 0;
+  }
+}
 
-
+.big-container{
+  @extend .bottom-container;
+  .each-box{
+    .links{
+      position: relative;
+      text-align: right;
+      .share-links{
+        padding-top: 25px;
+        position: absolute;
+        top: 20px;
+        right: -46px;
+        .FBB{
+          text-align: left;
+          position: absolute;
+          top: 60px;
+          right: 60px;
+        }
+      }
+      .absolute-icon{
+        position: absolute;
+        top: 10px;
+        right: 0px;
+      }
+    }
+  }
+}
 
 .row-list{
   padding: 0 24px;
@@ -62,12 +106,3 @@ main{
  border-bottom: 2px $primary-color solid; 
 }
 
-// .side-box{
-//   .top-container{
-//     background-color: darken($our-gray,5%);
-//     text-transform: uppercase;
-//       a:hover{
-//       color: darken($dark-gray,20%);
-//       }
-//   }
-// }

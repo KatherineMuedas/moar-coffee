@@ -3,12 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 // top section on shop page
 main.pic{
-  background: url("coffee.jpg") no-repeat;
+  background: url("coffee.jpg") no-repeat $our_gray;
   -moz-webkit-background-size: cover;
   -moz-background-size: cover;
   background-position: fixed;
   background-size:100% auto;
-  -moz-background-attachment: absolut;
+  -moz-background-attachment: absolute;
   -moz-background-position: center top;
   -moz-overflow-x: hidden; 
   -moz-display: block;
