@@ -38,7 +38,7 @@
                   <% end %>
                 </span>
               <% end %>
-            <% if @shop.website && @shop.website.blank? %>
+            <% if @shop.website && @shop.website != "" %>
             <span data-tooltip aria-haspopup="true" class="has-tip" data-options="show_on:large" title="Go to website"><%= link_to url_with_http_protocol(@shop.website), class: "button tiny primary", :target => '_blank' do %>
                 <i class="fa fa-external-link fa-lg"></i>
               <% end %></span>
@@ -59,7 +59,7 @@
     <div class= "top-container">
       <h5>Recent Activity</h5>
     </div>
-    <div class="big-container">
+    <div class="big-container shop-activities">
       <%= render "activities/shop_activities" %>
     </div>
   </div> 
