@@ -14,7 +14,13 @@
     </div>
 
     <div class="small-12 medium-2 columns">
-      
+      <% if @user.id != current_user.id %>
+        <% if @user.followed_by?(current_user) %>
+          <%= link_to "Unfollow", user_follow_user_path(user_id: @user), method: :delete, class: "button tiny primary" %>
+        <% else %>
+          <%= link_to "Follow", user_follow_users_path(user_id: @user ), method: :post, class: "button tiny primary" %>
+        <% end %>
+      <% end %>
     </div>
   </div>  
 </div>  
