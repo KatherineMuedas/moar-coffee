@@ -2,8 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 // top section on shop page
+
 main.pic{
-  background: image-url("coffee.jpg") no-repeat $our_gray;
+    background: linear-gradient(to right, rgba(25,13,4,.6) 0%,rgba(61, 48, 25, .6) 59%,rgba(25,13,4, .6) 100%), url('coffee.jpg') no-repeat;
   -moz-webkit-background-size: cover;
   -moz-background-size: cover;
   background-position: fixed;
@@ -12,4 +13,9 @@ main.pic{
   -moz-background-position: center top;
   -moz-overflow-x: hidden; 
   -moz-display: block;
+
+}
+
+main.overlay {
+  z-index: 1;
 }
