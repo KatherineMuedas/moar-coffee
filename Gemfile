@@ -12,8 +12,6 @@ gem 'foundation-rails', '5.4.3.0'
 gem 'font-awesome-rails'
 gem 'high_voltage' #static page generation
 gem 'simple_form'
-gem 'thin' # better webserver then webrick
-gem 'ffi', '~> 1.9.5'
 gem "paperclip", "~> 4.2"
 gem 'friendly_id', '~> 5.0.0'
 gem "geocoder"
@@ -45,6 +43,7 @@ group :development do
 end
 
 group :development, :test do
+  gem 'thin' # better webserver then webrick
   gem 'reek'
   gem 'factory_girl_rails'
   gem 'ffaker'
@@ -64,6 +63,7 @@ end
 
 group :production do
   gem 'rails_12factor' #for heroku
+  gem 'unicorn'
 end
 
 gem 'sdoc', '~> 0.4.0',          group: :doc
