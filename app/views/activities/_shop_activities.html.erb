@@ -1,8 +1,13 @@
 <% @activities.each do |activity| %>
   <% if activity.trackable %>
-      <%= link_to image_tag(activity.owner.avatar.url(:thumb), class: "user-thumb radius"), user_path(activity.owner)%> <%= link_to activity.owner.name, user_path(activity.owner.friendly_id) %>
-     <%= render_activity activity %>
-      <hr>
+    <p class="left">
+      <%= link_to image_tag(activity.owner.avatar.url(:thumb), class: "user-thumb radius max-hight-50"), user_path(activity.owner)%> 
+    </p>
+    <p class="text-left pad-top-10">
+      <%= link_to activity.owner.name, user_path(activity.owner.friendly_id) %>
+      <%= render_activity activity %>
+    </p>
+    <hr>
   <% end %>
 <% end %>
   
