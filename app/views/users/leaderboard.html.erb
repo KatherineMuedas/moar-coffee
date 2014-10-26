@@ -1,30 +1,30 @@
-<div class="text-center">
-  <h5>Leaderboard</h5>
-</div>
+<div class="small-12 medium-6 large-8 medium-centered columns">
 
-<table>
-  <thead>
-    <tr>
-      <th width="100">Position</th>
-      <th>Name</th>
-      <th width="150">Rank</th>
-      <th width="150">Points</th>
-      <th width="150">Follow</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @users.each do |user| %>
-      <tr> 
-        <td>1</td>
-        <td><%= link_to user.name, user_path(user.id) %></td>
-        <td><span class="success round label"><%= user.rank %></span></td> 
-        <td><%= user.points %></td>
-        <td>
-          
-        </td>
-      </tr> 
-    <% end %>  
-  </tbody>
-</table> 
+  <div class="text-center top-container">
+    <h5>Leaderboard</h5>
+  </div>
+
+  <table class='leaderboard'>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Rank</th>
+        <th class="text-center">Points</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each_with_index do |user, index| %>
+        <tr> 
+          <td class="text-center"><%= (index + 1).ordinalize %></td>
+          <td><%= link_to user.name, user_path(user.id) %></td>
+          <td><%= user.rank.capitalize %></td> 
+          <td class="text-center"><%= user.points %></td>
+        </tr> 
+      <% end %>  
+    </tbody>
+  </table> 
+
+</div>
      
   

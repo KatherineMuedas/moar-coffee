@@ -144,12 +144,12 @@ $tabbar-menu-icon-color: black;
 //$include-html-table-classes: $include-html-classes;
 
 // // These control the background color for the table and even rows
-// $table-bg: $white;
-$table-even-row-bg: $white;
+$table-bg: $white;
+$table-even-row-bg: $our-gray;
 
 // // These control the table cell border style
 // $table-border-style: solid;
-// $table-border-size: 1px;
+$table-border-size: 2px;
 $table-border-color: darken($our-gray,5%);
 
 // // These control the table head styles
@@ -181,3 +181,16 @@ $table-head-font-color: $dark-gray;
 // // These are for controlling the display and margin of tables
 // $table-display: table-cell;
 // $table-margin-bottom: rem-calc(20);
+
+//Label 
+// $include-html-label-classes: $include-html-classes;
+
+// // We use these to style the labels
+// $label-padding: rem-calc(3 10 4);
+// $label-radius: $global-radius;
+
+// // We use these to style the label text
+// $label-font-sizing: rem-calc(14);
+// $label-font-weight: bold;
+// $label-font-color: #333;
+// $label-font-color-alt: #fff;
