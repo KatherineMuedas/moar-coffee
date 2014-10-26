@@ -6,3 +6,66 @@
   border-radius: 25px;
 }
 
+.user-profile-container{
+  position: relative;
+  // color: white;
+  .user-info-main{
+    height: 210px;
+    background: image-url('coffee_bean.jpg') no-repeat $dark-gray;
+    background-size: 100% auto;
+    .user-photo-main{
+      img{
+        max-height: 124px;
+        max-width: 124px;
+        border-radius: 50%;
+        border: 4px solid $white;
+      }
+        position: absolute;
+        bottom: 30px;
+        left: 10px;
+        @media (max-width: 1025px) {
+          bottom: 40%;
+          left: 0;
+          text-align: center;
+          width: 100%;
+        }
+    }
+    .user-info{
+      position: absolute;
+      bottom: 50px;
+      left: 155px;
+      h1{color: white;}
+      @media (max-width: 1025px) {
+        left: 0;
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+  .user-stats{
+    height: 54px;
+    background-color: black;
+    .stats{
+      margin-left: 133px;
+      color: white;
+      @media (max-width: 1025px) {
+        margin-left: 0;
+      }
+      ul{
+        margin-left: 0;
+        li{
+          margin-left: 0; 
+          padding-right: 32px;
+          padding-left: 32px;
+          border-right: 1px solid rgba(255, 255, 255, 0.2);
+          .title{
+            font-size: 0.70rem;
+          }
+          .stat{
+            font-size: 1.30rem;
+          }
+        }
+      }
+    }
+  }
+}

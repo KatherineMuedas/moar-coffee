@@ -1,72 +1,90 @@
-<div  class= "big-container ">
-  <div class="row">
-    <div class="small-4 columns medium-4 columns photo-item">
-       <%= image_tag @user.avatar.url(:medium), class: "user-medium" %>
-    </div>
-    <div class="small-8 medium-6 columns">
-      <h1><%= @user.name%></h1>
-      <td>Points: <%= @user.points %></td> 
-      <br>
-      <td>Rank: <%= @user.rank.humanize %></td>
-      <% if current_user && @user.id == current_user.id %> 
-        <p><%= link_to 'Edit My Account', edit_user_registration_path, class: "button tiny" %></p> 
-      <% end %> 
-    </div>
-
-    <div class="small-12 medium-2 columns">
-      <% if @user.id != current_user.id %>
+<div  class= "user-profile-container">
+  <div class="user-info-main">
+    <div class="follow-or-edit-button">
+      <% if @user.id == current_user.id %>
+        <%= link_to 'Edit Account', edit_user_registration_path, class: "button tiny right" %>
+      <% else %>
         <% if @user.followed_by?(current_user) %>
-          <%= link_to "Unfollow", user_follow_user_path(user_id: @user), method: :delete, class: "button tiny primary" %>
+          <%= link_to "Unfollow", user_follow_user_path(user_id: @user), method: :delete, class: "button tiny right" %>
         <% else %>
-          <%= link_to "Follow", user_follow_users_path(user_id: @user ), method: :post, class: "button tiny primary" %>
+          <%= link_to "Follow", user_follow_users_path(user_id: @user ), method: :post, class: "button tiny right" %>
         <% end %>
-      <% end %>
+      <% end if current_user %>
     </div>
-  </div>  
+    <div class="user-photo-main">
+       <%= image_tag @user.avatar.url(:medium), class: "user-round-face" %>
+    </div>
+    <div class="user-info">
+      <h1><%= @user.name%></h1>
+    </div>
+  </div>
+  <div class="user-stats">
+    <div class="stats">
+      <ul class="inline-list">
+        <li>
+          <span class='stat'><%= @user.rank.humanize %></span>
+          <span class='title'>RANK </span>
+        </li>
+        <li>
+          <span class='stat'><%= @user.points %></span>
+          <span class='title'>POINTS </span>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>  
 
 <div class="row">
-  <div  class="small-12 medium-4 columns">
+  <div  class="small-12 medium-12 large-4 columns">
     <div class="top-container">
-      <h5>My Favorite Drinks</h5>
+      <h5>My Favorite Coffees</h5>
     </div>
-    <div class='bottom-container'>
+    <div class='bottom-pic-container'>
       <%= render 'users/favorite_drinks' %>
     </div>
     <div class="top-container">  
     <h5>Shops I'm Following</h5>
     </div>
-    <div class="bottom-container">
-      <ul>
-        <% if current_user.id == @user.id %>
-          <% @shop_follows.each do |follow| %>
-          <li class="margin-left-10"><%= link_to follow[:name], shop_path(follow.friendly_id) %> | <%= link_to '',shop_follows_delete_path(shop_id: follow.id),class:"fa fa-bomb",
-                                                                                        method: :delete %></li>
-          <hr>
-          <% end %>
-
+    <div class="bottom-pic-container">
+      <ul class="small-block-grid-3 medium-block-grid-6 large-block-grid-3">
+        <% @shop_follows.first(6).each do |shop| %>
+          <li class="photo">
+            <%= link_to(image_tag( shop.pictures.first ? shop.pictures.first.photo.url(:thumb) : "300x300.gif", class: "margin-0 radius-10"), shop_path(shop.friendly_id)) %>
+            <%= link_to shop_path(shop.friendly_id) do %>
+              <span class='caption-name'><small><%= shop.name %></small></span>
+            <% end %>
+          </li>
+        <% end %>
+        <% unless @shop_follows[6].nil? %>
+          <%= link_to 'View all shops...', '#', class: 'right' %>
         <% end %>
       </ul>
-    </div>  
+    </div> 
     <div class="top-container">  
-    <h5>Users I'm Following</h5>
+      <h5>Users I'm Following</h5>
     </div>
-    <div class='bottom-container'>
-      <ul>
-        <% if current_user.id == @user.id %>
-        <% @user_follows.each do |follow| %>
-          <li class="margin-left-10"><%= link_to follow[:name], user_path(follow.friendly_id) %> | <%= link_to '', user_follow_user_path(user_id: follow.id), class:"fa fa-bomb", method: :delete %></li>
-          <% end %>
+    <div class='bottom-pic-container'>
+      <ul class="small-block-grid-3 medium-block-grid-6 large-block-grid-3">
+        <% @user_follows.first(6).each do |follow| %>
+          <li class="photo">
+            <%= link_to image_tag(follow.avatar.url(:thumb), class: "margin-0 radius-10"), user_path(follow.friendly_id) %>
+            <%= link_to user_path(follow.friendly_id) do %>
+              <span class='caption-name'><%= follow.name %></span>
+            <% end %>
+          </li>
+        <% end %>
+        <% unless @user_follows[6].nil? %>
+          <%= link_to 'View all users...', '#', class: 'right' %>
         <% end %>
       </ul>
-    </div>  
+    </div>
   </div> 
+
   <div class="small-12 large-8 columns">
     <div class="top-container">
       <h5>My Photos</h5>
     </div>
     <%= render 'pictures/display_photos' %>
-
     <div class="top-container">    
       <h5>Recent Activity</h5>
     </div> 
