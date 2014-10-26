@@ -32,7 +32,14 @@ class User < ActiveRecord::Base
       end
     end
   end
-
+def update_with_password(params={}) 
+  if params[:password].blank? 
+    # params.delete(:current_password)
+    params.delete(:password) 
+    params.delete(:password_confirmation) if params[:password_confirmation].blank? 
+  end 
+  update_attributes(params) 
+end
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged
   def slug_candidates

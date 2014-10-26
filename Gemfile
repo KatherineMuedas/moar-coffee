@@ -37,6 +37,7 @@ group :development do
   gem 'guard-minitest'
   gem 'guard-bundler'
   gem 'guard-livereload'
+  gem 'rack-livereload'
   gem 'ruby_gntp' # send notification when guard is running. download Growl from the app store.
   gem 'xray-rails' # short cut cmd + shift + x
 end
