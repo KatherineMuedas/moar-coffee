@@ -172,6 +172,14 @@ li {
   background: #60605e;
   color: white;
 }
+.devpointlabs {
+  padding-bottom: 7px;
+  width: 100px;
+  margin-right: auto;
+  z-index: 2;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
 /////////used on specific pages/////////
 ///used on cafe page
 .cafe_description_index{
@@ -189,10 +197,6 @@ li {
 #newsfeed{
   background: $our-gray;
   border-radius: 10px;
-}
-.devpointlabs {
-  float: right;
-  width: 100px;
 }
 
 //for mid to small-screens for search bar
