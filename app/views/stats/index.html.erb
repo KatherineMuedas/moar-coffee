@@ -1,0 +1,15 @@
+<ul>
+  <% @has_many.each do |x| %>
+    <li><%= x %></li>
+    <% end %>
+</ul>
+
+<ul>
+  <li><%= @loc %></li>
+</ul>
+
+<ul>
+  <% @loc_by_file.each do |x| %>
+    <li><%= x %></li>
+  <% end %>
+</ul>
