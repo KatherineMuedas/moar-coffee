@@ -4,6 +4,8 @@
 // $body-font-weight: $font-weight-normal;
 // $body-font-style: normal;
 
+
+
 // Navigation
 // Background color for the top bar
 $topbar-bg-color: $primary-color;
@@ -137,3 +139,58 @@ $tabbar-menu-icon-color: black;
 // $off-canvas-overlay-box-shadow: -4px 0 4px rgba($black, 0.5), 4px 0 4px rgba($black, 0.5);
 // $off-canvas-overlay-background: rgba($white, 0.2);
 // $off-canvas-overlay-background-hover: rgba($white, 0.05);
+
+//table
+//$include-html-table-classes: $include-html-classes;
+
+// // These control the background color for the table and even rows
+$table-bg: $white;
+$table-even-row-bg: $our-gray;
+
+// // These control the table cell border style
+// $table-border-style: solid;
+$table-border-size: 2px;
+$table-border-color: darken($our-gray,5%);
+
+// // These control the table head styles
+$table-head-bg: darken($our-gray,5%);
+// $table-head-font-size: rem-calc(14);
+$table-head-font-color: $dark-gray;
+// $table-head-font-weight: $font-weight-bold;
+ $table-head-padding: darken($our-gray,5%);
+
+// // These control the table foot styles
+// $table-foot-bg: $table-head-bg;
+// $table-foot-font-size: $table-head-font-size;
+// $table-foot-font-color: $table-head-font-color;
+// $table-foot-font-weight: $table-head-font-weight;
+// $table-foot-padding: $table-head-padding;
+
+// // These control the caption
+// $table-caption-bg: transparent;
+// $table-caption-font-color: $table-head-font-color;
+// $table-caption-font-size: rem-calc(16);
+// $table-caption-font-weight: bold;
+
+// // These control the row padding and font styles
+// $table-row-padding: rem-calc(9 10);
+// $table-row-font-size: rem-calc(14);
+// $table-row-font-color: $jet;
+// $table-line-height: rem-calc(18);
+
+// // These are for controlling the display and margin of tables
+// $table-display: table-cell;
+// $table-margin-bottom: rem-calc(20);
+
+//Label 
+// $include-html-label-classes: $include-html-classes;
+
+// // We use these to style the labels
+// $label-padding: rem-calc(3 10 4);
+// $label-radius: $global-radius;
+
+// // We use these to style the label text
+// $label-font-sizing: rem-calc(14);
+// $label-font-weight: bold;
+// $label-font-color: #333;
+// $label-font-color-alt: #fff;

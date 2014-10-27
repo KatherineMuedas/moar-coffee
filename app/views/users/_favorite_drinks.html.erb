@@ -1,6 +1,13 @@
-<ul class = "favorite-list margin-left-0">  
-  <% @user.favorited_drinks.each do |drink| %>
-    <li class="margin-left-10"><%= link_to drink.name, shop_drink_path(drink.shop_id, drink) %> | <%= link_to '', favorite_path(drink.id), class:"fa fa-bomb", method: :delete, data: { confirm: 'Are you sure?' } %></li>
-  <hr>
+<ul class="small-block-grid-3 medium-block-grid-6 large-block-grid-3">  
+  <% @user.favorited_drinks.first(6).each do |drink| %>
+    <li class="photo">
+      <%= link_to(image_tag( drink.pictures.first ? drink.pictures.first.photo.url(:thumb) : "300x300.gif", class: "margin-0 radius-10"), shop_drink_path(drink.shop_id, drink)) %>
+      <%= link_to shop_drink_path(drink.shop_id, drink) do %>
+        <span class='caption-name'><small><%= "#{drink.name} from #{drink.shop.name}" %></small></span>
+      <% end %>
+    </li>
+  <% end %>
+  <% unless @user.favorited_drinks[6].nil? %>
+    <%= link_to 'View all drinks...', '#', class: 'right' %>
   <% end %>
 </ul>

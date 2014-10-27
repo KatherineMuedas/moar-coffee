@@ -13,7 +13,7 @@ $alert-color: #f04124;     // cinnabar
 $success-color: #43AC6A;   // sea-green
 $warning-color: #f08a24;   // carrot
 $info-color: #a0d3e8;      // cornflower
-$button-color: #49B26D;  // green
+$button-color: #5ead79;  // green
 
 $white         : #FFFFFF;
 $ghost         : #FAFAFA;
@@ -78,4 +78,8 @@ $black         : #000000;
 }
 .bg-soft-gray{
   background-color: $our-gray;
+}
+
+#NO-MARGIN{
+  margin: 0 !important;
 }

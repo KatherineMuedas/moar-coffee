@@ -3,9 +3,9 @@ class ShopsController < ApplicationController
   before_action :set_shop, only:[:show, :edit, :update]
   respond_to :html, :json
   def index
-    if params[:search].present?
-      @shops = Location.near(params[:search], 50).map{|x| x.shop}
-      @shops = Shop.where("name ilike ?", "%#{params[:search]}%") if @shops.empty?
+    if params[:search]
+      @shops = Location.limit(20).near(params[:search], 50).map{|x| x.shop}
+      @shops = Shop.where("name ilike ?", "%#{params[:search]}%").limit(10) if @shops.empty?
     end
   end
 

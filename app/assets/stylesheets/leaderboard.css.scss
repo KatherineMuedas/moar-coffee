@@ -1,0 +1,6 @@
+.leaderboard{
+  border-collapse: collapse;
+  tbody tr:hover{
+    background-color: darken($our-gray, 10%);
+  }
+}

@@ -1,15 +1,18 @@
-  
-<div id= "newsfeed" class= "small-12 large-8 large-centered columns">
+<div class= "small-12 large-8 large-centered columns">
   <div class="top-container text-center">
-    <h3 class="dark-gray">Activities</h3>
+    <h3>Activities</h3>
   </div>
-  <div class="bg-white">
+  <div class="bottom-container">
     <% @activities.each do |activity| %>
       <% if activity.trackable %>
-        <div class="activities">
-          <%= link_to image_tag(activity.owner.avatar.url(:thumb), class: "user-thumb radius"), user_path(activity.owner)%> <%= link_to activity.owner.name, user_path(activity.owner.friendly_id) %>
+        <p class="left">
+          <%= link_to image_tag(activity.owner.avatar.url(:thumb), class: "user-thumb radius max-hight-50"), user_path(activity.owner)%> 
+        </p>
+        <p class="text-left pad-top-10">
+          <%= link_to activity.owner.name, user_path(activity.owner.friendly_id) %>
           <%= render_activity activity %>
-          <hr>
+        </p>
+        <hr>
       <% end %>
     <% end %>
   </div>

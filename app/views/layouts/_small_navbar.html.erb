@@ -21,6 +21,7 @@
 <aside class="left-off-canvas-menu">
   <ul class="off-canvas-list">
     <%= render 'layouts/navigation_links' %>
+    <%= render 'shops/sidebar' if @shop && @drinks %>
   </ul>
 </aside>
 <% if user_signed_in? %>

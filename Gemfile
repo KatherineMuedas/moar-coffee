@@ -12,13 +12,13 @@ gem 'foundation-rails', '5.4.3.0'
 gem 'font-awesome-rails'
 gem 'high_voltage' #static page generation
 gem 'simple_form'
-gem 'thin' # better webserver then webrick
-gem 'ffi', '~> 1.9.5'
 gem "paperclip", "~> 4.2"
 gem 'friendly_id', '~> 5.0.0'
 gem "geocoder"
 gem "public_activity"
 gem "figaro" #To protect secret keys
+gem "aws-sdk"
+gem 'asset_sync'
 gem "acts_as_follower"
 gem 'omniauth-facebook'
 # gem 'rmagick', '2.13.2'
@@ -37,11 +37,13 @@ group :development do
   gem 'guard-minitest'
   gem 'guard-bundler'
   gem 'guard-livereload'
+  gem 'rack-livereload'
   gem 'ruby_gntp' # send notification when guard is running. download Growl from the app store.
   gem 'xray-rails' # short cut cmd + shift + x
 end
 
 group :development, :test do
+  gem 'thin' # better webserver then webrick
   gem 'reek'
   gem 'factory_girl_rails'
   gem 'ffaker'
@@ -61,6 +63,7 @@ end
 
 group :production do
   gem 'rails_12factor' #for heroku
+  gem 'unicorn'
 end
 
 gem 'sdoc', '~> 0.4.0',          group: :doc

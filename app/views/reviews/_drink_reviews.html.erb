@@ -1,6 +1,4 @@
-<% if @reviews.empty? %>
-  <h4 class='text-center'> No Reviews to Display</h4>
-<% else %>
+<% unless @reviews.empty? %>
   <% @reviews.each do |review| %>
     <div class="each-box">
       <div class="hide-for-small-only medium-2 columns text-center">
@@ -37,4 +35,6 @@
      <hr> 
    </div>
   <% end %>
+<% else %>
+  <h5 class='text-center pad-20 dark-gray'> No Reviews to Display</h5>
 <% end %>
