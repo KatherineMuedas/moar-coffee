@@ -42,7 +42,7 @@ end
 #     final_address_array << cell
  
 locations = ["Salt Lake City", "Park City", "Provo", "Ogden", "Sandy", "New York City", "Seattle", "Portland", "San Francisco", "Reno", "Las Vegas", "Denver", "Albuquerque", "Dallas"]
-@client = GooglePlaces::Client.new('AIzaSyAJUOJux-vCYq-5UHUSF6HmLeupTfj0nlU')
+@client = GooglePlaces::Client.new(ENV['GOOGLEAPI'])
 locations.each do |location|
   puts "creating shops for #{location}"
   results = @client.spots_by_query("coffee near #{location}")
