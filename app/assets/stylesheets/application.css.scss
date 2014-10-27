@@ -211,6 +211,12 @@ li {
     width: 100%
   }
 }
+//for background image on main page
+@media (max-width: 850px) {
+  main.pic{
+    background-size: 850px;
+  }
+}
 //small screen
 @media (max-width: 705px){
   .row, section, .main_shop_page{
