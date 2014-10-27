@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/pwalker86/loc_stats.git
+  revision: 72a8b4ec314fdb24fef83bc1b766c7814ca4194a
+  specs:
+    loc_stats (0.0.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -39,7 +45,7 @@ GEM
     aws-sdk-v1 (1.57.0)
       json (~> 1.4)
       nokogiri (>= 1.4.4)
-    bcrypt (3.1.7)
+    bcrypt (3.1.9)
     better_errors (2.0.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -48,7 +54,7 @@ GEM
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
     callsite (0.0.11)
-    capybara (2.4.3)
+    capybara (2.4.4)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
       rack (>= 1.0.0)
@@ -88,16 +94,16 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.3)
     excon (0.40.0)
-    execjs (2.2.1)
-    factory_girl (4.4.0)
+    execjs (2.2.2)
+    factory_girl (4.5.0)
       activesupport (>= 3.0.0)
-    factory_girl_rails (4.4.1)
-      factory_girl (~> 4.4.0)
+    factory_girl_rails (4.5.0)
+      factory_girl (~> 4.5.0)
       railties (>= 3.0.0)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
     ffaker (1.25.0)
-    ffi (1.9.5)
+    ffi (1.9.6)
     figaro (1.0.0)
       thor (~> 0.14)
     fog (1.24.0)
@@ -144,7 +150,7 @@ GEM
     friendly_id (5.0.4)
       activerecord (>= 4.0.0)
     geocoder (1.2.5)
-    google_places (0.24.0)
+    google_places (0.26.0)
       httparty (~> 0.13.1)
     guard (2.6.1)
       formatador (>= 0.2.4)
@@ -176,7 +182,7 @@ GEM
     inflecto (0.0.2)
     interception (0.5)
     ipaddress (0.8.0)
-    jbuilder (2.2.1)
+    jbuilder (2.2.4)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
     jquery-rails (3.1.2)
@@ -274,7 +280,7 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.1.5)
       sprockets-rails (~> 2.0)
-    rails_12factor (0.0.2)
+    rails_12factor (0.0.3)
       rails_serve_static_assets
       rails_stdout_logging
     rails_serve_static_assets (0.0.2)
@@ -299,12 +305,12 @@ GEM
       sexp_processor
     responders (1.1.1)
       railties (>= 3.2, < 4.2)
-    rspec-core (3.1.5)
+    rspec-core (3.1.7)
       rspec-support (~> 3.1.0)
     rspec-expectations (3.1.2)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.1.0)
-    rspec-mocks (3.1.2)
+    rspec-mocks (3.1.3)
       rspec-support (~> 3.1.0)
     rspec-rails (3.1.0)
       actionpack (>= 3.0)
@@ -314,7 +320,7 @@ GEM
       rspec-expectations (~> 3.1.0)
       rspec-mocks (~> 3.1.0)
       rspec-support (~> 3.1.0)
-    rspec-support (3.1.1)
+    rspec-support (3.1.2)
     ruby2ruby (2.1.3)
       ruby_parser (~> 3.1)
       sexp_processor (~> 4.0)
@@ -353,10 +359,10 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    sprockets-rails (2.1.4)
+    sprockets-rails (2.2.0)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
-      sprockets (~> 2.8)
+      sprockets (>= 2.8, < 4.0)
     thin (1.6.3)
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0)
@@ -420,6 +426,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   launchy
+  loc_stats!
   mail_form
   meta_request
   minitest-rails

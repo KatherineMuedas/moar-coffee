@@ -26,6 +26,7 @@ gem 'omniauth-facebook'
 gem 'google_places'
 gem 'mail_form'
 gem "select2-rails"
+gem 'loc_stats', :git => 'https://github.com/pwalker86/loc_stats.git', :require => true
 
 group :development do
   gem 'better_errors'
