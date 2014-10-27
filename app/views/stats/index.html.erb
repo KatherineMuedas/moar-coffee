@@ -1,15 +1,25 @@
-<ul>
-  <% @has_many.each do |x| %>
-    <li><%= x %></li>
+<div class="small-12 large-4 columns">
+  <h4>Lines of Code:</h4>
+  <ul>
+    <li><%= @loc %></li>
+  </ul>
+</div>
+
+<div class="small-12 large-4 columns">
+  <h4># of has many relationships</h4>
+  <ul>
+    <% @has_many.each do |x| %>
+      <li><%= x %></li>
+      <% end %>
+  </ul>
+</div>
+
+
+<div class="small-12 large-4 columns">
+  <h4>Lines of code per file:</h4>
+  <ul>
+    <% @loc_by_file.each do |x| %>
+      <li><%= x %></li>
     <% end %>
-</ul>
-
-<ul>
-  <li><%= @loc %></li>
-</ul>
-
-<ul>
-  <% @loc_by_file.each do |x| %>
-    <li><%= x %></li>
-  <% end %>
-</ul>
+  </ul>
+</div>
