@@ -1,5 +1,6 @@
   Rails.application.routes.draw do
 
+  get "/stats", to: "stats#index", as: :stats
   resources :activities
   resources :favorites, only: [:create, :destroy]
 

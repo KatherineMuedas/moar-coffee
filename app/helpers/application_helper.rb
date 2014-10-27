@@ -20,4 +20,16 @@ module ApplicationHelper
   def devise_mapping
     @devise_mapping ||= Devise.mappings[:user]
   end
+
+  def has_many_stats
+    LocStats.get_has_many_relationships
+  end
+
+  def loc_stats
+    LocStats.get_lines_of_code
+  end
+
+  def loc_sorted_stats
+    LocStats.sort_by_lines_of_code
+  end
 end
