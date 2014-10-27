@@ -35,14 +35,14 @@ main {
 
 //search function
 #search-box {
-  background: $our-gray;
+  background: rgba(255, 255, 255, .6);
   border-radius: 10px;
 }
 #search {
     border-radius: 13px 0px 0px 13px;
 }
 #search-results{
-  background: $our-gray;
+  background: rgba(255, 255, 255, .6);
   border-radius: 10px;
 }
 .fa-search {
