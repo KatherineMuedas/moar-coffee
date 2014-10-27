@@ -1,7 +1,7 @@
 module ShopsHelper
   def background_image
     #need to change url when deployed heroku 
-    if request.original_url == "http://localhost:3000/" || "http://localhost:3000/shops" ||params[:search]  
+    if request.original_url == "http://localhost:3000/" ||params[:search]  
        'pic overlay' 
     else
         ''
