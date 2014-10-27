@@ -47,13 +47,8 @@ class ReviewsController < ApplicationController
   private
 
   def reviews_params
-    if 
     picture_attributes = [:id, :caption, :photo, :user_id]
     params.require(:review).permit(:title, :body, :drink_rating, :drink_id,:review_type, :shop_id, picture_attributes: picture_attributes)
-    else
-    flash[:notice] = "Please select a number" 
-    end
-
   end
   def find_shop
     @shop = Shop.friendly.find(params[:review][:shop_id])
