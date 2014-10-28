@@ -1,13 +1,9 @@
-<% if @drink.new_record? %>
-  // not saved yet
-<% else %>
-  // Saved
-  $('#addDrink').foundation('reveal', 'close')
+
+  $('#addDrink').foundation('reveal', 'close');
   $('#addDrink #drink_description').val('');
   $('#addDrink #drink_name').val('');
   var partial =  "<%= j render(partial: 'drinks/drinks_list', locals: { drinks: @drinks, shop: @shop }) %>";
   var newsfeed = "<%= j render(partial: 'activities/shop_activities', locals: { activities: @activities }) %>";
   $('.drinksPartial').html(partial);
   $('.shop-activities').html(newsfeed);
-  var flash_msg = '<%=flash[:notice] if flash[:notice] %>';
-<% end %>
+  alert('Your coffee was successfully created!');

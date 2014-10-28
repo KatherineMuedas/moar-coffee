@@ -35,14 +35,14 @@ main {
 
 //search function
 #search-box {
-  background: $our-gray;
+  background: rgba(242, 242, 242, .9);
   border-radius: 10px;
 }
 #search {
     border-radius: 13px 0px 0px 13px;
 }
 #search-results{
-  background: $our-gray;
+  background: rgba(242, 242, 242, .9);
   border-radius: 10px;
 }
 .fa-search {
@@ -173,6 +173,15 @@ li {
   background: #60605e;
   color: white;
 }
+.devpointlabs {
+  padding-bottom: 7px;
+  width: 100px;
+  margin-right: auto;
+  z-index: 2;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+
 /////////used on specific pages/////////
 ///used on cafe page
 .cafe_description_index{
@@ -210,6 +219,12 @@ li {
 @media (max-width: 1024px) {
   .inside_search_bar {
     width: 100%
+  }
+}
+//for background image on main page
+@media (max-width: 850px) {
+  main.pic{
+    background-size: 850px;
   }
 }
 //small screen
