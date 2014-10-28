@@ -225,6 +225,9 @@ li {
   main.pic{
     background-size: 850px;
   }
+  .reveal-modal.small, .small {
+    width: 100%;
+  }
 }
 //small screen
 @media (max-width: 705px){
