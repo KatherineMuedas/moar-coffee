@@ -155,6 +155,9 @@ li {
 .no_reviews {
   margin-left: 1.3em;
 }
+.has-tip {
+  border-bottom: none;  
+}
 
 //shops boxes
 .box {
@@ -225,6 +228,9 @@ li {
 @media (max-width: 850px) {
   main.pic{
     background-size: 850px;
+  }
+  .reveal-modal.small, .small {
+    width: 100%;
   }
 }
 //small screen
