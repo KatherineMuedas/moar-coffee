@@ -1,19 +1,6 @@
 [![Code Climate](https://codeclimate.com/github/KatherineMuedas/moar-coffee/badges/gpa.svg)](https://codeclimate.com/github/KatherineMuedas/moar-coffee)
 
-To Login:
-kat@email.com
-chase@email.com
-phil@email.com
 
-Password = password
-
-Moar Coffee
-================
-
-Team members:
- - Phil
- - Chase
- - Katherine
 
 ###Community based, coffee experience sharing application. Rate and enjoy coffees from your local coffee shops. Find and explore new coffees based on real users experiences. 
 
