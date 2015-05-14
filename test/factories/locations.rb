@@ -2,13 +2,10 @@
 
 FactoryGirl.define do
   factory :location do
-    street_address "MyString"
-    city "MyString"
-    state "MyString"
-    zipcode "MyString"
-    lat 1.5
-    long 1.5
-    shop nil
+    street_address '430 E 400 S'
+    city 'Salt Lake City'
+    state 'Utah'
+    zipcode '84111'
   end
 end
 
