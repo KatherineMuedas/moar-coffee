@@ -10,3 +10,16 @@ class Drink < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: :scoped, scope: :shop
 end
+
+# == Schema Information
+#
+# Table name: drinks
+#
+#  id          :integer          not null, primary key
+#  name        :string(255)
+#  description :text
+#  shop_id     :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#  slug        :string(255)
+#

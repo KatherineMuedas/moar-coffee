@@ -7,6 +7,7 @@ require "rails/test_help"
 require "minitest/rails"
 require "minitest/spec"
 require "minitest/pride"
+require "minitest/focus"
  
 class ActiveSupport::TestCase
   include FactoryGirl::Syntax::Methods

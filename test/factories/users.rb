@@ -1,15 +1,9 @@
-describe User do
-
-  before(:each) { @user = User.new(email: 'user@example.com') }
-
-  subject { @user }
-
-  it { should respond_to(:email) }
-
-  it "#email returns a string" do
-    expect(@user.email).to match 'user@example.com'
+FactoryGirl.define do
+  factory :user do
+    name "Test User"
+    email "test@example.com"
+    password "please123"
   end
-
 end
 
 # == Schema Information

@@ -1,7 +1,8 @@
-require 'rails_helper'
+# Read about factories at https://github.com/thoughtbot/factory_girl
 
-RSpec.describe Favorite, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+FactoryGirl.define do
+  factory :favorite do
+  end
 end
 
 # == Schema Information

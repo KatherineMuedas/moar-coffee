@@ -5,3 +5,16 @@ class DrinkTest < ActiveSupport::TestCase
   #   assert true
   # end
 end
+
+# == Schema Information
+#
+# Table name: drinks
+#
+#  id          :integer          not null, primary key
+#  name        :string(255)
+#  description :text
+#  shop_id     :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#  slug        :string(255)
+#

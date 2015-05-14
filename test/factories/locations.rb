@@ -1,7 +1,15 @@
-require 'rails_helper'
+# Read about factories at https://github.com/thoughtbot/factory_girl
 
-RSpec.describe Location, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+FactoryGirl.define do
+  factory :location do
+    street_address "MyString"
+    city "MyString"
+    state "MyString"
+    zipcode "MyString"
+    lat 1.5
+    long 1.5
+    shop nil
+  end
 end
 
 # == Schema Information

@@ -51,15 +51,17 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-rescue'
   gem 'rspec-rails' # rspec
+  gem 'annotate'
 end
 
 group :test do
   gem 'minitest-rails'
   gem 'capybara' 
   gem 'database_cleaner'
-  gem 'launchy' #no idea what this is. must be for rspec
+  gem 'launchy' 
   gem 'selenium-webdriver' # for capybara
   gem 'simplecov', require: false
+  gem 'minitest-focus'
 end
 
 group :production do

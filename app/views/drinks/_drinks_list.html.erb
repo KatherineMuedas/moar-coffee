@@ -1,8 +1,7 @@
-<ul>
-  <% drinks.each do |drink| %>
-    <li><%= link_to drink.name.capitalize , shop_drink_path(shop, drink) %></li>
+<ul><% drinks.each do |drink| %>
+  <li><%= link_to drink.name.capitalize , shop_drink_path(shop, drink) %></li>
   <hr class='hide-for-small-only hide-for-medium-only'>
-  <% end %>
+<% end %> 
   <% if current_user %>
     <li><a href="#" data-reveal-id="addDrink"><i class="fa fa-plus"></i> Add a Coffee</a></li>  
   <% end %>
