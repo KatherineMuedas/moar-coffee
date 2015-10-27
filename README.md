@@ -2,6 +2,7 @@
 
 
 
+
 ###Community based, coffee experience sharing application. Rate and enjoy coffees from your local coffee shops. Find and explore new coffees based on real users experiences. 
 
 Models:
@@ -41,13 +42,7 @@ Other Ideas
   Google maps
   Login with Facebook, twitter, github, google+
   Sharing with Facebook, twitter 
-  Message user?
-  Quiz  → Javascript
 
-
-Moar Coffee is a drink experience sharing application that is community based.
-
-Moar =>  is a roar for more.  
 
 Basic Idea
   When the user arrive to his profile page he will find an option “Add and find  shops”
@@ -55,17 +50,4 @@ Basic Idea
   When the user select a shop will be redirect to the shop page where is going to find a  list of drinks with their reviews. 
 
  
-Getting Started
----------------
 
-Issues
--------------
-
-Contributing
-------------
-
-Credits
--------
-
-License
--------
